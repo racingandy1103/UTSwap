@@ -216,6 +216,7 @@
             <point key="canvasLocation" x="2042.0289855072465" y="77.678571428571431"/>
         </scene>
         <!--View Controller-->
+<<<<<<< HEAD
 
         <scene sceneID="CZT-oq-occ">
             <objects>
@@ -227,6 +228,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhL-5B-fzS">
                                 <rect key="frame" x="56" y="142" width="84" height="21"/>
 =======
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of 76f4fec (Added Register page and home page UI)
         <scene sceneID="CUL-qM-Xee">
             <objects>
                 <viewController id="1bJ-UW-Jl6" sceneMemberID="viewController">
@@ -263,7 +267,7 @@
 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5K-Bm-eUg">
                                 <rect key="frame" x="56" y="311" width="82" height="50"/>
-                            </label>
+                        
 =======
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlz-Mn-CXG">
                                 <rect key="frame" x="176" y="275" width="195" height="34"/>
@@ -496,7 +500,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3495.652173913044" y="77.678571428571431"/>
+<<<<<<< HEAD
 >>>>>>> andyykh
+=======
+=======
+        <scene sceneID="dDw-yX-u74">
+            <objects>
+                <viewController id="5sy-Ui-Wsm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gsm-Ke-EVF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QSZ-qG-KWE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9j-Se-tQz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="78"/>
+>>>>>>> Stashed changes
+>>>>>>> parent of 76f4fec (Added Register page and home page UI)
         </scene>
     </scenes>
     <resources>
