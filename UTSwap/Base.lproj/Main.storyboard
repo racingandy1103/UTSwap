@@ -216,7 +216,6 @@
             <point key="canvasLocation" x="2042.0289855072465" y="77.678571428571431"/>
         </scene>
         <!--View Controller-->
-<<<<<<< Updated upstream
         <scene sceneID="CUL-qM-Xee">
             <objects>
                 <viewController id="1bJ-UW-Jl6" sceneMemberID="viewController">
@@ -383,21 +382,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3495.652173913044" y="77.678571428571431"/>
-=======
-        <scene sceneID="dDw-yX-u74">
-            <objects>
-                <viewController id="5sy-Ui-Wsm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gsm-Ke-EVF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="QSZ-qG-KWE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K9j-Se-tQz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2780" y="78"/>
->>>>>>> Stashed changes
         </scene>
     </scenes>
     <resources>
