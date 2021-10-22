@@ -216,9 +216,7 @@
             <point key="canvasLocation" x="2042.0289855072465" y="77.678571428571431"/>
         </scene>
         <!--View Controller-->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 =======
 >>>>>>> main
@@ -232,13 +230,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhL-5B-fzS">
                                 <rect key="frame" x="56" y="142" width="84" height="21"/>
 =======
-<<<<<<< HEAD
+
 =======
-<<<<<<< Updated upstream
->>>>>>> parent of 76f4fec (Added Register page and home page UI)
-=======
-<<<<<<< Updated upstream
->>>>>>> parent of 76f4fec (Added Register page and home page UI)
+
 =======
 >>>>>>> main
         <scene sceneID="CUL-qM-Xee">
