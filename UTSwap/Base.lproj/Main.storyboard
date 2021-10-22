@@ -218,7 +218,10 @@
         <!--View Controller-->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         <scene sceneID="CZT-oq-occ">
             <objects>
                 <viewController id="8nU-Tz-10o" sceneMemberID="viewController">
@@ -229,12 +232,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhL-5B-fzS">
                                 <rect key="frame" x="56" y="142" width="84" height="21"/>
 =======
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
 <<<<<<< Updated upstream
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
+=======
+>>>>>>> main
         <scene sceneID="CUL-qM-Xee">
             <objects>
                 <viewController id="1bJ-UW-Jl6" sceneMemberID="viewController">
@@ -250,7 +256,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> main
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font: Arial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-aV-xIV">
                                 <rect key="frame" x="56" y="227" width="77" height="21"/>
 =======
@@ -268,10 +278,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5K-Bm-eUg">
                                 <rect key="frame" x="56" y="311" width="82" height="50"/>
                         
+=======
+<<<<<<< HEAD
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5K-Bm-eUg">
+                                <rect key="frame" x="56" y="311" width="82" height="50"/>
+>>>>>>> main
 =======
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlz-Mn-CXG">
                                 <rect key="frame" x="176" y="275" width="195" height="34"/>
@@ -287,7 +303,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> main
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaM-Eg-6ew">
                                 <rect key="frame" x="326" y="218" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -302,10 +322,14 @@
                                 <rect key="frame" x="317" y="132" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+<<<<<<< HEAD
                         
                         </subviews>
                         
                         
+=======
+                        </subviews>
+>>>>>>> main
                         <viewLayoutGuide key="safeArea" id="n3Y-C2-zeS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -506,6 +530,7 @@
             <point key="canvasLocation" x="3495.652173913044" y="77.678571428571431"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> andyykh
 =======
 =======
@@ -529,6 +554,9 @@
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
+=======
+>>>>>>> andyykh
+>>>>>>> main
         </scene>
     </scenes>
     <resources>
