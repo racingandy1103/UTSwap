@@ -50,7 +50,6 @@
         <!--View Controller-->
         <scene sceneID="sBG-2m-eZU">
             <objects>
-                <viewController id="iXe-qp-H06" customClass="ViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pq-P8-I9S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +214,7 @@
             </objects>
             <point key="canvasLocation" x="2042.0289855072465" y="77.678571428571431"/>
         </scene>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <!--View Controller-->
 <<<<<<< HEAD
@@ -495,6 +495,8 @@
             <point key="canvasLocation" x="3495.652173913044" y="77.678571428571431"/>
 >>>>>>> andyykh
         </scene>
+=======
+>>>>>>> parent of 372201c (Merge pull request #5 from racingandy1103/jess)
     </scenes>
     <resources>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
