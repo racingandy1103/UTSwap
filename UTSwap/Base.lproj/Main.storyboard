@@ -219,6 +219,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
         <!--View Controller-->
+<<<<<<< HEAD
 
 
 =======
@@ -238,6 +239,9 @@
 
 =======
 >>>>>>> main
+=======
+<<<<<<< Updated upstream
+>>>>>>> parent of 76f4fec (Added Register page and home page UI)
         <scene sceneID="CUL-qM-Xee">
             <objects>
                 <viewController id="1bJ-UW-Jl6" sceneMemberID="viewController">
@@ -528,8 +532,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> andyykh
 =======
+=======
+>>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
@@ -548,12 +555,15 @@
             <point key="canvasLocation" x="2780" y="78"/>
 >>>>>>> Stashed changes
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
 >>>>>>> parent of 76f4fec (Added Register page and home page UI)
 =======
 >>>>>>> andyykh
 >>>>>>> main
+=======
+>>>>>>> parent of 76f4fec (Added Register page and home page UI)
         </scene>
 =======
 >>>>>>> parent of 372201c (Merge pull request #5 from racingandy1103/jess)
