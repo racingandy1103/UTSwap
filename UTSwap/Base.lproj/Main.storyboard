@@ -13,6 +13,7 @@
         <scene sceneID="fA9-7T-Lyh">
             <objects>
                 <viewController id="9qp-QI-aTe" customClass="ViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9qp-QI-aTe" customClass="ViewController" customModule="ChiangHan_Pei_HW2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8I-c7-bkc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
