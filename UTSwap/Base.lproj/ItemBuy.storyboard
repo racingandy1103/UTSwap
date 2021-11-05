@@ -11,7 +11,7 @@
         <!--Item Buy View Controller-->
         <scene sceneID="TpX-mM-lco">
             <objects>
-                <viewController id="0te-vQ-6al" customClass="ItemBuyViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itemBuyId" id="0te-vQ-6al" customClass="ItemBuyViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="47T-fX-mMH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,6 +10,12 @@
 		15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E6844C273300F3005C245D /* GoogleService-Info.plist */; };
 		15E6844F273304F6005C245D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6844E273304F6005C245D /* LoginViewController.swift */; };
 		19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */; };
+		D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52B2735C32100ACEDEC /* Settings.storyboard */; };
+		D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */; };
+		D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5312735C37E00ACEDEC /* BaseViewController.swift */; };
+		D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5322735C37E00ACEDEC /* LandingViewController.swift */; };
+		D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5332735C37E00ACEDEC /* SettingsViewController.swift */; };
+		D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */; };
 		D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E714C271A2ED800CC01C2 /* AppDelegate.swift */; };
 		D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */; };
 		D44E7151271A2ED800CC01C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E7150271A2ED800CC01C2 /* ViewController.swift */; };
@@ -24,6 +30,12 @@
 		15E6844E273304F6005C245D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C033452AD9D88D8EB80A867 /* Pods-UTSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.release.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.release.xcconfig"; sourceTree = "<group>"; };
 		B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42EB52C2735C32100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		D42EB52F2735C33100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemBuy.storyboard; sourceTree = "<group>"; };
+		D42EB5312735C37E00ACEDEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D42EB5322735C37E00ACEDEC /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		D42EB5332735C37E00ACEDEC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBuyViewController.swift; sourceTree = "<group>"; };
 		D44E7149271A2ED800CC01C2 /* UTSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44E714C271A2ED800CC01C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +89,12 @@
 		D44E714B271A2ED800CC01C2 /* UTSwap */ = {
 			isa = PBXGroup;
 			children = (
+				D42EB5312735C37E00ACEDEC /* BaseViewController.swift */,
+				D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */,
+				D42EB5322735C37E00ACEDEC /* LandingViewController.swift */,
+				D42EB5332735C37E00ACEDEC /* SettingsViewController.swift */,
+				D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */,
+				D42EB52B2735C32100ACEDEC /* Settings.storyboard */,
 				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				D44E7150271A2ED800CC01C2 /* ViewController.swift */,
@@ -163,6 +181,8 @@
 				15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */,
 				D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */,
 				D44E7154271A2ED800CC01C2 /* Main.storyboard in Resources */,
+				D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */,
+				D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,16 +236,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44E7151271A2ED800CC01C2 /* ViewController.swift in Sources */,
+				D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */,
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
+				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
+				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
+				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D42EB52B2735C32100ACEDEC /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D42EB52C2735C32100ACEDEC /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D42EB52F2735C33100ACEDEC /* Base */,
+			);
+			name = ItemBuy.storyboard;
+			sourceTree = "<group>";
+		};
 		D44E7152271A2ED800CC01C2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
