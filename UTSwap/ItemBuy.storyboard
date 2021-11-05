@@ -8,28 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Landing View Controller-->
+        <!--Item Buy View Controller-->
         <scene sceneID="IP3-kS-Ejy">
             <objects>
-                <viewController id="qjK-Zw-flz" customClass="LandingViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itemBuyId" id="qjK-Zw-flz" customClass="ItemBuyViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0l-TV-Vbx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-MH-L4Z">
-                                <rect key="frame" x="69" y="729" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-VC-7Z4">
+                                <rect key="frame" x="129" y="321" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
+                                <state key="normal" title="To Item Template Page"/>
                                 <connections>
-                                    <segue destination="ynv-Gh-TWM" kind="show" identifier="ToItemBuySegue" id="mC3-Gb-w9Y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-8y-a7M">
-                                <rect key="frame" x="269" y="732" width="86" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Started"/>
-                                <connections>
-                                    <segue destination="9qp-QI-aTe" kind="show" identifier="ToAuthPageSegue" id="JQD-5B-5Tu"/>
+                                    <segue destination="0te-vQ-6al" kind="show" identifier="ItemBuySegue" id="KkP-xL-h4E"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,7 +35,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-tj-Jgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="275"/>
+            <point key="canvasLocation" x="941" y="-206"/>
+        </scene>
+        <!--Item Buy View Controller-->
+        <scene sceneID="TpX-mM-lco">
+            <objects>
+                <viewController id="0te-vQ-6al" customClass="ItemBuyViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="47T-fX-mMH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-U5-vZH">
+                                <rect key="frame" x="54" y="160" width="306" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aCj-xo-XC2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ugd-9v-Cgm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Lv-59-h6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="-583"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fA9-7T-Lyh">
@@ -78,7 +93,6 @@
                         <viewLayoutGuide key="safeArea" id="nBG-cB-Yjb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LYf-ww-d8q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNY-Hx-VKo" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5223" y="78"/>
+            <point key="canvasLocation" x="5315.9420289855079" y="77.678571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PdX-nM-u0e">
@@ -422,7 +436,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgD-of-wLl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="78"/>
+            <point key="canvasLocation" x="46" y="-206"/>
         </scene>
         <!--Settings-->
         <scene sceneID="XFd-NG-zPh">
@@ -432,17 +446,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llb-AO-jcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="-338"/>
-        </scene>
-        <!--itemBuyId-->
-        <scene sceneID="XeC-AX-JYU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ItemBuy" referencedIdentifier="itemBuyId" id="ynv-Gh-TWM" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="paJ-aN-RYo"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nE3-80-jwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2008" y="555"/>
+            <point key="canvasLocation" x="1817" y="-962"/>
         </scene>
     </scenes>
     <resources>
@@ -450,6 +454,9 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
