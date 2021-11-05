@@ -10,26 +10,44 @@ import UIKit
 class BaseViewController: UIViewController {
     
     var currentColor: UIColor = .lightGray
+    
+    
+    public static let THEME_COLORS = [
+        "BLUE": UIColor.blue,
+        "RED": UIColor.red,
+        "SYSTEM_PINK": UIColor.systemPink,
+        "WHITE": UIColor.white,
+        "CYAN": UIColor.cyan,
+        "ORANGE": UIColor.orange
+    ]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = currentColor
+        
+        
+        navigationController?.navigationBar.barTintColor = getCurrentAccentColor()
         
         if(navigationItem.rightBarButtonItem == nil) {
             showSettingsButton(show: true)
         }
-        
-       
-
     }
         
     func getCurrentAccentColor() -> UIColor {
-        return self.currentColor
+        let key = UserDefaults.standard.string(forKey: "accentColor")
+        return BaseViewController.THEME_COLORS[key ?? "BLUE"]!
+    }
+    
+    
+    func setTheme(theme: String) {
+        let _: Void = UserDefaults.standard.setValue(theme, forKey: "accentColor")
+        setCurrentAccentColor(color: (BaseViewController.THEME_COLORS[theme] ?? BaseViewController.THEME_COLORS["BLUE"])!)
     }
     
     func setCurrentAccentColor(color: UIColor) {
-        self.currentColor = color
+        navigationController?.navigationBar.barTintColor = color
     }
+
     
     func isDarkModeOn() -> Bool {
         let darkMode = UserDefaults.standard.bool(forKey: "darkModeOn")  as? Bool ?? true
@@ -47,6 +65,10 @@ class BaseViewController: UIViewController {
         } else {
             overrideUserInterfaceStyle = .light
         }
+    }
+    
+    func getRandomTheme() -> String {
+        return BaseViewController.THEME_COLORS.keys.randomElement()!
     }
     
     override func viewWillAppear(_ animated: Bool) {
