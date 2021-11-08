@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157E80692738CE3F005F5D09 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157E80682738CE3F005F5D09 /* Login.storyboard */; };
+		157E806B2738D337005F5D09 /* FeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */; };
+		157E80752738D918005F5D09 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E80742738D918005F5D09 /* signUpViewController.swift */; };
 		15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E6844C273300F3005C245D /* GoogleService-Info.plist */; };
 		15E6844F273304F6005C245D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6844E273304F6005C245D /* LoginViewController.swift */; };
 		19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		157E80682738CE3F005F5D09 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewController.swift; sourceTree = "<group>"; };
+		157E80742738D918005F5D09 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		15E6844C273300F3005C245D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15E6844E273304F6005C245D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C033452AD9D88D8EB80A867 /* Pods-UTSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.release.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +105,10 @@
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				D44E7150271A2ED800CC01C2 /* ViewController.swift */,
 				D44E7152271A2ED800CC01C2 /* Main.storyboard */,
+				157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */,
+				157E80682738CE3F005F5D09 /* Login.storyboard */,
 				15E6844E273304F6005C245D /* LoginViewController.swift */,
+				157E80742738D918005F5D09 /* signUpViewController.swift */,
 				D44E7158271A2ED900CC01C2 /* Assets.xcassets */,
 				D44E715A271A2ED900CC01C2 /* LaunchScreen.storyboard */,
 				D44E715D271A2ED900CC01C2 /* Info.plist */,
@@ -179,6 +188,7 @@
 			files = (
 				D44E715C271A2ED900CC01C2 /* LaunchScreen.storyboard in Resources */,
 				15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */,
+				157E80692738CE3F005F5D09 /* Login.storyboard in Resources */,
 				D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */,
 				D44E7154271A2ED800CC01C2 /* Main.storyboard in Resources */,
 				D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */,
@@ -238,9 +248,11 @@
 				D44E7151271A2ED800CC01C2 /* ViewController.swift in Sources */,
 				D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */,
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
+				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
+				157E806B2738D337005F5D09 /* FeedCollectionViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
 				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
