@@ -25,11 +25,12 @@
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-vu-kbr">
-                                <rect key="frame" x="290" y="211" width="30" height="30"/>
+                                <rect key="frame" x="289" y="433" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="editFont:" destination="jLF-w1-foQ" eventType="touchUpInside" id="iad-cM-6mF"/>
+                                    <action selector="onFontEditPressed:" destination="jLF-w1-foQ" eventType="touchUpInside" id="OaO-hl-bOD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slt-uC-gqx">
@@ -47,8 +48,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-ax-jhu">
-                                <rect key="frame" x="85" y="215" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Font : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-ax-jhu">
+                                <rect key="frame" x="85" y="437" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,12 +67,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Nam liber te conscient to factor tum poen legum odioque civiuda." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-8K-LNW">
+                                <rect key="frame" x="202" y="666" width="176" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.59901284599343307" green="0.80854764462513151" blue="0.92133218050003052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zgO-o5-UC0">
+                                <rect key="frame" x="65" y="566" width="171" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.78249229349511928" blue="0.73674106010965845" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vvR-Uh-MkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="onj-yu-rQx"/>
                     <connections>
+                        <outlet property="chatBubble1" destination="zgO-o5-UC0" id="GAk-nz-LrO"/>
+                        <outlet property="chatBubble2" destination="Veb-8K-LNW" id="2M1-Hx-jwW"/>
                         <outlet property="colorBox" destination="S62-jO-1O0" id="gRC-50-2Ch"/>
                         <outlet property="darkModeToggle" destination="qYN-GI-aV3" id="bh7-pS-HMT"/>
                         <outlet property="fontLabel" destination="uS0-ax-jhu" id="bOV-ar-idl"/>
@@ -79,13 +98,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxD-Qa-F68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="-962.27678571428567"/>
+            <point key="canvasLocation" x="2339.130434782609" y="-828.34821428571422"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
