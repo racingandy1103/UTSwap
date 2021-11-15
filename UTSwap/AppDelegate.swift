@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import CoreData
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       FirebaseApp.configure()
 
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: {
+            (success, error) in
+            if success {
+                print("Permission Granted")
+            } else {
+                print("There was a problem")
+            }
+        })
       return true
     }
 

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D0B842741B1FE00D76FEB /* FeedCollectionViewCell.swift */; };
+		150D0B872741B50500D76FEB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D0B862741B50500D76FEB /* FeedViewController.swift */; };
+		150D0B8927420F3F00D76FEB /* ItemSellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */; };
 		157E80692738CE3F005F5D09 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157E80682738CE3F005F5D09 /* Login.storyboard */; };
-		157E806B2738D337005F5D09 /* FeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */; };
 		157E80752738D918005F5D09 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157E80742738D918005F5D09 /* signUpViewController.swift */; };
 		15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E6844C273300F3005C245D /* GoogleService-Info.plist */; };
 		15E6844F273304F6005C245D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6844E273304F6005C245D /* LoginViewController.swift */; };
@@ -31,8 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150D0B842741B1FE00D76FEB /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		150D0B862741B50500D76FEB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSellViewController.swift; sourceTree = "<group>"; };
 		157E80682738CE3F005F5D09 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewController.swift; sourceTree = "<group>"; };
 		157E80742738D918005F5D09 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		15E6844C273300F3005C245D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15E6844E273304F6005C245D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +115,9 @@
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				D44E7150271A2ED800CC01C2 /* ViewController.swift */,
 				D44E7152271A2ED800CC01C2 /* Main.storyboard */,
-				157E806A2738D337005F5D09 /* FeedCollectionViewController.swift */,
+				150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */,
+				150D0B862741B50500D76FEB /* FeedViewController.swift */,
+				150D0B842741B1FE00D76FEB /* FeedCollectionViewCell.swift */,
 				157E80682738CE3F005F5D09 /* Login.storyboard */,
 				15E6844E273304F6005C245D /* LoginViewController.swift */,
 				157E80742738D918005F5D09 /* signUpViewController.swift */,
@@ -257,11 +263,13 @@
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
+				150D0B8927420F3F00D76FEB /* ItemSellViewController.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,
+				150D0B872741B50500D76FEB /* FeedViewController.swift in Sources */,
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
-				157E806B2738D337005F5D09 /* FeedCollectionViewController.swift in Sources */,
 				A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
+				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
 				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
 			);
