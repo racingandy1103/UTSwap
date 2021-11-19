@@ -6,11 +6,33 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 let reuseIdentifier = "MyCell"
-var items = ["1","2","3"]
+let initialItems = ["1","2","3"]
+
+
+class Item {
+    
+    public var itemTitle:String = ""
+    
+    public var key:String = ""
+
+    init(title:String) {
+        self.itemTitle = title
+    }
+}
+
 
 class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    // for DB
+    var ref: DatabaseReference!
+    
+    var items:[String] = []
+
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,6 +41,44 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        var itemList:[String] = []
+        for i in initialItems {
+            itemList.append(i)
+        }
+        
+        addItemsFromDBIntoList()
+        
+        self.items = itemList
+    }
+    
+    func addItemsFromDBIntoList() {
+        var itemsToAdd:[Item] = []
+        if (Auth.auth().currentUser != nil) {
+            print("reading items from db")
+            ref = Database.database().reference()
+            ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
+                // Get user value
+                print(snapshot.childrenCount) // I got the expected number of items
+                for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                   
+                    for i in rest.children.allObjects as! [DataSnapshot] {
+                        let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                        var a = Item(title: title)
+                        a.key = snapshot.key
+                        itemsToAdd.append(a)
+                        self.items.append(title)
+                    }
+                   
+                }
+                
+                self.collectionView.reloadData()
+                // ...
+              }) { error in
+                print(error.localizedDescription)
+              }
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,10 +93,16 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: cellSize, height: cellSize));
         
         // Note: this will be set to category selected from tableview
-        let img : UIImage = UIImage(named:"furniture\(indexPath.row)")!
-                imageview.image = img
-
+        let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
+        if img != nil {
+            imageview.image = img
+        }
+        
+        let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
+        title.text = "\(items[indexPath.row])"
+    
         cell.contentView.addSubview(imageview)
+        cell.contentView.addSubview(title)
 
         cell.layer.borderColor = UIColor.orange.cgColor
         cell.layer.borderWidth = 1
