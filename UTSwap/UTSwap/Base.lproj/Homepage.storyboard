@@ -73,23 +73,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-4q-TtE">
-                                <rect key="frame" x="54" y="853" width="52" height="22"/>
+                                <rect key="frame" x="20" y="829" width="38" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Liked Goods" image="heart" catalog="system"/>
+                                <state key="normal" title="Liked Goods" image="suit.heart" catalog="system"/>
+                                <connections>
+                                    <action selector="tapHeartButton:" destination="kSx-AY-jvj" eventType="touchUpInside" id="YhW-Cc-2al"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DfJ-Hr-RKu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="YiT-XM-1lz"/>
+                    <connections>
+                        <outlet property="accountNameLabel" destination="HTF-GO-afX" id="nTt-lx-Rwv"/>
+                        <outlet property="advertiseImageView" destination="ABZ-cT-ZMz" id="CqG-T2-A55"/>
+                        <outlet property="buyButton" destination="4AL-dV-p7O" id="Vfp-Hb-MHJ"/>
+                        <outlet property="chatButton" destination="eUf-ue-VYS" id="EaN-aI-XiX"/>
+                        <outlet property="heartButton" destination="Lfd-4q-TtE" id="AW8-pr-Egs"/>
+                        <outlet property="likedGoodsLabel" destination="CdE-qc-tRU" id="AFW-Xh-HPy"/>
+                        <outlet property="notificationsButton" destination="aF5-76-Doe" id="ZJB-Bi-lm8"/>
+                        <outlet property="sellButton" destination="Oge-tA-O0Y" id="Tg5-W0-Pxi"/>
+                        <outlet property="sellingGoodsLabel" destination="7dI-k9-Xap" id="Gm6-Dr-uWZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4567" y="78"/>
+            <point key="canvasLocation" x="4566.666666666667" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
