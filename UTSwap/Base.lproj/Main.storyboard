@@ -58,8 +58,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-aG-Rui">
-                                <rect key="frame" x="188" y="489" width="38" height="30"/>
+                                <rect key="frame" x="192" y="498" width="30" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="8qc-ya-FlH" kind="show" id="Xgb-B8-aYU"/>

@@ -110,4 +110,7 @@ class BaseViewController: UIViewController {
     @objc func buttonTappedAction() {
         showSettingsScreen()
     }
+
   }
+
+
