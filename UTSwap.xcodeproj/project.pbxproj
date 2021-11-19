@@ -13,6 +13,7 @@
 		15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E6844C273300F3005C245D /* GoogleService-Info.plist */; };
 		15E6844F273304F6005C245D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6844E273304F6005C245D /* LoginViewController.swift */; };
 		19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */; };
+		D41450BF274731A900888BC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450BE274731A900888BC8 /* ProfileViewController.swift */; };
 		D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52B2735C32100ACEDEC /* Settings.storyboard */; };
 		D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */; };
 		D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5312735C37E00ACEDEC /* BaseViewController.swift */; };
@@ -36,6 +37,7 @@
 		15E6844E273304F6005C245D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C033452AD9D88D8EB80A867 /* Pods-UTSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.release.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.release.xcconfig"; sourceTree = "<group>"; };
 		B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41450BE274731A900888BC8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D42EB52C2735C32100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D42EB52F2735C33100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemBuy.storyboard; sourceTree = "<group>"; };
 		D42EB5312735C37E00ACEDEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		D44E714B271A2ED800CC01C2 /* UTSwap */ = {
 			isa = PBXGroup;
 			children = (
+				D41450BE274731A900888BC8 /* ProfileViewController.swift */,
 				D42EB5312735C37E00ACEDEC /* BaseViewController.swift */,
 				D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */,
 				D42EB5322735C37E00ACEDEC /* LandingViewController.swift */,
@@ -251,6 +254,7 @@
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,
+				D41450BF274731A900888BC8 /* ProfileViewController.swift in Sources */,
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
 				157E806B2738D337005F5D09 /* FeedCollectionViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
