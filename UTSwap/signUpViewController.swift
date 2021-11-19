@@ -7,8 +7,9 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
-class signUpViewController: UIViewController {
+class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var textFieldLoginUser: UITextField!
     @IBOutlet weak var textFieldLoginPass: UITextField!
@@ -17,7 +18,7 @@ class signUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        UNUserNotificationCenter.current().delegate = self
     }
     
     @IBAction func signUp(_ sender: Any) {
@@ -30,7 +31,7 @@ class signUpViewController: UIViewController {
                     Auth.auth().signIn(withEmail: self.textFieldLoginUser.text!,
                                        password: self.textFieldLoginPass.text!)
                     //self.performSegue(withIdentifier: "segue2Identifier", sender: nil)
-                    
+                    print("yay")
                     // create an object that holds the data for our notification
                     let notification = UNMutableNotificationContent()
                     notification.title = "Sign-up Successful"
@@ -38,12 +39,10 @@ class signUpViewController: UIViewController {
                     notification.body = "You have successfully created an account on UTSwap!"
                     
                     // set up the notification's trigger
-                    let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+                    let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                     
                     // set up a request to tell iOS to submit the notification with that trigger
-                    let request = UNNotificationRequest(identifier: "notification1",
-                                                        content: notification,
-                                                        trigger: notificationTrigger)
+                    let request = UNNotificationRequest(identifier: "notification1", content: notification, trigger: notificationTrigger)
                     
                     
                     // submit the request to iOS
