@@ -10,7 +10,7 @@ import UIKit
 let reuseIdentifier = "MyCell"
 var items = ["1","2","3"]
 
-class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

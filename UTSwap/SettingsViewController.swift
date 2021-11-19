@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
 
 
 class SettingsViewController: BaseViewController {
     
     let colors:[UIColor] = [UIColor.blue, UIColor.white,UIColor.red,UIColor.cyan, UIColor.yellow, UIColor.systemPink, UIColor.orange]
+    
+    var ref: DatabaseReference!
+
     
     @IBOutlet weak var colorBox: UIImageView!
     @IBOutlet weak var darkModeToggle: UISwitch!
@@ -72,6 +78,8 @@ class SettingsViewController: BaseViewController {
         
         chatBubble1.font = currentFont
         chatBubble2.font = currentFont
+        
+        
 
 
     }
@@ -97,6 +105,17 @@ class SettingsViewController: BaseViewController {
         showSettingsButton(show: false)
         colorBox.layer.masksToBounds = true
         colorBox.layer.borderWidth = 1.5
+        
+        ref = Database.database().reference()
+        ref.child("TestData").observeSingleEvent(of: .value, with: { snapshot in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let data = value?["DataChunk1"] as? String ?? ""
+            self.chatBubble1.text = data
+            // ...
+          }) { error in
+            print(error.localizedDescription)
+          }
     }
     
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemSellViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var datepicker: UIDatePicker!

@@ -17,6 +17,7 @@
 		19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */; };
 		A95DF45C273E675800B24710 /* Homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95DF45A273E675800B24710 /* Homepage.storyboard */; };
 		A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DF45D273E687200B24710 /* HomepageViewController.swift */; };
+		D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450C0274767E000888BC8 /* ProfileViewController.swift */; };
 		D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52B2735C32100ACEDEC /* Settings.storyboard */; };
 		D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */; };
 		D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5312735C37E00ACEDEC /* BaseViewController.swift */; };
@@ -25,7 +26,6 @@
 		D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */; };
 		D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E714C271A2ED800CC01C2 /* AppDelegate.swift */; };
 		D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */; };
-		D44E7151271A2ED800CC01C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E7150271A2ED800CC01C2 /* ViewController.swift */; };
 		D44E7154271A2ED800CC01C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44E7152271A2ED800CC01C2 /* Main.storyboard */; };
 		D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */; };
 		D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44E7158271A2ED900CC01C2 /* Assets.xcassets */; };
@@ -44,6 +44,7 @@
 		A95DF45B273E675800B24710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UTSwap/Base.lproj/Homepage.storyboard; sourceTree = "<group>"; };
 		A95DF45D273E687200B24710 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41450C0274767E000888BC8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D42EB52C2735C32100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D42EB52F2735C33100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemBuy.storyboard; sourceTree = "<group>"; };
 		D42EB5312735C37E00ACEDEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		D44E7149271A2ED800CC01C2 /* UTSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44E714C271A2ED800CC01C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D44E7150271A2ED800CC01C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D44E7153271A2ED800CC01C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D44E7156271A2ED800CC01C2 /* UTSwap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UTSwap.xcdatamodel; sourceTree = "<group>"; };
 		D44E7158271A2ED900CC01C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +103,7 @@
 		D44E714B271A2ED800CC01C2 /* UTSwap */ = {
 			isa = PBXGroup;
 			children = (
+				D41450C0274767E000888BC8 /* ProfileViewController.swift */,
 				D42EB5312735C37E00ACEDEC /* BaseViewController.swift */,
 				D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */,
 				D42EB5322735C37E00ACEDEC /* LandingViewController.swift */,
@@ -113,7 +114,6 @@
 				A95DF45A273E675800B24710 /* Homepage.storyboard */,
 				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
-				D44E7150271A2ED800CC01C2 /* ViewController.swift */,
 				D44E7152271A2ED800CC01C2 /* Main.storyboard */,
 				150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */,
 				150D0B862741B50500D76FEB /* FeedViewController.swift */,
@@ -258,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44E7151271A2ED800CC01C2 /* ViewController.swift in Sources */,
 				D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */,
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
@@ -270,6 +269,7 @@
 				A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
 				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
+				D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
 				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
 			);
