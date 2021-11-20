@@ -238,6 +238,7 @@
                     <navigationItem key="navigationItem" id="KoK-YZ-EX8"/>
                     <connections>
                         <outlet property="datepicker" destination="EqO-xS-enN" id="Xj5-TN-ePW"/>
+                        <outlet property="itemDesc" destination="Dta-Hn-COL" id="Hzh-s9-YIZ"/>
                         <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
                         <outlet property="priceField" destination="EzQ-kQ-75V" id="sc2-0b-50C"/>
                         <outlet property="textView" destination="Dta-Hn-COL" id="ghm-C8-QwA"/>
