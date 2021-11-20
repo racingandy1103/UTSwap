@@ -15,6 +15,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var itemDesc: UITextView!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -40,7 +41,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             let user = Auth.auth().currentUser
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location])
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location, "itemDesc": itemDesc.text!, "meetTime": datepicker.date.timeIntervalSince1970])
             
         }
     }

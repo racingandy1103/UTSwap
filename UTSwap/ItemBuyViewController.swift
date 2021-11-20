@@ -13,10 +13,10 @@ class ItemBuyViewController: BaseViewController {
     
     // for DB
     var ref: DatabaseReference!
+    public var currentItem:Item? = nil
 
     
-    public var currentItem:Item? = nil
-    
+    @IBOutlet weak var timeDesc: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -51,6 +51,11 @@ class ItemBuyViewController: BaseViewController {
                     let location = snapshot.childSnapshot(forPath: "meetLocation").value as? String
                     if location != nil {
                         self.locationLabel.text = location
+                    }
+                    
+                    let time = snapshot.childSnapshot(forPath: "meetTime").value as? TimeInterval
+                    if time != nil {
+                        self.timeDesc.text = Date(timeIntervalSince1970: time!).description(with: Locale.current)
                     }
                     
                     let desc = snapshot.childSnapshot(forPath: "itemDesc").value as? String
