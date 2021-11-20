@@ -15,6 +15,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var textView: UITextView!
     
     var pickerData: [String] = [String]()
     var location = ""
@@ -24,6 +25,9 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textView.layer.borderColor = UIColor.lightGray.cgColor
+        self.textView.layer.borderWidth = 1
         
         self.picker.delegate = self
         self.picker.dataSource = self
