@@ -10,7 +10,7 @@ import Firebase
 import FirebaseDatabase
 
 let reuseIdentifier = "MyCell"
-let initialItems = ["1","2","3"]
+let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
 
 
 class Item {
@@ -18,10 +18,18 @@ class Item {
     public var itemTitle:String = ""
     
     public var key:String = ""
+    public var ownerKey:String = ""
+    
 
     init(title:String) {
         self.itemTitle = title
     }
+    
+    func printDesc() {
+        print("Item: \(ownerKey) \(key) \(itemTitle)")
+        
+    }
+
 }
 
 
@@ -30,7 +38,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     // for DB
     var ref: DatabaseReference!
     
-    var items:[String] = []
+    var items:[Item] = []
 
 
     
@@ -42,7 +50,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        var itemList:[String] = []
+        var itemList:[Item] = []
         for i in initialItems {
             itemList.append(i)
         }
@@ -50,10 +58,11 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         addItemsFromDBIntoList()
         
         self.items = itemList
+        print(self.items)
+        
     }
     
     func addItemsFromDBIntoList() {
-        var itemsToAdd:[Item] = []
         if (Auth.auth().currentUser != nil) {
             print("reading items from db")
             ref = Database.database().reference()
@@ -61,13 +70,14 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 // Get user value
                 print(snapshot.childrenCount) // I got the expected number of items
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                   
+                    let ownerKey = rest.key
                     for i in rest.children.allObjects as! [DataSnapshot] {
+                        let key = i.key
                         let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                        var a = Item(title: title)
-                        a.key = snapshot.key
-                        itemsToAdd.append(a)
-                        self.items.append(title)
+                        let a = Item(title: title)
+                        a.ownerKey = ownerKey
+                        a.key = key
+                        self.items.append(a)
                     }
                    
                 }
@@ -99,7 +109,8 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         }
         
         let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
-        title.text = "\(items[indexPath.row])"
+        let item = items[indexPath.row]
+        title.text = "\(item.itemTitle)"
     
         cell.contentView.addSubview(imageview)
         cell.contentView.addSubview(title)
@@ -121,7 +132,19 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         // Note: instead of printing this, will segue to item's buy page
         print("You selected cell #\(indexPath.row)!")
+        let i = self.items[indexPath.row]
+        i.printDesc()
+        showItemBuyForItem(item: i)
     }
+    
+    func showItemBuyForItem(item: Item)
+    {
+        let storyBoard = UIStoryboard(name: "ItemBuy", bundle:nil)
+        let itemBuyScreen = storyBoard.instantiateViewController(withIdentifier: "itemBuyId") as! ItemBuyViewController
+        itemBuyScreen.currentItem = item
+        self.navigationController?.pushViewController(itemBuyScreen, animated: true)
+    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

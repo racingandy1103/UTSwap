@@ -33,14 +33,6 @@
                                     <action selector="onFontEditPressed:" destination="jLF-w1-foQ" eventType="touchUpInside" id="OaO-hl-bOD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slt-uC-gqx">
-                                <rect key="frame" x="290" y="307" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="onEditColor:" destination="jLF-w1-foQ" eventType="touchUpInside" id="5rc-PC-QKq"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-AD-mTj">
                                 <rect key="frame" x="85" y="224" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,6 +83,14 @@
                                     <segue destination="Cen-FH-3rU" kind="show" id="RXu-gK-cP7"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-K5-Var">
+                                <rect key="frame" x="240" y="308" width="129" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Orange"/>
+                                    <segment title="Gray"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vvR-Uh-MkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,6 +102,7 @@
                         <outlet property="colorBox" destination="S62-jO-1O0" id="gRC-50-2Ch"/>
                         <outlet property="darkModeToggle" destination="qYN-GI-aV3" id="bh7-pS-HMT"/>
                         <outlet property="fontLabel" destination="uS0-ax-jhu" id="bOV-ar-idl"/>
+                        <outlet property="themeSegment" destination="rGY-K5-Var" id="Fay-7u-PdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxD-Qa-F68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

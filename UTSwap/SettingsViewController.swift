@@ -13,7 +13,9 @@ import FirebaseDatabase
 
 class SettingsViewController: BaseViewController {
     
-    let colors:[UIColor] = [UIColor.blue, UIColor.white,UIColor.red,UIColor.cyan, UIColor.yellow, UIColor.systemPink, UIColor.orange]
+//    let colors:[UIColor] = [UIColor.blue, UIColor.white,UIColor.red,UIColor.cyan, UIColor.yellow, UIColor.systemPink, UIColor.orange]
+    
+    let colors:[UIColor] = [ UIColor.orange, UIColor.gray]
     
     var ref: DatabaseReference!
 
@@ -29,6 +31,7 @@ class SettingsViewController: BaseViewController {
     
     var currentFont: UIFont = fontList[0]
     
+    @IBOutlet weak var themeSegment: UISegmentedControl!
     @IBOutlet weak var chatBubble1: UITextView!
     
     @IBAction func onFontEditPressed(_ sender: Any) {
@@ -36,10 +39,12 @@ class SettingsViewController: BaseViewController {
     }
     
     @IBOutlet weak var chatBubble2: UITextView!
-    @IBAction func onEditColor(_ sender: Any) {
-        self.setTheme(theme: self.getRandomTheme())
-        setUIColors(color: self.getCurrentAccentColor())
-    }
+//    @IBAction func onEditColor(_ sender: Any) {
+//        self.setTheme(theme: self.getRandomTheme())
+//        setUIColors(color: self.getCurrentAccentColor())
+//    }
+
+
     
     func randomizeFont() {
         currentFont = SettingsViewController.fontList.randomElement()!
@@ -79,7 +84,6 @@ class SettingsViewController: BaseViewController {
         chatBubble1.font = currentFont
         chatBubble2.font = currentFont
         
-        
 
 
     }
@@ -116,7 +120,27 @@ class SettingsViewController: BaseViewController {
           }) { error in
             print(error.localizedDescription)
           }
+        
+        
+        self.themeSegment.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
+        
+        if self.getThemeName() == "ORANGE" {
+            self.themeSegment.selectedSegmentIndex = 0
+        } else {
+            self.themeSegment.selectedSegmentIndex = 1
+        }
     }
     
+    
+    @objc func segmentSelected(sender: UISegmentedControl)
+    {
+        let index = sender.selectedSegmentIndex
+        if index == 0 {
+            self.setTheme(theme: "ORANGE")
+        } else {
+            self.setTheme(theme: "GRAY")
+        }
+        setUIColors(color: self.getCurrentAccentColor())
+    }
     
 }

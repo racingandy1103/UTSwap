@@ -18,7 +18,8 @@ class BaseViewController: UIViewController {
         "SYSTEM_PINK": UIColor.systemPink,
         "WHITE": UIColor.white,
         "CYAN": UIColor.cyan,
-        "ORANGE": UIColor.orange
+        "ORANGE": UIColor.orange,
+        "GRAY": UIColor.gray
     ]
     
     
@@ -33,6 +34,10 @@ class BaseViewController: UIViewController {
             showSettingsButton(show: true)
         }
     }
+    
+    func getThemeName() -> String {
+        return UserDefaults.standard.string(forKey: "accentColor") ?? "ORANGE"
+    }
         
     func getCurrentAccentColor() -> UIColor {
         let key = UserDefaults.standard.string(forKey: "accentColor")
@@ -42,6 +47,7 @@ class BaseViewController: UIViewController {
     
     func setTheme(theme: String) {
         let _: Void = UserDefaults.standard.setValue(theme, forKey: "accentColor")
+
         setCurrentAccentColor(color: (BaseViewController.THEME_COLORS[theme] ?? BaseViewController.THEME_COLORS["BLUE"])!)
     }
     
