@@ -15,6 +15,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
+    
     @IBOutlet weak var textView: UITextView!
     
     var pickerData: [String] = [String]()
@@ -34,8 +35,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         pickerData = ["GDC", "Littlefield Fountain", "Union", "Loc 4", "Loc 5", "Loc 6"]
     }
     
-    
-    @IBAction func onSavePressed(_ sender: Any) {
+    @IBAction func onSaveItemPress(_ sender: Any) {
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
             print("reading items from db")
@@ -43,9 +43,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location])
             
         }
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
