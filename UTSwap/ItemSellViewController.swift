@@ -8,22 +8,25 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import AVFoundation
 
-class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     var pickerData: [String] = [String]()
     var location = ""
+    let imagePicker = UIImagePickerController()
+    let datePicker = UIDatePicker()
     
     // for DB
     var ref: DatabaseReference!
-    
-    let datePicker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +55,14 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                 
         textView.text = "Enter your description here..."
         textView.textColor = UIColor.lightGray
-                
         textView.delegate = self
         
         createDatePicker()
+        
+        imagePicker.delegate = self
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 1.5
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -99,8 +106,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
         location = pickerData[row] // saves location
         print(location)
     }
@@ -128,4 +133,83 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         textField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
+    
+    @IBAction func uploadImage(_ sender: Any) {
+        
+        let controller = UIAlertController( // Alert message
+            title: "Upload Image",
+            message: "Choose a method",
+            preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil)
+        controller.addAction(cancelAction)
+        let OKAction = UIAlertAction(
+            title: "Photo Library",
+            style: .default,
+            handler: {action in
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true, completion: nil)
+            })
+        controller.addAction(OKAction)
+        let destroyAction = UIAlertAction(
+            title: "Camera",
+            style: .default,
+            handler: {action in
+                if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
+                    switch AVCaptureDevice.authorizationStatus(for: .video) {
+                    case .notDetermined:
+                        AVCaptureDevice.requestAccess(for: .video) {
+                            accessGranted in
+                            guard accessGranted == true else { return }
+                        }
+                    case .authorized:
+                        break
+                    default:
+                        print("Access denied")
+                        return
+                    }
+                    
+                    self.imagePicker.allowsEditing = false
+                    self.imagePicker.sourceType = .camera
+                    self.imagePicker.cameraCaptureMode = .photo
+                    
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                
+                } else {
+                    
+                    let alertVC = UIAlertController(
+                        title: "No camera",
+                        message: "Buy a better phone",
+                        preferredStyle: .alert)
+                    let okAction = UIAlertAction(
+                        title: "OK",
+                        style: .default,
+                        handler: nil)
+                    alertVC.addAction(okAction)
+                    self.present(alertVC, animated: true, completion: nil)
+                    
+                }
+
+            })
+        controller.addAction(destroyAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        let chosenImage = info[.originalImage] as! UIImage
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = chosenImage
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
