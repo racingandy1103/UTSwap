@@ -9,15 +9,13 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var datepicker: UIDatePicker!
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var priceField: UITextField!
-    @IBOutlet weak var itemDesc: UITextView!
-    
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     
     var pickerData: [String] = [String]()
     var location = ""
