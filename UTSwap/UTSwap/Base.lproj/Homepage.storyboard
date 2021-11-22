@@ -181,16 +181,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
-                                <rect key="frame" x="239" y="94" width="97" height="34"/>
+
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
+                                <rect key="frame" x="50" y="434" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-hS-ez4">
+                                <rect key="frame" x="151" y="128" width="97" height="34"/>
+
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
+                                <rect key="frame" x="239" y="94" width="97" height="34"/>
+
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Cq-ZRV">
                                 <rect key="frame" x="0.0" y="374" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU8-MO-8MJ">
                                 <rect key="frame" x="147" y="411" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -198,6 +211,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-Hn-COL">
+                                <rect key="frame" x="50" y="298" width="316" height="128"/>
+
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EqO-xS-enN">
                                 <rect key="frame" x="8" y="569" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -211,12 +228,17 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter your description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-Hn-COL">
                                 <rect key="frame" x="49" y="273" width="316" height="128"/>
+
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="At1-dZ-mZV">
+                                <rect key="frame" x="170" y="434" width="196" height="34"/>
+
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj9-oQ-WfY">
                                 <rect key="frame" x="190" y="739" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -227,22 +249,37 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-hS-ez4">
                                 <rect key="frame" x="81" y="94" width="97" height="34"/>
+
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Cq-ZRV">
+                                <rect key="frame" x="0.0" y="506" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OtO-Sl-2dF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="KoK-YZ-EX8"/>
                     <connections>
+
+                        <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
+                        <outlet property="priceTextField" destination="EzQ-kQ-75V" id="caY-rF-53z"/>
+                        <outlet property="textField" destination="At1-dZ-mZV" id="qQA-Cb-YOw"/>
+                        <outlet property="textView" destination="Dta-Hn-COL" id="ghm-C8-QwA"/>
+                        <outlet property="titleTextField" destination="mQ1-hS-ez4" id="8pi-IR-LDS"/>
+
                         <outlet property="datepicker" destination="EqO-xS-enN" id="Xj5-TN-ePW"/>
                         <outlet property="itemDesc" destination="Dta-Hn-COL" id="Hzh-s9-YIZ"/>
                         <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
                         <outlet property="priceField" destination="EzQ-kQ-75V" id="sc2-0b-50C"/>
                         <outlet property="textView" destination="Dta-Hn-COL" id="ghm-C8-QwA"/>
                         <outlet property="titleField" destination="mQ1-hS-ez4" id="qh7-co-7sa"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKG-tc-2Ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
