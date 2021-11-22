@@ -9,7 +9,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
 class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
@@ -17,38 +16,35 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-
+    
     var pickerData: [String] = [String]()
     var location = ""
     
-    let datePicker = UIDatePicker()
-
+    // for DB
+    var ref: DatabaseReference!
     
     let datePicker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createDatePicker()
-        
         self.textView.layer.borderColor = UIColor.lightGray.cgColor
         self.textView.layer.borderWidth = 1
         
         self.picker.delegate = self
         self.picker.dataSource = self
-
-        pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "PCL", "UT Tower"]
+        pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "Jester"]
         
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-
+                
         priceTextField.attributedPlaceholder = NSAttributedString(
             string: "Price",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-
+                
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
@@ -60,7 +56,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         textView.delegate = self
         
         createDatePicker()
-
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -77,7 +72,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
-
     @IBAction func onSaveItemPress(_ sender: Any) {
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
@@ -87,7 +81,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -134,5 +128,4 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         textField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-
 }
