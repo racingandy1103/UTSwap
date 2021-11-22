@@ -166,7 +166,6 @@
         <!--Item Sell View Controller-->
         <scene sceneID="6J9-VJ-2RN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nSI-2N-D81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Qwm-3g-Jtc" customClass="ItemSellViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6W-Gs-z4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -244,6 +243,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZAB-z6-YmA"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSI-2N-D81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3548" y="1142"/>
         </scene>

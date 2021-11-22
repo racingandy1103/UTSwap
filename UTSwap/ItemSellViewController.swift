@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, {
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate{
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
@@ -21,7 +21,9 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     var location = ""
     
     let datePicker = UIDatePicker()
-
+    
+    // for DB
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +79,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             let user = Auth.auth().currentUser
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location, "itemDesc": itemDesc.text!, "meetTime": datepicker.date.timeIntervalSince1970])
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation":location])
             
         }
     }
