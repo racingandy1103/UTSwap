@@ -6,20 +6,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var priceTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
-    
-    
+
+    @IBOutlet weak var datepicker: UIDatePicker!
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var itemDesc: UITextView!
+
     var pickerData: [String] = [String]()
     var location = ""
     
     let datePicker = UIDatePicker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +72,17 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
+
+    @IBAction func onSaveItemPress(_ sender: Any) {
+        if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            print("reading items from db")
+            ref = Database.database().reference()
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location, "itemDesc": itemDesc.text!, "meetTime": datepicker.date.timeIntervalSince1970])
+            
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

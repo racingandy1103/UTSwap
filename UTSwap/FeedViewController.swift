@@ -6,11 +6,41 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 let reuseIdentifier = "MyCell"
-var items = ["1","2","3"]
+let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
+
+
+class Item {
+    
+    public var itemTitle:String = ""
+    
+    public var key:String = ""
+    public var ownerKey:String = ""
+    
+
+    init(title:String) {
+        self.itemTitle = title
+    }
+    
+    func printDesc() {
+        print("Item: \(ownerKey) \(key) \(itemTitle)")
+        
+    }
+
+}
+
 
 class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    // for DB
+    var ref: DatabaseReference!
+    
+    var items:[Item] = []
+
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,6 +49,46 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        var itemList:[Item] = []
+        for i in initialItems {
+            itemList.append(i)
+        }
+        
+        addItemsFromDBIntoList()
+        
+        self.items = itemList
+        print(self.items)
+        
+    }
+    
+    func addItemsFromDBIntoList() {
+        if (Auth.auth().currentUser != nil) {
+            print("reading items from db")
+            ref = Database.database().reference()
+            ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
+                // Get user value
+                print(snapshot.childrenCount) // I got the expected number of items
+                for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                    let ownerKey = rest.key
+                    for i in rest.children.allObjects as! [DataSnapshot] {
+                        let key = i.key
+                        let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                        let a = Item(title: title)
+                        a.ownerKey = ownerKey
+                        a.key = key
+                        self.items.append(a)
+                    }
+                   
+                }
+                
+                self.collectionView.reloadData()
+                // ...
+              }) { error in
+                print(error.localizedDescription)
+              }
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,10 +103,17 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: cellSize, height: cellSize));
         
         // Note: this will be set to category selected from tableview
-        let img : UIImage = UIImage(named:"furniture\(indexPath.row)")!
-                imageview.image = img
-
+        let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
+        if img != nil {
+            imageview.image = img
+        }
+        
+        let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
+        let item = items[indexPath.row]
+        title.text = "\(item.itemTitle)"
+    
         cell.contentView.addSubview(imageview)
+        cell.contentView.addSubview(title)
 
         cell.layer.borderColor = UIColor.orange.cgColor
         cell.layer.borderWidth = 1
@@ -55,7 +132,19 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         // Note: instead of printing this, will segue to item's buy page
         print("You selected cell #\(indexPath.row)!")
+        let i = self.items[indexPath.row]
+        i.printDesc()
+        showItemBuyForItem(item: i)
     }
+    
+    func showItemBuyForItem(item: Item)
+    {
+        let storyBoard = UIStoryboard(name: "ItemBuy", bundle:nil)
+        let itemBuyScreen = storyBoard.instantiateViewController(withIdentifier: "itemBuyId") as! ItemBuyViewController
+        itemBuyScreen.currentItem = item
+        self.navigationController?.pushViewController(itemBuyScreen, animated: true)
+    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
