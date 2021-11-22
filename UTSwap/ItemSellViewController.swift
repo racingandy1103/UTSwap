@@ -7,25 +7,68 @@
 
 import UIKit
 
-class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    
     
     var pickerData: [String] = [String]()
     var location = ""
     
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createDatePicker()
         
         self.textView.layer.borderColor = UIColor.lightGray.cgColor
         self.textView.layer.borderWidth = 1
         
         self.picker.delegate = self
         self.picker.dataSource = self
-        pickerData = ["GDC", "Littlefield Fountain", "Union", "Loc 4", "Loc 5", "Loc 6"]
+        pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "PCL", "UT Tower"]
+        
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Date & Time",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        
+        priceTextField.attributedPlaceholder = NSAttributedString(
+            string: "Price",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        
+        titleTextField.attributedPlaceholder = NSAttributedString(
+            string: "Title",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        
+        textView.text = "Enter your description here..."
+        textView.textColor = UIColor.lightGray
+        
+        textView.delegate = self
+        
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter your description here..."
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -48,4 +91,29 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         location = pickerData[row] // saves location
         print(location)
     }
+    
+    func createDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: true)
+        
+        textField.inputAccessoryView = toolbar
+        
+        textField.inputView = datePicker
+        
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        
+        textField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
 }
