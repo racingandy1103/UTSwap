@@ -174,25 +174,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-1i-bwv">
-                                <rect key="frame" x="50" y="244" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
 
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
-                                <rect key="frame" x="50" y="434" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-hS-ez4">
-                                <rect key="frame" x="151" y="128" width="97" height="34"/>
-
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
-                                <rect key="frame" x="239" y="94" width="97" height="34"/>
+                                <rect key="frame" x="60" y="133" width="97" height="34"/>
 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -200,34 +184,22 @@
                             </textField>
 
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Cq-ZRV">
-                                <rect key="frame" x="0.0" y="374" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="569" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU8-MO-8MJ">
-                                <rect key="frame" x="147" y="411" width="121" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
 
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-Hn-COL">
-                                <rect key="frame" x="50" y="298" width="316" height="128"/>
+                                <rect key="frame" x="147" y="540" width="121" height="21"/>
 
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EqO-xS-enN">
-                                <rect key="frame" x="8" y="569" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-qt-SCk">
-                                <rect key="frame" x="173" y="578" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter your description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-Hn-COL">
-                                <rect key="frame" x="49" y="273" width="316" height="128"/>
+
+                                <rect key="frame" x="50" y="404" width="316" height="128"/>
 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -247,18 +219,32 @@
                                     <action selector="onSaveItemPress:" destination="82m-11-3Bd" eventType="touchUpInside" id="bxX-DM-GCl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-hS-ez4">
-                                <rect key="frame" x="81" y="94" width="97" height="34"/>
+
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-hS-ez4">
+                                <rect key="frame" x="159" y="91" width="97" height="34"/>
 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
 
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Cq-ZRV">
-                                <rect key="frame" x="0.0" y="506" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEv-Lu-Obx">
+                                <rect key="frame" x="207" y="133" width="171" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-3I-w9l">
+                                <rect key="frame" x="95" y="222" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-1i-bwv">
+                                <rect key="frame" x="51" y="375" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
 
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OtO-Sl-2dF"/>
@@ -267,18 +253,13 @@
                     <navigationItem key="navigationItem" id="KoK-YZ-EX8"/>
                     <connections>
 
-                        <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
-                        <outlet property="priceTextField" destination="EzQ-kQ-75V" id="caY-rF-53z"/>
-                        <outlet property="textField" destination="At1-dZ-mZV" id="qQA-Cb-YOw"/>
-                        <outlet property="textView" destination="Dta-Hn-COL" id="ghm-C8-QwA"/>
-                        <outlet property="titleTextField" destination="mQ1-hS-ez4" id="8pi-IR-LDS"/>
 
-                        <outlet property="datepicker" destination="EqO-xS-enN" id="Xj5-TN-ePW"/>
-                        <outlet property="itemDesc" destination="Dta-Hn-COL" id="Hzh-s9-YIZ"/>
                         <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
-                        <outlet property="priceField" destination="EzQ-kQ-75V" id="sc2-0b-50C"/>
+                        <outlet property="priceTextField" destination="EzQ-kQ-75V" id="Qdn-2b-juQ"/>
+                        <outlet property="textField" destination="bEv-Lu-Obx" id="cIz-xE-sUH"/>
                         <outlet property="textView" destination="Dta-Hn-COL" id="ghm-C8-QwA"/>
-                        <outlet property="titleField" destination="mQ1-hS-ez4" id="qh7-co-7sa"/>
+
+                        <outlet property="titleTextField" destination="mQ1-hS-ez4" id="kEZ-ez-rBZ"/>
 
                     </connections>
                 </viewController>

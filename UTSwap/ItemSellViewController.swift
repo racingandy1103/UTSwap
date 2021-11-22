@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextViewDelegate {
+
+class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
@@ -23,6 +24,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     let datePicker = UIDatePicker()
 
     
+    let datePicker = UIDatePicker()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,28 +36,31 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         self.picker.delegate = self
         self.picker.dataSource = self
+
         pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "PCL", "UT Tower"]
         
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-        
+
         priceTextField.attributedPlaceholder = NSAttributedString(
             string: "Price",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-        
+
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-        
+                
         textView.text = "Enter your description here..."
         textView.textColor = UIColor.lightGray
-        
+                
         textView.delegate = self
         
+        createDatePicker()
+
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -77,7 +83,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             let user = Auth.auth().currentUser
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location, "itemDesc": itemDesc.text!, "meetTime": datepicker.date.timeIntervalSince1970])
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation":location, "itemDesc": textView.text!, "meetTime": textField.text!])
             
         }
     }
@@ -128,5 +134,5 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         textField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-    
+
 }
