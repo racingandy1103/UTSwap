@@ -25,6 +25,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     // for DB
     var ref: DatabaseReference!
     
+    let datePicker = UIDatePicker()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,43 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         self.picker.delegate = self
         self.picker.dataSource = self
-        pickerData = ["GDC", "Littlefield Fountain", "Union", "Loc 4", "Loc 5", "Loc 6"]
+        pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "Jester"]
+        
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Date & Time",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+                
+        priceTextField.attributedPlaceholder = NSAttributedString(
+            string: "Price",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+                
+        titleTextField.attributedPlaceholder = NSAttributedString(
+            string: "Title",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+                
+        textView.text = "Enter your description here..."
+        textView.textColor = UIColor.lightGray
+                
+        textView.delegate = self
+        
+        createDatePicker()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter your description here..."
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     @IBAction func onSaveItemPress(_ sender: Any) {
@@ -41,7 +79,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             let user = Auth.auth().currentUser
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleField.text!, "itemPrice": priceField.text!,"meetLocation":location, "itemDesc": itemDesc.text!, "meetTime": datepicker.date.timeIntervalSince1970])
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation":location, "itemDesc": textView.text!, "meetTime": textField.text!])
             
         }
     }
@@ -67,5 +105,29 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         // The parameter named row and component represents what was selected.
         location = pickerData[row] // saves location
         print(location)
+    }
+    
+    func createDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: true)
+        
+        textField.inputAccessoryView = toolbar
+        
+        textField.inputView = datePicker
+        
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        
+        textField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
 }
