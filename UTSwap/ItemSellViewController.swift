@@ -65,6 +65,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         imageView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
+    // Setting textView default color
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = ""
@@ -79,6 +80,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
+    // Saves item info into database
     @IBAction func onSaveItemPress(_ sender: Any) {
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
@@ -93,6 +95,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         super.didReceiveMemoryWarning()
     }
     
+    // Creating location picker options
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -110,6 +113,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         print(location)
     }
     
+    // Creating date & time picker options
     func createDatePicker() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -134,9 +138,10 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         self.view.endEditing(true)
     }
     
+    // To upload image with options of photo library and camera
     @IBAction func uploadImage(_ sender: Any) {
         
-        let controller = UIAlertController( // Alert message
+        let controller = UIAlertController(
             title: "Upload Image",
             message: "Choose a method",
             preferredStyle: .actionSheet)
@@ -145,7 +150,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             style: .cancel,
             handler: nil)
         controller.addAction(cancelAction)
-        let OKAction = UIAlertAction(
+        let photoLibAction = UIAlertAction( // Set image from photo library
             title: "Photo Library",
             style: .default,
             handler: {action in
@@ -153,8 +158,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                 self.imagePicker.sourceType = .photoLibrary
                 self.present(self.imagePicker, animated: true, completion: nil)
             })
-        controller.addAction(OKAction)
-        let destroyAction = UIAlertAction(
+        controller.addAction(photoLibAction)
+        let cameraAction = UIAlertAction( // Set image from camera
             title: "Camera",
             style: .default,
             handler: {action in
@@ -194,10 +199,11 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                 }
 
             })
-        controller.addAction(destroyAction)
+        controller.addAction(cameraAction)
         present(controller, animated: true, completion: nil)
     }
     
+    // Set image to image chosen from photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         let chosenImage = info[.originalImage] as! UIImage
@@ -205,7 +211,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         imageView.image = chosenImage
         
         dismiss(animated: true, completion: nil)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
