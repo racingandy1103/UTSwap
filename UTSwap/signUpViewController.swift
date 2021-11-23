@@ -30,8 +30,8 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
                 if error == nil {
                     Auth.auth().signIn(withEmail: self.textFieldLoginUser.text!,
                                        password: self.textFieldLoginPass.text!)
-                    //self.performSegue(withIdentifier: "segue2Identifier", sender: nil)
-                    print("yay")
+                    /*self.performSegue(withIdentifier: "segue2Identifier", sender: nil)*/
+                    
                     // create an object that holds the data for our notification
                     let notification = UNMutableNotificationContent()
                     notification.title = "Sign-up Successful"
