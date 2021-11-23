@@ -64,7 +64,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="signIn:" destination="iXe-qp-H06" eventType="touchUpInside" id="UGC-G9-bkf"/>
-                                    <segue destination="kRs-Gh-lC0" kind="show" identifier="segueIdentifier" id="58b-zP-efM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,36 +91,12 @@
                     <connections>
                         <outlet property="textFieldLoginPass" destination="Kmn-Ki-I3H" id="fol-il-e4Q"/>
                         <outlet property="textFieldLoginUser" destination="e3B-C9-tFc" id="CIe-Io-4fQ"/>
+                        <segue destination="kRs-Gh-lC0" kind="show" identifier="segueIdentifier" id="xes-Un-U7Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yN-Fm-KXn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3301" y="-34"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JNo-5d-OsS">
-            <objects>
-                <viewController id="6Vz-5E-oox" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FZF-93-HA4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exf-M7-D6B">
-                                <rect key="frame" x="186" y="282" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WTz-g2-40t"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="64Q-59-cvr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wne-At-Ggx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4271" y="275"/>
+            <point key="canvasLocation" x="3888" y="-116"/>
         </scene>
         <!--HomepageVC-->
         <scene sceneID="Th7-ia-3ra">
@@ -131,7 +106,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wp8-6p-TnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3890" y="-102"/>
+            <point key="canvasLocation" x="3888" y="299"/>
+        </scene>
+        <!--landingVC-->
+        <scene sceneID="b3q-KY-eoR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="landingVC" id="oS2-YD-KtU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x0W-vn-Nvw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPj-f4-vRG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3871" y="401"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Rbl-PY-fqe">
@@ -187,7 +172,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUp:" destination="QHc-2Y-m2B" eventType="touchUpInside" id="fHt-al-lBS"/>
-                                    <segue destination="kRs-Gh-lC0" kind="show" identifier="signUpSegueIdentifier" id="iRJ-qL-B16"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,16 +182,14 @@
                         <outlet property="confPassTextField" destination="wnE-Im-EvI" id="hOi-Va-tiX"/>
                         <outlet property="textFieldLoginPass" destination="pnf-Az-jBC" id="ar3-c1-N5O"/>
                         <outlet property="textFieldLoginUser" destination="Ayp-lY-E3c" id="S0z-Sd-31Z"/>
+                        <segue destination="oS2-YD-KtU" kind="show" identifier="segue2Identifier" id="H8x-2K-wB1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zca-eA-SQT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="625"/>
+            <point key="canvasLocation" x="3145" y="400"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="58b-zP-efM"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
