@@ -17,6 +17,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var uploadimgButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
     
@@ -209,6 +210,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         let chosenImage = info[.originalImage] as! UIImage
         imageView.contentMode = .scaleAspectFit
         imageView.image = chosenImage
+        self.uploadimgButton.alpha = 0.010001
         
         dismiss(animated: true, completion: nil)
     }
@@ -216,5 +218,4 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
