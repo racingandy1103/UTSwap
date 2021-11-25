@@ -67,11 +67,6 @@ class ItemBuyViewController: BaseViewController {
                         self.descBox.text = desc
                     }
                    
-                    let pic = snapshot.childSnapshot(forPath: "itemPic").value as? UIImageView
-                    if pic != nil {
-                        self.imgView = pic
-                    }
-                    
                     let imgUUID = snapshot.childSnapshot(forPath: "itemImgUUID").value as? String
                     if imgUUID != nil {
                         self.imgUUID = imgUUID
