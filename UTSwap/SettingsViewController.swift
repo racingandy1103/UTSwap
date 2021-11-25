@@ -32,24 +32,17 @@ class SettingsViewController: BaseViewController {
     var currentFont: UIFont = fontList[0]
     
     @IBOutlet weak var themeSegment: UISegmentedControl!
-    @IBOutlet weak var chatBubble1: UITextView!
     
     @IBAction func onFontEditPressed(_ sender: Any) {
         randomizeFont()
     }
-    
-    @IBOutlet weak var chatBubble2: UITextView!
-//    @IBAction func onEditColor(_ sender: Any) {
-//        self.setTheme(theme: self.getRandomTheme())
-//        setUIColors(color: self.getCurrentAccentColor())
-//    }
 
 
     
     func randomizeFont() {
         currentFont = SettingsViewController.fontList.randomElement()!
-        chatBubble1.font = currentFont
-        chatBubble2.font = currentFont
+//        chatBubble1.font = currentFont
+//        chatBubble2.font = currentFont
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,21 +50,24 @@ class SettingsViewController: BaseViewController {
         self.darkModeToggle.isOn = self.isDarkModeOn()
         setUIColors(color: self.getCurrentAccentColor())
         
-        chatBubble1.layer.borderWidth = 1.0
-        chatBubble1.layer.masksToBounds = false
-        chatBubble1.layer.borderColor = UIColor.white.cgColor
-        chatBubble1.layer.cornerRadius = chatBubble1.bounds.height / 2
-        chatBubble1.clipsToBounds = true
+        self.showProfileButton()
+
         
-        
-        chatBubble2.layer.borderWidth = 1.0
-        chatBubble2.layer.masksToBounds = false
-        chatBubble2.layer.borderColor = UIColor.white.cgColor
-        chatBubble2.layer.cornerRadius = chatBubble1.bounds.height / 2
-        chatBubble2.clipsToBounds = true
-        
-        chatBubble1.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
-        chatBubble2.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+//        chatBubble1.layer.borderWidth = 1.0
+//        chatBubble1.layer.masksToBounds = false
+//        chatBubble1.layer.borderColor = UIColor.white.cgColor
+//        chatBubble1.layer.cornerRadius = chatBubble1.bounds.height / 2
+//        chatBubble1.clipsToBounds = true
+//
+//
+//        chatBubble2.layer.borderWidth = 1.0
+//        chatBubble2.layer.masksToBounds = false
+//        chatBubble2.layer.borderColor = UIColor.white.cgColor
+//        chatBubble2.layer.cornerRadius = chatBubble1.bounds.height / 2
+//        chatBubble2.clipsToBounds = true
+//
+//        chatBubble1.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+//        chatBubble2.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         
 //        var fixedWidth = chatBubble1.frame.size.width
 //        var newSize = chatBubble1.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -81,9 +77,9 @@ class SettingsViewController: BaseViewController {
 //        newSize = chatBubble2.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
 //        chatBubble2.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         
-        chatBubble1.font = currentFont
-        chatBubble2.font = currentFont
-        
+//        chatBubble1.font = currentFont
+//        chatBubble2.font = currentFont
+//
 
 
     }
@@ -104,7 +100,6 @@ class SettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         showSettingsButton(show: false)
         colorBox.layer.masksToBounds = true
@@ -115,7 +110,7 @@ class SettingsViewController: BaseViewController {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let data = value?["DataChunk1"] as? String ?? ""
-            self.chatBubble1.text = data
+//            self.chatBubble1.text = data
             // ...
           }) { error in
             print(error.localizedDescription)

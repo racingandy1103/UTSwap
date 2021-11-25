@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 import AVFoundation
 
 class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -95,10 +96,51 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBAction func onSaveItemPress(_ sender: Any) {
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
-            print("reading items from db")
-            ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation": locationTextField.text!, "itemDesc": textView.text!, "meetTime": textField.text!, "itemCategory": category])
-            //"itemPic": imageView! issue
+            print("onSaveItemPress - reading items from db")
+            
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imgUUID = UUID.init().uuidString
+            if imageView.image != nil {
+                
+                // inspired from firebase documentation
+                // https://firebase.google.com/docs/storage/ios/upload-files
+                
+                let imgData = imageView.image?.jpegData(compressionQuality: 0.75)
+                // Create a reference to the file you want to upload
+                let imgRef = storageRef.child("images").child(user!.uid).child("\(imgUUID).jpg")
+                
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpeg"
+                // Upload the file to the path "images/{userId}/{imgUUID}.png"
+                let uploadTask = imgRef.putData(imgData!, metadata: metadata) { (metadata, error) in
+                  guard let metadata = metadata else {
+                    // Uh-oh, an error occurred!
+                    print(error)
+                    return
+                  }
+                  // Metadata contains file metadata such as size, content-type.
+                  let size = metadata.size
+                  // You can also access to download URL after upload.
+                    imgRef.downloadURL { (url, error) in
+                    guard let downloadURL = url else {
+                      // Uh-oh, an error occurred!
+                      return
+                    }
+                  }
+                }
+            }
+           
+            ref = Database.database().reference()            
+            
+            var dataToAdd = ["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation": locationTextField.text!, "itemDesc": textView.text!, "meetTime": textField.text!, "itemCategory": category]
+
+            if imageView.image != nil {
+                dataToAdd["itemImgUUID"] = imgUUID
+            }
+
+            ref.child("items").child(user!.uid).childByAutoId().setValue(dataToAdd)
+
         }
     }
     
@@ -223,6 +265,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         self.uploadimgButton.alpha = 0.010001
         
         dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
