@@ -53,6 +53,10 @@ class ProfileViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.showSettingsButton(show: false)
+    }
+    
 
    
 }

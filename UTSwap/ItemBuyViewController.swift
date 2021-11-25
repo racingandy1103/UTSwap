@@ -13,8 +13,9 @@ class ItemBuyViewController: BaseViewController {
     
     // for DB
     var ref: DatabaseReference!
+    
+    
     public var currentItem:Item? = nil
-
     
     @IBOutlet weak var timeDesc: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -71,6 +72,14 @@ class ItemBuyViewController: BaseViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToItemChatSegue" {
+//            let dest = segue.destination as! ChatViewController
+//            dest.currentItem = self.currentItem
+        }
+    }
+
     
     @IBAction func buyPressed(_ sender: Any) {
         

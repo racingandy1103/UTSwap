@@ -18,21 +18,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-MH-L4Z">
-                                <rect key="frame" x="69" y="729" width="42" height="30"/>
+                                <rect key="frame" x="75" y="698" width="46" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
-                                <connections>
-                                    <segue destination="ynv-Gh-TWM" kind="show" identifier="ToItemBuySegue" id="mC3-Gb-w9Y"/>
-                                </connections>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.74509803921568629" green="0.34509803921568627" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-8y-a7M">
-                                <rect key="frame" x="269" y="732" width="86" height="25"/>
+                                <rect key="frame" x="242" y="699" width="100" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Started"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.71532888510000003" green="0.34491283779999998" blue="0.24978512880000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="9qp-QI-aTe" kind="show" identifier="ToAuthPageSegue" id="JQD-5B-5Tu"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="lSA-bu-WJw">
+                                <rect key="frame" x="37" y="222" width="340" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epr-w0-P1v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-tj-Jgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="78"/>
+            <point key="canvasLocation" x="1373.913043478261" y="77.678571428571431"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="fA9-7T-Lyh">
@@ -166,7 +173,6 @@
         <!--Item Sell View Controller-->
         <scene sceneID="6J9-VJ-2RN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nSI-2N-D81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Qwm-3g-Jtc" customClass="ItemSellViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d6W-Gs-z4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -244,6 +250,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZAB-z6-YmA"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSI-2N-D81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3548" y="1142"/>
         </scene>
@@ -287,6 +294,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Transparent.PNG" width="245.75999450683594" height="245.75999450683594"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
