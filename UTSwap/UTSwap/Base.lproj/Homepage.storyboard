@@ -86,6 +86,9 @@
                                 <state key="normal" title="Liked Goods" image="suit.heart" catalog="system"/>
                                 <connections>
                                     <action selector="tapHeartButton:" destination="kSx-AY-jvj" eventType="touchUpInside" id="YhW-Cc-2al"/>
+                                    <segue destination="pmr-k8-quQ" kind="popoverPresentation" identifier="LikedGoodsPopoverSegue" popoverAnchorView="Lfd-4q-TtE" id="4I6-F4-m0q">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,6 +295,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKG-tc-2Ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5421.739130434783" y="368.97321428571428"/>
+        </scene>
+        <!--Liked Goods Popover Table View Controller-->
+        <scene sceneID="m3v-5Q-AqQ">
+            <objects>
+                <viewController id="pmr-k8-quQ" customClass="LikedGoodsPopoverTableViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xBp-s7-OZD" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XNS-3c-0o1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <size key="freeformSize" width="300" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufw-fk-0N0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4567" y="603"/>
         </scene>
     </scenes>
     <resources>

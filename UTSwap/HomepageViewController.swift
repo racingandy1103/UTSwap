@@ -7,7 +7,14 @@
 
 import UIKit
 
-class HomepageViewController: BaseViewController {
+protocol ButtonSetter {
+    func setButton()
+}
+
+
+var LikedGoodsSegueID = "LikedGoodsPopoverSegue"
+
+class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, ButtonSetter {
     @IBOutlet weak var accountNameLabel: UILabel!
     
     @IBOutlet weak var likedGoodsLabel: UILabel!
@@ -27,6 +34,8 @@ class HomepageViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         
+        
+        
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         
@@ -41,30 +50,45 @@ class HomepageViewController: BaseViewController {
         advertiseImageView.startAnimating()
         
         }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == LikedGoodsSegueID {
+            let popoverVC = segue.destination as! LikedGoodsPopoverTableViewController
+            popoverVC.delegate = self
+            popoverVC.modalPresentationStyle = .popover
+            popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+        }
+    }
     
 
     @IBAction func tapHeartButton(_ sender: Any) {
         
-        
-        
-       
-        
-        if self.heartButton.currentImage == UIImage(systemName: "suit.heart.fill"){
-            UIView.animate(withDuration: 1.0) {
-                self.heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
+        UIView.animate(withDuration: 1.0) {
+            self.heartButton.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
                         }
-        }else{
-            UIView.animate(withDuration: 1.0) {
-                self.heartButton.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
-                        }
+        let vc = LikedGoodsPopoverTableViewController()
+        vc.preferredContentSize = CGSize(width: 400,height: 500)
+                vc.modalPresentationStyle = .popover
+                if let pres = vc.presentationController {
+                    pres.delegate = self
+                    
+                }
+                self.present(vc, animated: true)
+                if let pop = vc.popoverPresentationController {
+                    pop.sourceView = (sender as! UIView)
+                    pop.sourceRect = (sender as! UIView).bounds
+                    
+                }
+        
         }
-
-        
-        
-        
-
+    func setButton() {
+        UIView.animate(withDuration: 1.0) {
+            self.heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
+                        }
     }
     
+    
+    
+
     
     /*
     // MARK: - Navigation
@@ -90,5 +114,11 @@ extension UIImage {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+}
+
+extension BaseViewController : UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
 }
