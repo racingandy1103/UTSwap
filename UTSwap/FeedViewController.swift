@@ -9,17 +9,20 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+
 let reuseIdentifier = "MyCell"
 let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
 
 
 class Item {
     
+    
+
     public var itemTitle:String = ""
     
     public var key:String = ""
     public var ownerKey:String = ""
-    
+
 
     init(title:String) {
         self.itemTitle = title
@@ -36,6 +39,7 @@ class Item {
 class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // for DB
+    var categoryName = String()
     var ref: DatabaseReference!
     
     var items:[Item] = []

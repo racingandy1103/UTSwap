@@ -7,6 +7,11 @@
 
 import UIKit
 
+public let categories = [
+    "Furnitures", "Clothing", "Electronics", "Books",
+    "Misc."
+]
+
 class BaseViewController: UIViewController {
     
     var currentColor: UIColor = .lightGray

@@ -28,12 +28,18 @@ class HomepageViewController: BaseViewController {
         // Do any additional setup after loading the view.
         
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
-        let imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
+        var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         
-        advertiseImageView.image = UIImage(named: "furniture1")
+        for n in 0...imagesArr.count-1{
+            imagesArr[n] = imagesArr[n].resize(200, 200)!
+        }
+        advertiseImageView.image = imagesArr[0]
         advertiseImageView.animationImages = imagesArr
+        self.advertiseImageView.clipsToBounds = true
+        self.advertiseImageView.animationRepeatCount = 0
         advertiseImageView.animationDuration = 3
         advertiseImageView.startAnimating()
+        
         }
     
 
@@ -41,13 +47,15 @@ class HomepageViewController: BaseViewController {
         
         
         
-        UIView.animate(withDuration: 1.0) {
-            self.heartButton.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
-                    }
+       
         
         if self.heartButton.currentImage == UIImage(systemName: "suit.heart.fill"){
             UIView.animate(withDuration: 1.0) {
                 self.heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
+                        }
+        }else{
+            UIView.animate(withDuration: 1.0) {
+                self.heartButton.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
                         }
         }
 
@@ -56,6 +64,8 @@ class HomepageViewController: BaseViewController {
         
 
     }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -66,4 +76,19 @@ class HomepageViewController: BaseViewController {
     }
     */
 
+}
+
+extension UIImage {
+    func resize(_ width: CGFloat, _ height:CGFloat) -> UIImage? {
+        let widthRatio  = width / size.width
+        let heightRatio = height / size.height
+        let ratio = widthRatio > heightRatio ? heightRatio : widthRatio
+        let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }
