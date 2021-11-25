@@ -18,11 +18,6 @@
 		A95DF45C273E675800B24710 /* Homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95DF45A273E675800B24710 /* Homepage.storyboard */; };
 		A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DF45D273E687200B24710 /* HomepageViewController.swift */; };
 		D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450C0274767E000888BC8 /* ProfileViewController.swift */; };
-		D41450C32748DDC500888BC8 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450C22748DDC500888BC8 /* ChatCellTableViewCell.swift */; };
-		D41450C52748DEC400888BC8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450C42748DEC400888BC8 /* ChatViewController.swift */; };
-		D41450C72748F79600888BC8 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41450C62748F79600888BC8 /* Chat.storyboard */; };
-		D41450CB274A075600888BC8 /* White.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D41450CA274A075600888BC8 /* White.PNG */; };
-		D41450CD274A0CE400888BC8 /* Transparent.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D41450CC274A0CE400888BC8 /* Transparent.PNG */; };
 		D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52B2735C32100ACEDEC /* Settings.storyboard */; };
 		D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */; };
 		D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EB5312735C37E00ACEDEC /* BaseViewController.swift */; };
@@ -35,7 +30,6 @@
 		D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */; };
 		D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44E7158271A2ED900CC01C2 /* Assets.xcassets */; };
 		D44E715C271A2ED900CC01C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44E715A271A2ED900CC01C2 /* LaunchScreen.storyboard */; };
-		D4A005C3274EEA3200713368 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005C2274EEA3200713368 /* ChatLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,11 +45,6 @@
 		A95DF45D273E687200B24710 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41450C0274767E000888BC8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		D41450C22748DDC500888BC8 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
-		D41450C42748DEC400888BC8 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		D41450C62748F79600888BC8 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
-		D41450CA274A075600888BC8 /* White.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White.PNG; path = Assets.xcassets/White.PNG; sourceTree = "<group>"; };
-		D41450CC274A0CE400888BC8 /* Transparent.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Transparent.PNG; path = Assets.xcassets/Transparent.PNG; sourceTree = "<group>"; };
 		D42EB52C2735C32100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D42EB52F2735C33100ACEDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemBuy.storyboard; sourceTree = "<group>"; };
 		D42EB5312735C37E00ACEDEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +59,6 @@
 		D44E7158271A2ED900CC01C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44E715B271A2ED900CC01C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D44E715D271A2ED900CC01C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4A005C2274EEA3200713368 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		D511F1DE48FBA3154F3C68F1 /* Pods-UTSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.debug.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,35 +103,29 @@
 		D44E714B271A2ED800CC01C2 /* UTSwap */ = {
 			isa = PBXGroup;
 			children = (
+				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
+				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				D41450C0274767E000888BC8 /* ProfileViewController.swift */,
-				D41450C42748DEC400888BC8 /* ChatViewController.swift */,
 				D42EB5312735C37E00ACEDEC /* BaseViewController.swift */,
 				D42EB5342735C37E00ACEDEC /* ItemBuyViewController.swift */,
+				D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */,
 				D42EB5322735C37E00ACEDEC /* LandingViewController.swift */,
 				D42EB5332735C37E00ACEDEC /* SettingsViewController.swift */,
-				A95DF45D273E687200B24710 /* HomepageViewController.swift */,
-				D42EB52E2735C33100ACEDEC /* ItemBuy.storyboard */,
 				D42EB52B2735C32100ACEDEC /* Settings.storyboard */,
+				A95DF45D273E687200B24710 /* HomepageViewController.swift */,
 				A95DF45A273E675800B24710 /* Homepage.storyboard */,
 				150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */,
 				D44E7152271A2ED800CC01C2 /* Main.storyboard */,
-				D41450CC274A0CE400888BC8 /* Transparent.PNG */,
-				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
-				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				150D0B862741B50500D76FEB /* FeedViewController.swift */,
 				150D0B842741B1FE00D76FEB /* FeedCollectionViewCell.swift */,
-				D41450CA274A075600888BC8 /* White.PNG */,
-				157E80682738CE3F005F5D09 /* Login.storyboard */,
 				15E6844E273304F6005C245D /* LoginViewController.swift */,
 				157E80742738D918005F5D09 /* signUpViewController.swift */,
+				157E80682738CE3F005F5D09 /* Login.storyboard */,
 				D44E7158271A2ED900CC01C2 /* Assets.xcassets */,
 				D44E715A271A2ED900CC01C2 /* LaunchScreen.storyboard */,
 				D44E715D271A2ED900CC01C2 /* Info.plist */,
 				D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */,
 				15E6844C273300F3005C245D /* GoogleService-Info.plist */,
-				D41450C22748DDC500888BC8 /* ChatCellTableViewCell.swift */,
-				D41450C62748F79600888BC8 /* Chat.storyboard */,
-				D4A005C2274EEA3200713368 /* ChatLogViewController.swift */,
 			);
 			path = UTSwap;
 			sourceTree = "<group>";
@@ -216,14 +198,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41450CB274A075600888BC8 /* White.PNG in Resources */,
-				D41450C72748F79600888BC8 /* Chat.storyboard in Resources */,
 				A95DF45C273E675800B24710 /* Homepage.storyboard in Resources */,
 				D44E715C271A2ED900CC01C2 /* LaunchScreen.storyboard in Resources */,
 				15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */,
 				157E80692738CE3F005F5D09 /* Login.storyboard in Resources */,
 				D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */,
-				D41450CD274A0CE400888BC8 /* Transparent.PNG in Resources */,
 				D44E7154271A2ED800CC01C2 /* Main.storyboard in Resources */,
 				D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */,
 				D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */,
@@ -281,7 +260,6 @@
 			files = (
 				D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */,
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
-				D41450C52748DEC400888BC8 /* ChatViewController.swift in Sources */,
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				150D0B8927420F3F00D76FEB /* ItemSellViewController.swift in Sources */,
@@ -290,8 +268,6 @@
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
 				A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
-				D4A005C3274EEA3200713368 /* ChatLogViewController.swift in Sources */,
-				D41450C32748DDC500888BC8 /* ChatCellTableViewCell.swift in Sources */,
 				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
 				D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
@@ -469,6 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UTSwap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +465,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UTSwap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
