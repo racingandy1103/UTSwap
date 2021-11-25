@@ -8,7 +8,7 @@
 import UIKit
 
 public let categories = [
-    "Furnitures", "Clothing", "Electronics", "Books",
+    "Furniture", "Clothing", "Electronics", "Book",
     "Misc."
 ]
 
