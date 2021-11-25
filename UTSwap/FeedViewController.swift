@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+
 let reuseIdentifier = "MyCell"
 let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
 
@@ -19,7 +20,7 @@ class Item {
     
     public var key:String = ""
     public var ownerKey:String = ""
-    
+
 
     init(title:String) {
         self.itemTitle = title
@@ -36,6 +37,7 @@ class Item {
 class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // for DB
+    var categoryName = String()
     var ref: DatabaseReference!
     
     var items:[Item] = []
@@ -57,9 +59,8 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         addItemsFromDBIntoList()
         
-        self.items = itemList
+        //self.items = itemList
         print(self.items)
-        
     }
     
     func addItemsFromDBIntoList() {
@@ -69,17 +70,20 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
             ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
                 // Get user value
                 print(snapshot.childrenCount) // I got the expected number of items
+                
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
                     let ownerKey = rest.key
                     for i in rest.children.allObjects as! [DataSnapshot] {
-                        let key = i.key
-                        let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                        let a = Item(title: title)
-                        a.ownerKey = ownerKey
-                        a.key = key
-                        self.items.append(a)
+                        let cat = i.childSnapshot(forPath: "itemCategory").value as! String
+                        if cat == self.categoryName{
+                            let key = i.key
+                            let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                            let a = Item(title: title)
+                            a.ownerKey = ownerKey
+                            a.key = key
+                            self.items.append(a)
+                        }
                     }
-                   
                 }
                 
                 self.collectionView.reloadData()

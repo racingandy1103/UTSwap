@@ -24,6 +24,10 @@ extension UIColor {
        )
    }
 }
+public let categories = [
+    "Furniture", "Clothing", "Electronics", "Book",
+    "Misc."
+]
 
 class BaseViewController: UIViewController {
     
@@ -174,5 +178,6 @@ class BaseViewController: UIViewController {
     }
 
   }
+
 
 

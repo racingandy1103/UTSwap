@@ -18,11 +18,12 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var uploadimgButton: UIButton!
+    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
     
     var pickerData: [String] = [String]()
-    var location = ""
+    var category = "Furniture"
     let imagePicker = UIImagePickerController()
     let datePicker = UIDatePicker()
     
@@ -37,7 +38,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         self.picker.delegate = self
         self.picker.dataSource = self
-        pickerData = ["GDC", "Littlefield Fountain", "Union", "Speedway", "Jester"]
+        pickerData = ["Furniture", "Clothing", "Electronics", "Book", "Misc."]
         
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
@@ -53,6 +54,11 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             string: "Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
+        
+        locationTextField.attributedPlaceholder = NSAttributedString(
+            string: "Location",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
                 
         textView.text = "Enter your description here..."
         textView.textColor = UIColor.lightGray
@@ -64,6 +70,10 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        /*if categories.contains(categoryTextField.text!) == false {
+            categories.append(categoryTextField.text!)
+        }*/
     }
     
     // Setting textView default color
@@ -87,8 +97,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             let user = Auth.auth().currentUser
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation":location, "itemDesc": textView.text!, "meetTime": textField.text!, "itemPic": imageView!])
-            
+            ref.child("items").child(user!.uid).childByAutoId().setValue(["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation": locationTextField.text!, "itemDesc": textView.text!, "meetTime": textField.text!, "itemCategory": category])
+            //"itemPic": imageView! issue
         }
     }
     
@@ -110,8 +120,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        location = pickerData[row] // saves location
-        print(location)
+        category = pickerData[row] // saves location
+        print(category)
     }
     
     // Creating date & time picker options

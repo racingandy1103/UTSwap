@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z1i-k6-TA4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -128,10 +129,10 @@
         <!--signUpVC-->
         <scene sceneID="2D2-3n-Ez2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SyE-QY-ESI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="signUpVC" id="Qje-Pc-yTT" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="vGR-qM-do0"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SyE-QY-ESI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="198"/>
         </scene>
@@ -166,10 +167,10 @@
         <!--itemBuyId-->
         <scene sceneID="XeC-AX-JYU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nE3-80-jwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="ItemBuy" referencedIdentifier="itemBuyId" id="ynv-Gh-TWM" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="paJ-aN-RYo"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nE3-80-jwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2552" y="513"/>
         </scene>

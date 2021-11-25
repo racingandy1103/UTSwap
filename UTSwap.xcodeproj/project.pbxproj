@@ -15,6 +15,8 @@
 		15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E6844C273300F3005C245D /* GoogleService-Info.plist */; };
 		15E6844F273304F6005C245D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6844E273304F6005C245D /* LoginViewController.swift */; };
 		19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */; };
+		A92F978D274F11C6003E01A1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F978C274F11C6003E01A1 /* CategoryViewController.swift */; };
+		A92F9791274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F9790274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift */; };
 		A95DF45C273E675800B24710 /* Homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95DF45A273E675800B24710 /* Homepage.storyboard */; };
 		A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95DF45D273E687200B24710 /* HomepageViewController.swift */; };
 		D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41450C0274767E000888BC8 /* ProfileViewController.swift */; };
@@ -41,6 +43,8 @@
 		15E6844C273300F3005C245D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15E6844E273304F6005C245D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C033452AD9D88D8EB80A867 /* Pods-UTSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.release.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.release.xcconfig"; sourceTree = "<group>"; };
+		A92F978C274F11C6003E01A1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		A92F9790274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedGoodsPopoverTableViewController.swift; sourceTree = "<group>"; };
 		A95DF45B273E675800B24710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UTSwap/Base.lproj/Homepage.storyboard; sourceTree = "<group>"; };
 		A95DF45D273E687200B24710 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,8 @@
 				D42EB5332735C37E00ACEDEC /* SettingsViewController.swift */,
 				D42EB52B2735C32100ACEDEC /* Settings.storyboard */,
 				A95DF45D273E687200B24710 /* HomepageViewController.swift */,
+				A92F978C274F11C6003E01A1 /* CategoryViewController.swift */,
+				A92F9790274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift */,
 				A95DF45A273E675800B24710 /* Homepage.storyboard */,
 				150D0B8827420F3F00D76FEB /* ItemSellViewController.swift */,
 				D44E7152271A2ED800CC01C2 /* Main.storyboard */,
@@ -268,7 +274,9 @@
 				D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */,
 				A95DF45E273E687200B24710 /* HomepageViewController.swift in Sources */,
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
+				A92F978D274F11C6003E01A1 /* CategoryViewController.swift in Sources */,
 				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
+				A92F9791274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift in Sources */,
 				D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
 				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
