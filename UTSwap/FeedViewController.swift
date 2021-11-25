@@ -74,14 +74,16 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
                     let ownerKey = rest.key
                     for i in rest.children.allObjects as! [DataSnapshot] {
-                        let cat = i.childSnapshot(forPath: "itemCategory").value as! String
-                        if cat == self.categoryName{
-                            let key = i.key
-                            let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                            let a = Item(title: title)
-                            a.ownerKey = ownerKey
-                            a.key = key
-                            self.items.append(a)
+                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
+                        if cat != nil {
+                            if cat == self.categoryName{
+                                let key = i.key
+                                let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                let a = Item(title: title)
+                                a.ownerKey = ownerKey
+                                a.key = key
+                                self.items.append(a)
+                            }
                         }
                     }
                 }

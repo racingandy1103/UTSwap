@@ -32,6 +32,12 @@
 		D44E7157271A2ED800CC01C2 /* UTSwap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */; };
 		D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44E7158271A2ED900CC01C2 /* Assets.xcassets */; };
 		D44E715C271A2ED900CC01C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44E715A271A2ED900CC01C2 /* LaunchScreen.storyboard */; };
+		D4A005D6274F63F500713368 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */; };
+		D4A005D7274F63F500713368 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A005D3274F63F500713368 /* Chat.storyboard */; };
+		D4A005D8274F63F500713368 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D4274F63F500713368 /* ChatViewController.swift */; };
+		D4A005D9274F63F500713368 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D5274F63F500713368 /* ChatLogViewController.swift */; };
+		D4A005DC274F644D00713368 /* Transparent.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DA274F644D00713368 /* Transparent.PNG */; };
+		D4A005DD274F644D00713368 /* White.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DB274F644D00713368 /* White.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +69,12 @@
 		D44E7158271A2ED900CC01C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44E715B271A2ED900CC01C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D44E715D271A2ED900CC01C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
+		D4A005D3274F63F500713368 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		D4A005D4274F63F500713368 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D4A005D5274F63F500713368 /* ChatLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
+		D4A005DA274F644D00713368 /* Transparent.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Transparent.PNG; path = Assets.xcassets/Transparent.PNG; sourceTree = "<group>"; };
+		D4A005DB274F644D00713368 /* White.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White.PNG; path = Assets.xcassets/White.PNG; sourceTree = "<group>"; };
 		D511F1DE48FBA3154F3C68F1 /* Pods-UTSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.debug.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +119,12 @@
 		D44E714B271A2ED800CC01C2 /* UTSwap */ = {
 			isa = PBXGroup;
 			children = (
+				D4A005DA274F644D00713368 /* Transparent.PNG */,
+				D4A005DB274F644D00713368 /* White.PNG */,
+				D4A005D3274F63F500713368 /* Chat.storyboard */,
+				D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */,
+				D4A005D5274F63F500713368 /* ChatLogViewController.swift */,
+				D4A005D4274F63F500713368 /* ChatViewController.swift */,
 				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
 				D41450C0274767E000888BC8 /* ProfileViewController.swift */,
@@ -204,11 +222,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A005D7274F63F500713368 /* Chat.storyboard in Resources */,
 				A95DF45C273E675800B24710 /* Homepage.storyboard in Resources */,
+				D4A005DD274F644D00713368 /* White.PNG in Resources */,
 				D44E715C271A2ED900CC01C2 /* LaunchScreen.storyboard in Resources */,
 				15E6844D273300F3005C245D /* GoogleService-Info.plist in Resources */,
 				157E80692738CE3F005F5D09 /* Login.storyboard in Resources */,
 				D44E7159271A2ED900CC01C2 /* Assets.xcassets in Resources */,
+				D4A005DC274F644D00713368 /* Transparent.PNG in Resources */,
 				D44E7154271A2ED800CC01C2 /* Main.storyboard in Resources */,
 				D42EB5302735C33100ACEDEC /* ItemBuy.storyboard in Resources */,
 				D42EB52D2735C32100ACEDEC /* Settings.storyboard in Resources */,
@@ -267,6 +288,7 @@
 				D42EB5362735C37E00ACEDEC /* LandingViewController.swift in Sources */,
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
+				D4A005D6274F63F500713368 /* ChatCellTableViewCell.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				150D0B8927420F3F00D76FEB /* ItemSellViewController.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,
@@ -276,9 +298,11 @@
 				D42EB5352735C37E00ACEDEC /* BaseViewController.swift in Sources */,
 				A92F978D274F11C6003E01A1 /* CategoryViewController.swift in Sources */,
 				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
+				D4A005D9274F63F500713368 /* ChatLogViewController.swift in Sources */,
 				A92F9791274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift in Sources */,
 				D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
+				D4A005D8274F63F500713368 /* ChatViewController.swift in Sources */,
 				D42EB5372735C37E00ACEDEC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class ItemBuyViewController: BaseViewController {
     
@@ -25,6 +26,8 @@ class ItemBuyViewController: BaseViewController {
     
     @IBOutlet weak var locationLabel: UILabel!
     
+    var imgUUID: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +35,8 @@ class ItemBuyViewController: BaseViewController {
         
         if(currentItem != nil) {
             if (Auth.auth().currentUser != nil && currentItem?.key != "" && currentItem?.ownerKey != "") {
-                print("reading items from db")
+                print("Item Buy :: reading items from db")
+                let user = Auth.auth().currentUser
                 ref = Database.database().reference()
                 ref.child("items").child(currentItem!.ownerKey).child(currentItem!.key).observeSingleEvent(of: .value, with: { snapshot in
                     // Get user value
@@ -67,6 +71,33 @@ class ItemBuyViewController: BaseViewController {
                     if pic != nil {
                         self.imgView = pic
                     }
+                    
+                    let imgUUID = snapshot.childSnapshot(forPath: "itemImgUUID").value as? String
+                    if imgUUID != nil {
+                        self.imgUUID = imgUUID
+                    }
+                    
+                    let storage = Storage.storage()
+                    let storageRef = storage.reference()
+                    
+                    if self.imgUUID != nil {
+                        let imgRef = storageRef.child("images").child(user!.uid).child("\(self.imgUUID!).jpg")
+                        print(imgRef.fullPath)
+                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                        imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                          if let error = error {
+                            // Uh-oh, an error occurred!
+                            print("error \(error)")
+                          } else {
+                            // Data for "images/island.jpg" is returned
+                            let image = UIImage(data: data!)
+                            self.imgView.image = image
+//                            let image = UIImage()
+                          }
+                        }
+                    }
+                    
+                    
                     // ...
                   }) { error in
                     print(error.localizedDescription)

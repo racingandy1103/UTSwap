@@ -24,14 +24,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
-                                <rect key="frame" x="192" y="750" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Buy"/>
-                                <connections>
-                                    <action selector="buyPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="Z9d-CL-h2V"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-U5-vZH">
                                 <rect key="frame" x="54" y="164" width="306" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,6 +67,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-Jw-kuf">
+                                <rect key="frame" x="308" y="769" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Chat"/>
+                                <connections>
+                                    <segue destination="Ijh-UQ-OLj" kind="show" id="yFv-jM-A7w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
+                                <rect key="frame" x="77" y="769" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buyPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="Z9d-CL-h2V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aCj-xo-XC2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,6 +100,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lv-59-h6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2302.898550724638" y="-583.25892857142856"/>
+        </scene>
+        <!--ItemMessageChat-->
+        <scene sceneID="kq5-WZ-xtt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" referencedIdentifier="ItemMessageChat" id="Ijh-UQ-OLj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="afm-J5-o1C"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csc-wB-na1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3047" y="-375"/>
         </scene>
     </scenes>
     <resources>
