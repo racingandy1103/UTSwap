@@ -38,6 +38,7 @@
 		D4A005D9274F63F500713368 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D5274F63F500713368 /* ChatLogViewController.swift */; };
 		D4A005DC274F644D00713368 /* Transparent.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DA274F644D00713368 /* Transparent.PNG */; };
 		D4A005DD274F644D00713368 /* White.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DB274F644D00713368 /* White.PNG */; };
+		D4A005DF2753080800713368 /* LocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005DE2753080800713368 /* LocationMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		D4A005D5274F63F500713368 /* ChatLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		D4A005DA274F644D00713368 /* Transparent.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Transparent.PNG; path = Assets.xcassets/Transparent.PNG; sourceTree = "<group>"; };
 		D4A005DB274F644D00713368 /* White.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White.PNG; path = Assets.xcassets/White.PNG; sourceTree = "<group>"; };
+		D4A005DE2753080800713368 /* LocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewController.swift; sourceTree = "<group>"; };
 		D511F1DE48FBA3154F3C68F1 /* Pods-UTSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.debug.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				D44E715D271A2ED900CC01C2 /* Info.plist */,
 				D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */,
 				15E6844C273300F3005C245D /* GoogleService-Info.plist */,
+				D4A005DE2753080800713368 /* LocationMapViewController.swift */,
 			);
 			path = UTSwap;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				D44E714D271A2ED800CC01C2 /* AppDelegate.swift in Sources */,
 				157E80752738D918005F5D09 /* signUpViewController.swift in Sources */,
 				D4A005D6274F63F500713368 /* ChatCellTableViewCell.swift in Sources */,
+				D4A005DF2753080800713368 /* LocationMapViewController.swift in Sources */,
 				D44E714F271A2ED800CC01C2 /* SceneDelegate.swift in Sources */,
 				150D0B8927420F3F00D76FEB /* ItemSellViewController.swift in Sources */,
 				15E6844F273304F6005C245D /* LoginViewController.swift in Sources */,

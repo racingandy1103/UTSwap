@@ -111,6 +111,14 @@ class ItemBuyViewController: BaseViewController {
 //            let dest = segue.destination as! ChatViewController
 //            dest.currentItem = self.currentItem
         }
+        
+        else if segue.identifier == "ToItemMapSegue" {
+            
+                let dest = segue.destination as! LocationMapViewController
+            if self.locationLabel.text != nil {
+                dest.meetLocation = self.locationLabel.text!
+            }
+        }
     }
 
     
