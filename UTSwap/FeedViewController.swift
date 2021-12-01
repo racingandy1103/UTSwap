@@ -136,6 +136,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         title.text = "\(item.itemTitle)"
         var pic = UIImage()
         pic = item.itemPic
+        print(pic)
         
         /*let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
         if img != nil {

@@ -45,11 +45,8 @@ class BaseViewController: UIViewController {
         "GRAY": UIColor.gray
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         navigationController?.navigationBar.barTintColor = getCurrentAccentColor()
         
