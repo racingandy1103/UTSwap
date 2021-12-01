@@ -11,22 +11,18 @@ import FirebaseDatabase
 import FirebaseStorage
 
 let reuseIdentifier = "MyCell"
-let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
+//let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
 
 
 class Item {
     
     public var itemTitle:String = ""
-    public var itemPic = UIImage()
+    public var itemImgUUID: String = ""
     public var key:String = ""
     public var ownerKey:String = ""
 
     init(title:String) {
         self.itemTitle = title
-    }
-    
-    init(pic:UIImage) {
-        self.itemPic = pic
     }
     
     func printDesc() {
@@ -42,7 +38,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     // for DB
     var categoryName = String()
     var ref: DatabaseReference!
-    var imgUUID: String? = ""
+    var timgUUID: String? = ""
     var items:[Item] = []
 
 
@@ -55,10 +51,10 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        var itemList:[Item] = []
+        /*var itemList:[Item] = []
         for i in initialItems {
             itemList.append(i)
-        }
+        }*/
         
         addItemsFromDBIntoList()
         
@@ -67,11 +63,9 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     }
     
     func addItemsFromDBIntoList() {
-        let user = Auth.auth().currentUser
-        ref = Database.database().reference()
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
         if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
             ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
@@ -86,25 +80,14 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                             if cat == self.categoryName{
                                 let key = i.key
                                 let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                                if self.imgUUID != nil {
-                                    let imgRef = storageRef.child("images").child(user!.uid).child("\(self.imgUUID!).jpg")
-                                    print(imgRef.fullPath)
-                                    // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                                    imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                                      if let error = error {
-                                        // Uh-oh, an error occurred!
-                                        print("error \(error)")
-                                      } else {
-                                        // Data for "images/island.jpg" is returned
-                                        let pic = UIImage(data: data!)
-                        //                            let image = UIImage()
-                                      }
-                                    }
+                                let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
                                 
-                                }
                                 let a = Item(title: title)
                                 a.ownerKey = ownerKey
                                 a.key = key
+                                if imgUUID != nil {
+                                    a.itemImgUUID = imgUUID!
+                                }
                                 self.items.append(a)
                             }
                         }
@@ -134,9 +117,35 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
         let item = items[indexPath.row]
         title.text = "\(item.itemTitle)"
-        var pic = UIImage()
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let user = Auth.auth().currentUser
+        if item.itemImgUUID != nil {
+            let imgRef = storageRef.child("images").child(user!.uid).child("\(item.itemImgUUID).jpg")
+            print(imgRef.fullPath)
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+              if let error = error {
+                // Uh-oh, an error occurred!
+                print("error \(error)")
+              } else {
+                // Data for "images/island.jpg" is returned
+                let pic = UIImage(data: data!)
+                imageview.image = pic
+              }
+            }
+        
+        }
+        
+        /*var pic = UIImage()
         pic = item.itemPic
-        print(pic)
+        if pic != nil {
+            imageview.image = pic
+        }*/
+        //imageview.image = item.itemPic
+        //print(item.itemPic)
         
         /*let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
         if img != nil {

@@ -19,14 +19,14 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var uploadimgButton: UIButton!
-    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var locationLabel: UILabel!
     
     var pickerData: [String] = [String]()
     var category = "Furniture"
     let imagePicker = UIImagePickerController()
     let datePicker = UIDatePicker()
+    var location = ""
     
     // for DB
     var ref: DatabaseReference!
@@ -53,11 +53,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                 
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
-        )
-        
-        locationTextField.attributedPlaceholder = NSAttributedString(
-            string: "Location",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
                 
@@ -133,7 +128,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
            
             ref = Database.database().reference()            
             
-            var dataToAdd = ["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation": locationTextField.text!, "itemDesc": textView.text!, "meetTime": textField.text!, "itemCategory": category]
+            var dataToAdd = ["itemTitle": titleTextField.text!, "itemPrice": priceTextField.text!,"meetLocation": location, "itemDesc": textView.text!, "meetTime": textField.text!, "itemCategory": category]
 
             if imageView.image != nil {
                 dataToAdd["itemImgUUID"] = imgUUID
@@ -270,5 +265,45 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func locationPick(_ sender: Any) {
+        let controller = UIAlertController( // Alert message
+            title: "Alert Controller",
+            message: "Select your desired location",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "GDC",
+                                style: .default,
+                                handler: {action in
+                                    self.location = "GDC"
+                                    self.locationLabel.text = self.location
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "Speedway",
+                                style: .default,
+                                handler: {action in
+                                    self.location = "Speedway"
+                                    self.locationLabel.text = self.location
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "Jester",
+                                style: .default,
+                                handler: {action in
+                                    self.location = "Jester"
+                                    self.locationLabel.text = self.location
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "Union",
+                                style: .default,
+                                handler: {action in
+                                    self.location = "Union"
+                                    self.locationLabel.text = self.location
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "Cancel",
+                                style: .cancel,
+                                handler: nil))
+        present(controller, animated: true, completion: nil)
     }
 }
