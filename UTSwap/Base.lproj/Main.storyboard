@@ -69,26 +69,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
                                 <rect key="frame" x="27" y="146" width="360" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="OIj-n1-w4d"/>
+                                    <constraint firstAttribute="width" constant="360" id="s8w-TR-2bp"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-aG-Rui">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-aG-Rui">
                                 <rect key="frame" x="46" y="492" width="322" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="TqW-W8-XOQ"/>
+                                    <constraint firstAttribute="height" constant="77" id="u4W-3d-cSO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="24"/>
-                                <state key="normal" title="Login" backgroundImage="buttonImage">
+                                <state key="normal" title="Login" backgroundImage="buttonImageTrans">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="8qc-ya-FlH" kind="show" id="Xgb-B8-aYU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x97-JH-ptX">
-                                <rect key="frame" x="46" y="577" width="322" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x97-JH-ptX">
+                                <rect key="frame" x="46" y="577" width="322" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="boI-Xe-0va"/>
+                                    <constraint firstAttribute="height" constant="77" id="joe-Oj-x5o"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="24"/>
-                                <state key="normal" title="Sign Up" backgroundImage="buttonImage">
+                                <state key="normal" title="Sign Up" backgroundImage="buttonImageTrans">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -98,6 +107,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nBG-cB-Yjb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="IOR-AL-RQe"/>
+                            <constraint firstItem="JkM-d5-nQt" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="Rp1-2Q-XUe"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="top" secondItem="JkM-d5-nQt" secondAttribute="bottom" constant="130" id="YTv-ej-6D8"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="fgb-P0-uHb"/>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="top" secondItem="PeC-aG-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="ktc-in-wND"/>
+                            <constraint firstItem="JkM-d5-nQt" firstAttribute="top" secondItem="nBG-cB-Yjb" secondAttribute="top" constant="58" id="mNQ-cg-aUy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LYf-ww-d8q"/>
                 </viewController>
@@ -176,7 +193,7 @@
     </scenes>
     <resources>
         <image name="Transparent.PNG" width="245.75999450683594" height="245.75999450683594"/>
-        <image name="buttonImage" width="83" height="83"/>
+        <image name="buttonImageTrans" width="83" height="83"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

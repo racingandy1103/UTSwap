@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "buttonImage.jpg",
+      "filename" : "buttonImageTrans.png",
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
