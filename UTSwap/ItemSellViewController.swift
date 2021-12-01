@@ -20,7 +20,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var uploadimgButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var locationButton: UIButton!
     
     var pickerData: [String] = [String]()
     var category = "Furniture"
@@ -33,24 +33,29 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.textView.layer.borderColor = UIColor.lightGray.cgColor
+        self.textView.layer.borderColor = UIColor.orange.cgColor
         self.textView.layer.borderWidth = 1
         
         self.picker.delegate = self
         self.picker.dataSource = self
         pickerData = ["Furniture", "Clothing", "Electronics", "Book", "Misc."]
         
+        textField.layer.borderColor = UIColor.orange.cgColor
+        textField.layer.borderWidth = 1.0
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-                
+        
+        priceTextField.layer.borderColor = UIColor.orange.cgColor
+        priceTextField.layer.borderWidth = 1.0
         priceTextField.attributedPlaceholder = NSAttributedString(
             string: "Price",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
         )
-                
+        
+        titleTextField.layer.borderColor = UIColor.orange.cgColor
+        titleTextField.layer.borderWidth = 1.0
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
@@ -65,7 +70,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         imagePicker.delegate = self
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 1.5
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        imageView.layer.borderColor = UIColor.orange.cgColor
         
         /*if categories.contains(categoryTextField.text!) == false {
             categories.append(categoryTextField.text!)
@@ -277,28 +282,28 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                                 style: .default,
                                 handler: {action in
                                     self.location = "GDC"
-                                    self.locationLabel.text = self.location
+                                    self.locationButton.setTitle("GDC", for: .normal)
                                 }))
         controller.addAction(UIAlertAction(
                                 title: "Speedway",
                                 style: .default,
                                 handler: {action in
                                     self.location = "Speedway"
-                                    self.locationLabel.text = self.location
+                                    self.locationButton.setTitle("Speedway", for: .normal)
                                 }))
         controller.addAction(UIAlertAction(
                                 title: "Jester",
                                 style: .default,
                                 handler: {action in
                                     self.location = "Jester"
-                                    self.locationLabel.text = self.location
+                                    self.locationButton.setTitle("Jester", for: .normal)
                                 }))
         controller.addAction(UIAlertAction(
                                 title: "Union",
                                 style: .default,
                                 handler: {action in
                                     self.location = "Union"
-                                    self.locationLabel.text = self.location
+                                    self.locationButton.setTitle("Union", for: .normal)
                                 }))
         controller.addAction(UIAlertAction(
                                 title: "Cancel",
