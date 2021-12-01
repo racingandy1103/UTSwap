@@ -271,23 +271,27 @@
                                     <action selector="uploadImage:" destination="82m-11-3Bd" eventType="touchUpInside" id="uqH-G3-h5I"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEv-Lu-Obx">
-                                <rect key="frame" x="116" y="552" width="188" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-Ty-TEs">
-                                <rect key="frame" x="178" y="554" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Location"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-OH-hxc">
                                 <rect key="frame" x="206" y="144" width="172" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-Ty-TEs">
+                                <rect key="frame" x="38" y="561" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Location:"/>
+                                <connections>
+                                    <action selector="locationPick:" destination="82m-11-3Bd" eventType="touchUpInside" id="BXG-9W-3go"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-RI-kJn">
+                                <rect key="frame" x="109" y="566" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OtO-Sl-2dF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -295,7 +299,7 @@
                     <navigationItem key="navigationItem" id="KoK-YZ-EX8"/>
                     <connections>
                         <outlet property="imageView" destination="TaD-3I-w9l" id="cZN-iY-g8b"/>
-                        <outlet property="locationTextField" destination="bEv-Lu-Obx" id="dq6-bq-Wee"/>
+                        <outlet property="locationLabel" destination="LYW-RI-kJn" id="BzP-H7-KAM"/>
                         <outlet property="picker" destination="qFX-Cq-ZRV" id="utD-Rd-K4m"/>
                         <outlet property="priceTextField" destination="EzQ-kQ-75V" id="Qdn-2b-juQ"/>
                         <outlet property="textField" destination="ByF-OH-hxc" id="r1Y-II-JcW"/>
