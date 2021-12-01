@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 protocol ButtonSetter {
     func setButton()
 }
@@ -16,26 +16,22 @@ var LikedGoodsSegueID = "LikedGoodsPopoverSegue"
 
 class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, ButtonSetter {
     @IBOutlet weak var accountNameLabel: UILabel!
-    
     @IBOutlet weak var likedGoodsLabel: UILabel!
     @IBOutlet weak var sellingGoodsLabel: UILabel!
-    
     @IBOutlet weak var buyButton: UIButton!
-    
     @IBOutlet weak var sellButton: UIButton!
-    
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var notificationsButton: UIButton!
     @IBOutlet weak var advertiseImageView: UIImageView!
     @IBOutlet weak var heartButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Do any additional setup after loading the view.
-        
-        
-        
+        if (Auth.auth().currentUser != nil) { // Sets username
+            accountNameLabel.text = Auth.auth().currentUser?.displayName
+        }
+
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         

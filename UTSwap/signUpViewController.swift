@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 import UserNotifications
 
 class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
@@ -14,6 +15,8 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var textFieldLoginUser: UITextField!
     @IBOutlet weak var textFieldLoginPass: UITextField!
     @IBOutlet weak var confPassTextField: UITextField!
+    @IBOutlet weak var acctName: UITextField!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +28,18 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
         let userField = textFieldLoginUser.text
         let passField = textFieldLoginPass.text
         let confField = confPassTextField.text
+        let acctName = acctName.text
         if passField == confField { // Creates account when passwords are same
             Auth.auth().createUser(withEmail: userField!, password: passField!) { user, error in
                 if error == nil {
                     Auth.auth().signIn(withEmail: self.textFieldLoginUser.text!,
                                        password: self.textFieldLoginPass.text!)
-                    /*self.performSegue(withIdentifier: "segue2Identifier", sender: nil)*/
+                    
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = acctName!
+                    changeRequest?.commitChanges(completion: nil)
+                    
+                    self.performSegue(withIdentifier: "segue2Identifier", sender: nil)
                     
                     // create an object that holds the data for our notification
                     let notification = UNMutableNotificationContent()
@@ -61,16 +70,5 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
             alert.addAction(UIAlertAction(title:"OK",style:.default))
             self.present(alert, animated: true, completion: nil)
           }
-
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

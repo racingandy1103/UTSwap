@@ -15,7 +15,6 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
           auth, user in
           
