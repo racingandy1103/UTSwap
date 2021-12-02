@@ -64,7 +64,6 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     
     func addItemsFromDBIntoList() {
         if (Auth.auth().currentUser != nil) {
-            let user = Auth.auth().currentUser
             ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
@@ -121,6 +120,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
+        
         let user = Auth.auth().currentUser
         if item.itemImgUUID != nil {
             let imgRef = storageRef.child("images").child(user!.uid).child("\(item.itemImgUUID).jpg")
@@ -136,17 +136,9 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 imageview.image = pic
               }
             }
-        
         }
         
-        /*var pic = UIImage()
-        pic = item.itemPic
-        if pic != nil {
-            imageview.image = pic
-        }*/
-        //imageview.image = item.itemPic
-        //print(item.itemPic)
-        
+    
         /*let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
         if img != nil {
             imageview.image = img
