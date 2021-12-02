@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3c-lo-vct">
-                                <rect key="frame" x="74" y="297" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="58.5" y="297" width="61.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-64-Ub4">
-                                <rect key="frame" x="42" y="345" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-64-Ub4">
+                                <rect key="frame" x="28" y="341" width="92" height="31"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ayp-lY-E3c">
-                                <rect key="frame" x="176" y="220.5" width="195" height="34"/>
+                                <rect key="frame" x="199" y="217" width="195" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="gSJ-eP-hiO"/>
                                     <constraint firstAttribute="width" constant="195" id="xCJ-de-2Uv"/>
@@ -129,11 +129,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Desired Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dv-kb-Mw4">
-                                <rect key="frame" x="20" y="282" width="141" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="282" width="174" height="21"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnf-Az-jBC">
-                                <rect key="frame" x="176" y="272.5" width="195" height="34"/>
+                                <rect key="frame" x="199" y="275" width="195" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Ozz-Xr-7JB"/>
                                     <constraint firstAttribute="width" constant="195" id="cRl-G9-tBk"/>
@@ -142,11 +142,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Confirm Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-lq-NZT">
-                                <rect key="frame" x="20" y="336" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="336" width="174" height="21"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wnE-Im-EvI">
-                                <rect key="frame" x="176" y="326.5" width="195" height="34"/>
+                                <rect key="frame" x="199" y="329" width="195" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="YRO-XS-QEm"/>
                                     <constraint firstAttribute="width" constant="195" id="nhx-lN-S07"/>
@@ -155,23 +155,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Register for an Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbg-rn-IPw">
-                                <rect key="frame" x="118" y="130" width="179" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="88" y="122" width="239" height="23"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNE-jC-Bcw">
-                                <rect key="frame" x="115" y="230" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Account Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-58-PEO">
-                                <rect key="frame" x="44" y="385" width="117" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNE-jC-Bcw">
+                                <rect key="frame" x="132" y="224" width="62" height="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-0l-BPY">
-                                <rect key="frame" x="176" y="381" width="195" height="34"/>
+                                <rect key="frame" x="199" y="385" width="195" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="LTd-yR-UWR"/>
                                     <constraint firstAttribute="width" constant="195" id="nY1-fu-NFB"/>
@@ -193,30 +187,36 @@
                                     <action selector="signUp:" destination="QHc-2Y-m2B" eventType="touchUpInside" id="fHt-al-lBS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Account Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-58-PEO">
+                                <rect key="frame" x="60" y="392" width="134" height="21"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f1f-aL-3qB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cbg-rn-IPw" firstAttribute="top" secondItem="f1f-aL-3qB" secondAttribute="top" constant="86" id="3K1-f8-BD4"/>
-                            <constraint firstItem="sNE-jC-Bcw" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="77" id="41u-zf-ywd"/>
-                            <constraint firstItem="8pL-58-PEO" firstAttribute="top" secondItem="Gm7-lq-NZT" secondAttribute="bottom" constant="28" id="5gx-WE-tL3"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="pnf-Az-jBC" secondAttribute="trailing" constant="43" id="6D7-24-2Qt"/>
-                            <constraint firstItem="pnf-Az-jBC" firstAttribute="leading" secondItem="1dv-kb-Mw4" secondAttribute="trailing" constant="15" id="AEh-qi-4R8"/>
-                            <constraint firstItem="wnE-Im-EvI" firstAttribute="leading" secondItem="Gm7-lq-NZT" secondAttribute="trailing" constant="12" id="OoW-dh-4KA"/>
-                            <constraint firstItem="Gm7-lq-NZT" firstAttribute="top" secondItem="1dv-kb-Mw4" secondAttribute="bottom" constant="33" id="Tdv-fK-fPt"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="cbg-rn-IPw" secondAttribute="trailing" constant="117" id="UTV-uI-kC3"/>
-                            <constraint firstItem="b7Y-Gq-RXU" firstAttribute="top" secondItem="hHQ-0l-BPY" secondAttribute="bottom" constant="94" id="Xu8-PH-Auu"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="wnE-Im-EvI" secondAttribute="trailing" constant="43" id="bEF-aY-on0"/>
-                            <constraint firstItem="pnf-Az-jBC" firstAttribute="top" secondItem="Ayp-lY-E3c" secondAttribute="bottom" constant="18" id="eMu-4N-JK4"/>
-                            <constraint firstItem="wnE-Im-EvI" firstAttribute="top" secondItem="pnf-Az-jBC" secondAttribute="bottom" constant="20" id="fTH-wN-rZY"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="b7Y-Gq-RXU" secondAttribute="trailing" constant="66" id="kdF-yu-nDL"/>
-                            <constraint firstItem="Ayp-lY-E3c" firstAttribute="leading" secondItem="sNE-jC-Bcw" secondAttribute="trailing" constant="15" id="le3-mZ-NJ0"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="Ayp-lY-E3c" secondAttribute="trailing" constant="43" id="qmg-un-cBs"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="hHQ-0l-BPY" secondAttribute="trailing" constant="43" id="rq6-7O-UUf"/>
-                            <constraint firstItem="Ayp-lY-E3c" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="70" id="u6e-PJ-vEt"/>
-                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="top" secondItem="f1f-aL-3qB" secondAttribute="top" constant="337" id="xKB-Ad-qnx"/>
-                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="leading" secondItem="8pL-58-PEO" secondAttribute="trailing" constant="15" id="ypu-q3-LOA"/>
-                            <constraint firstItem="1dv-kb-Mw4" firstAttribute="top" secondItem="sNE-jC-Bcw" secondAttribute="bottom" constant="31" id="zCY-94-QUG"/>
+                            <constraint firstItem="wnE-Im-EvI" firstAttribute="leading" secondItem="Gm7-lq-NZT" secondAttribute="trailing" constant="5" id="0fh-qJ-f7C"/>
+                            <constraint firstItem="cbg-rn-IPw" firstAttribute="centerX" secondItem="f1f-aL-3qB" secondAttribute="centerX" id="7Am-l7-PY2"/>
+                            <constraint firstItem="pnf-Az-jBC" firstAttribute="top" secondItem="Ayp-lY-E3c" secondAttribute="bottom" constant="24" id="De6-fX-Lrl"/>
+                            <constraint firstItem="cbg-rn-IPw" firstAttribute="top" secondItem="f1f-aL-3qB" secondAttribute="top" constant="78" id="EUM-E8-gnd"/>
+                            <constraint firstItem="1dv-kb-Mw4" firstAttribute="top" secondItem="sNE-jC-Bcw" secondAttribute="bottom" constant="41" id="H6C-0p-r7l"/>
+                            <constraint firstItem="wnE-Im-EvI" firstAttribute="top" secondItem="pnf-Az-jBC" secondAttribute="bottom" constant="20" id="Ikb-UZ-Zvj"/>
+                            <constraint firstItem="sNE-jC-Bcw" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="85" id="IqS-3O-lXR"/>
+                            <constraint firstItem="Ayp-lY-E3c" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="78" id="IyS-Zg-lXp"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="hHQ-0l-BPY" secondAttribute="trailing" constant="20" id="MlN-Am-cVr"/>
+                            <constraint firstItem="sNE-jC-Bcw" firstAttribute="leading" secondItem="f1f-aL-3qB" secondAttribute="leading" constant="132" id="PF3-kg-ini"/>
+                            <constraint firstItem="pnf-Az-jBC" firstAttribute="leading" secondItem="1dv-kb-Mw4" secondAttribute="trailing" constant="5" id="ViX-h0-EEf"/>
+                            <constraint firstItem="b7Y-Gq-RXU" firstAttribute="centerX" secondItem="f1f-aL-3qB" secondAttribute="centerX" id="XQy-Vr-QDo"/>
+                            <constraint firstItem="8pL-58-PEO" firstAttribute="top" secondItem="Gm7-lq-NZT" secondAttribute="bottom" constant="35" id="ZGd-ji-ewv"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="pnf-Az-jBC" secondAttribute="trailing" constant="20" id="dMz-pU-Qgy"/>
+                            <constraint firstItem="Gm7-lq-NZT" firstAttribute="top" secondItem="1dv-kb-Mw4" secondAttribute="bottom" constant="33" id="feW-zi-oPD"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="Ayp-lY-E3c" secondAttribute="trailing" constant="20" id="fyf-bM-aWq"/>
+                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="leading" secondItem="8pL-58-PEO" secondAttribute="trailing" constant="5" id="ggT-oe-432"/>
+                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="top" secondItem="wnE-Im-EvI" secondAttribute="bottom" constant="22" id="kLv-Vw-4wB"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="bottom" secondItem="b7Y-Gq-RXU" secondAttribute="bottom" constant="278" id="ubL-YS-Mtc"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="wnE-Im-EvI" secondAttribute="trailing" constant="20" id="vYR-9d-4rU"/>
                         </constraints>
                     </view>
                     <connections>

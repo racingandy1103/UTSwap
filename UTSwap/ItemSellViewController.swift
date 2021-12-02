@@ -274,7 +274,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func locationPick(_ sender: Any) {
         let controller = UIAlertController( // Alert message
-            title: "Alert Controller",
+            title: "Location Picker",
             message: "Select your desired location",
             preferredStyle: .alert)
         controller.addAction(UIAlertAction(

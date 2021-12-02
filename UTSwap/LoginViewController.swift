@@ -15,7 +15,7 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
+        /*Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
           auth, user in
           
           if user != nil {
@@ -23,7 +23,7 @@ class LoginViewController: BaseViewController {
             self.textFieldLoginUser.text = nil
             self.textFieldLoginPass.text = nil
           }
-        }
+        }*/
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -46,9 +46,9 @@ class LoginViewController: BaseViewController {
             alert.addAction(UIAlertAction(title:"OK",style:.default))
             self.present(alert, animated: true, completion: nil)
           }
-            /*if user != nil {
+            if user != nil {
                 self.performSegue(withIdentifier: "segueIdentifier", sender: nil)
-            }*/
+            }
         }
     }
 

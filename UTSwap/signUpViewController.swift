@@ -38,7 +38,6 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = acctName!
                     changeRequest?.commitChanges(completion: nil)
-                    
                     self.performSegue(withIdentifier: "segue2Identifier", sender: nil)
                     
                     // create an object that holds the data for our notification

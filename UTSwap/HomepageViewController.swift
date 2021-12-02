@@ -27,9 +27,10 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if (Auth.auth().currentUser != nil) { // Sets username
-            accountNameLabel.text = Auth.auth().currentUser?.displayName
+            if (Auth.auth().currentUser?.displayName != nil) {
+                accountNameLabel.text = Auth.auth().currentUser?.displayName
+            }
         }
 
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
