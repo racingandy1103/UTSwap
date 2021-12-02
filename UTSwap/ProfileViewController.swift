@@ -15,6 +15,7 @@ class ProfileViewController: BaseViewController {
 
     @IBOutlet weak var profilePic: UIImageView!
     
+    @IBOutlet weak var accountEmail: UILabel!
     @IBOutlet weak var firstNameField: UITextField!
     
     @IBOutlet weak var lastNameField: UITextField!
@@ -42,6 +43,7 @@ class ProfileViewController: BaseViewController {
         addressField.isEnabled = false
         passwordField.isEnabled = false
         
+        
         firstNameField.placeholder = "Enter New Name"
         lastNameField.placeholder = "Enter New Name"
         addressField.placeholder = "Enter new address"
@@ -56,6 +58,8 @@ class ProfileViewController: BaseViewController {
                 let fname = value?["fname"] as? String ?? ""
                 let lname = value?["lname"] as? String ?? ""
                 let address = value?["address"] as? String ?? ""
+                let userEmail = Auth.auth().currentUser?.email
+                let userPassword =　Auth.auth().currentUser?.
                 
                 self.addressLabel.text = address
                 self.firstNameLabel.text = fname
@@ -70,7 +74,8 @@ class ProfileViewController: BaseViewController {
                 if (address == ""){
                     self.addressLabel.text = "No Address Set"
                 }
-
+                
+                self.accountEmail.text = "\(userEmail ?? "not logged in")"
 
                 // ...
               }) { error in
@@ -84,15 +89,28 @@ class ProfileViewController: BaseViewController {
     
     @IBAction func editProfileInfo(_ sender: Any) {
         
-        firstNameField.isEnabled = true
-        lastNameField.isEnabled = true
-        addressField.isEnabled = true
-        passwordField.isEnabled = true
-        
-        if (Auth.auth().currentUser != nil) {
-            let user = Auth.auth().currentUser
-            self.ref.child("users").child(user!.uid).setValue(["fname": self.firstNameField.text, "lname": self.lastNameField.text, "address": self.addressField.text])
+        if(editProfileButton.titleLabel?.text == "Save Changes"){
+            
+            if (Auth.auth().currentUser != nil) {
+                let user = Auth.auth().currentUser
+                self.ref.child("users").child(user!.uid).setValue(["fname": self.firstNameField.text, "lname": self.lastNameField.text, "address": self.addressField.text])
+            }
+            editProfileButton.setTitle("Edit Profile", for: .normal)
+            deleteAccountButton.isEnabled = true
+            
+        }else{
+            firstNameField.isEnabled = true
+            lastNameField.isEnabled = true
+            addressField.isEnabled = true
+            passwordField.isEnabled = true
+            
+            editProfileButton.setTitle("Save Changes", for: .normal)
+            
+            deleteAccountButton.isEnabled = false
         }
+        
+        
+        
     }
     
     
