@@ -80,7 +80,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Chat"/>
                                 <connections>
-                                    <segue destination="Ijh-UQ-OLj" kind="show" id="yFv-jM-A7w"/>
+                                    <segue destination="Ijh-UQ-OLj" kind="show" identifier="ToItemChatSegue" id="yFv-jM-A7w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-UP-fdz">

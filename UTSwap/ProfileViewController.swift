@@ -59,7 +59,7 @@ class ProfileViewController: BaseViewController {
                 let lname = value?["lname"] as? String ?? ""
                 let address = value?["address"] as? String ?? ""
                 let userEmail = Auth.auth().currentUser?.email
-                let userPassword =　Auth.auth().currentUser?.
+//                let userPassword =　Auth.auth().currentUser?.
                 
                 self.addressLabel.text = address
                 self.firstNameLabel.text = fname

@@ -45,6 +45,9 @@
                                 <state key="normal" title="Chat">
                                     <imageReference key="image" image="message" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PGS-aS-qkm" kind="show" id="fD2-Dq-iy3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-76-Doe">
                                 <rect key="frame" x="40" y="840" width="47" height="22"/>
@@ -372,6 +375,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufw-fk-0N0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4567" y="603"/>
+        </scene>
+        <!--ChatHistoryID-->
+        <scene sceneID="aeY-PR-qtH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" referencedIdentifier="ChatHistoryID" id="PGS-aS-qkm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cWn-Cf-wcp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfQ-kR-HAb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4934" y="828"/>
         </scene>
     </scenes>
     <resources>
