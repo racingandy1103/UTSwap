@@ -126,7 +126,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         
         let user = Auth.auth().currentUser
         if item.itemImgUUID != nil {
-            let imgRef = storageRef.child("images").child(item.ownerKey).child("\(item.itemImgUUID).jpg")
+            let imgRef = storageRef.child("itemimages").child("\(item.itemImgUUID).jpg")
             print(imgRef.fullPath)
             // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
             imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in

@@ -76,7 +76,7 @@ class ItemBuyViewController: BaseViewController {
                     let storageRef = storage.reference()
                     
                     if self.imgUUID != nil {
-                        let imgRef = storageRef.child("images").child(user!.uid).child("\(self.imgUUID!).jpg")
+                        let imgRef = storageRef.child("itemimages").child("\(self.imgUUID!).jpg")
                         print(imgRef.fullPath)
                         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                         imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
@@ -91,8 +91,6 @@ class ItemBuyViewController: BaseViewController {
                           }
                         }
                     }
-                    
-                    
                     // ...
                   }) { error in
                     print(error.localizedDescription)

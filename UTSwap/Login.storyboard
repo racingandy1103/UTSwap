@@ -164,17 +164,8 @@
                                 <rect key="frame" x="132" y="224" width="62" height="17"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-0l-BPY">
-                                <rect key="frame" x="199" y="385" width="195" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="LTd-yR-UWR"/>
-                                    <constraint firstAttribute="width" constant="195" id="nY1-fu-NFB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7Y-Gq-RXU">
-                                <rect key="frame" x="66" y="509" width="282" height="75"/>
+                                <rect key="frame" x="66" y="572" width="282" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Ocq-gx-5gx"/>
                                     <constraint firstAttribute="width" constant="282" id="vHa-3X-dJf"/>
@@ -193,6 +184,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-0l-BPY">
+                                <rect key="frame" x="199" y="379" width="195" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="LTd-yR-UWR"/>
+                                    <constraint firstAttribute="width" constant="195" id="nY1-fu-NFB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f1f-aL-3qB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -206,6 +206,7 @@
                             <constraint firstItem="sNE-jC-Bcw" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="85" id="IqS-3O-lXR"/>
                             <constraint firstItem="Ayp-lY-E3c" firstAttribute="top" secondItem="cbg-rn-IPw" secondAttribute="bottom" constant="78" id="IyS-Zg-lXp"/>
                             <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="hHQ-0l-BPY" secondAttribute="trailing" constant="20" id="MlN-Am-cVr"/>
+                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="top" secondItem="wnE-Im-EvI" secondAttribute="bottom" constant="16" id="N3x-RN-lGF"/>
                             <constraint firstItem="sNE-jC-Bcw" firstAttribute="leading" secondItem="f1f-aL-3qB" secondAttribute="leading" constant="132" id="PF3-kg-ini"/>
                             <constraint firstItem="pnf-Az-jBC" firstAttribute="leading" secondItem="1dv-kb-Mw4" secondAttribute="trailing" constant="5" id="ViX-h0-EEf"/>
                             <constraint firstItem="b7Y-Gq-RXU" firstAttribute="centerX" secondItem="f1f-aL-3qB" secondAttribute="centerX" id="XQy-Vr-QDo"/>
@@ -214,9 +215,8 @@
                             <constraint firstItem="Gm7-lq-NZT" firstAttribute="top" secondItem="1dv-kb-Mw4" secondAttribute="bottom" constant="33" id="feW-zi-oPD"/>
                             <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="Ayp-lY-E3c" secondAttribute="trailing" constant="20" id="fyf-bM-aWq"/>
                             <constraint firstItem="hHQ-0l-BPY" firstAttribute="leading" secondItem="8pL-58-PEO" secondAttribute="trailing" constant="5" id="ggT-oe-432"/>
-                            <constraint firstItem="hHQ-0l-BPY" firstAttribute="top" secondItem="wnE-Im-EvI" secondAttribute="bottom" constant="22" id="kLv-Vw-4wB"/>
-                            <constraint firstItem="f1f-aL-3qB" firstAttribute="bottom" secondItem="b7Y-Gq-RXU" secondAttribute="bottom" constant="278" id="ubL-YS-Mtc"/>
                             <constraint firstItem="f1f-aL-3qB" firstAttribute="trailing" secondItem="wnE-Im-EvI" secondAttribute="trailing" constant="20" id="vYR-9d-4rU"/>
+                            <constraint firstItem="f1f-aL-3qB" firstAttribute="bottom" secondItem="b7Y-Gq-RXU" secondAttribute="bottom" constant="215" id="vnv-Q4-XnR"/>
                         </constraints>
                     </view>
                     <connections>

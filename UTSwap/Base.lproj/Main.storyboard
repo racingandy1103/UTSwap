@@ -17,40 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-MH-L4Z">
-                                <rect key="frame" x="186" y="793" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
-                                <connections>
-                                    <segue destination="ynv-Gh-TWM" kind="show" identifier="ToItemBuySegue" id="mC3-Gb-w9Y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-8y-a7M">
-                                <rect key="frame" x="164" y="732" width="86" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Started"/>
-                                <connections>
-                                    <segue destination="gZd-Y4-89g" kind="show" id="AOa-3W-WzL"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to UTSwap!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-mX-qtF">
-                                <rect key="frame" x="125" y="125" width="164" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to UTSwap!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-mX-qtF">
+                                <rect key="frame" x="117.5" y="125" width="179" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WRq-nY-Apd"/>
+                                    <constraint firstAttribute="width" constant="179" id="fe1-K9-94L"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-9H-LYg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-9H-LYg">
                                 <rect key="frame" x="20" y="186" width="374" height="520"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="520" id="KSt-0D-kT9"/>
+                                    <constraint firstAttribute="width" constant="374" id="fmI-3Q-3Ys"/>
+                                </constraints>
                                 <string key="text">UTSwap is a platform for UT students to buy &amp; sell their new or used goods! The app is 100% created by students and designed for students! Click the gear icon on the top right to customize your own profile account and then hit Get Started below to start buying &amp; selling :)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-8y-a7M">
+                                <rect key="frame" x="110.5" y="737" width="193" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="nPA-TD-rjM"/>
+                                    <constraint firstAttribute="width" constant="193" id="sMU-Y7-4LH"/>
+                                </constraints>
+                                <state key="normal" title="Get Started" backgroundImage="buttonImageTrans">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gZd-Y4-89g" kind="show" id="AOa-3W-WzL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epr-w0-P1v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8dP-9H-LYg" firstAttribute="top" secondItem="xhj-mX-qtF" secondAttribute="bottom" constant="40" id="5LF-7x-cfK"/>
+                            <constraint firstItem="nM9-8y-a7M" firstAttribute="top" secondItem="8dP-9H-LYg" secondAttribute="bottom" constant="31" id="Gfc-3a-LNC"/>
+                            <constraint firstItem="8dP-9H-LYg" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="OBq-4X-zah"/>
+                            <constraint firstItem="xhj-mX-qtF" firstAttribute="top" secondItem="epr-w0-P1v" secondAttribute="top" constant="81" id="WT8-OL-Fgp"/>
+                            <constraint firstItem="xhj-mX-qtF" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="dk7-ff-aOK"/>
+                            <constraint firstItem="nM9-8y-a7M" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="siq-6B-m2u"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X53-yh-U1W"/>
                     <connections>
