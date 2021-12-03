@@ -39,29 +39,30 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         self.picker.delegate = self
         self.picker.dataSource = self
         pickerData = ["Furniture", "Clothing", "Electronics", "Book", "Misc."]
-        
+
         textField.layer.borderColor = UIColor.orange.cgColor
         textField.layer.borderWidth = 1.0
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
         )
         
         priceTextField.layer.borderColor = UIColor.orange.cgColor
         priceTextField.layer.borderWidth = 1.0
         priceTextField.attributedPlaceholder = NSAttributedString(
             string: "Price",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
         )
         
         titleTextField.layer.borderColor = UIColor.orange.cgColor
         titleTextField.layer.borderWidth = 1.0
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
         )
                 
         textView.text = "Enter your description here..."
+        textView.font = UIFont(name:"Courier",size:15)
         textView.textColor = UIColor.lightGray
         textView.delegate = self
         
@@ -89,6 +90,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         if textView.text.isEmpty {
             textView.text = "Enter your description here..."
             textView.textColor = UIColor.lightGray
+            textView.font = UIFont(name:"Courier",size:15)
         }
     }
     
@@ -151,6 +153,15 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     // Creating location picker options
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont (name: "Courier", size: 15)
+        label.text =  pickerData[row]
+        label.textAlignment = .center
+        return label
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
