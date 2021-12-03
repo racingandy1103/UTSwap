@@ -110,7 +110,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                 
                 let imgData = imageView.image?.jpegData(compressionQuality: 0.75)
                 // Create a reference to the file you want to upload
-                let imgRef = storageRef.child("images").child(user!.uid).child("\(imgUUID).jpg")
+                let imgRef = storageRef.child("itemimages").child("\(imgUUID).jpg")
                 
                 let metadata = StorageMetadata()
                 metadata.contentType = "image/jpeg"
