@@ -228,14 +228,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Cq-ZRV">
-                                <rect key="frame" x="9" y="550" width="396" height="162"/>
+                                <rect key="frame" x="9" y="544" width="396" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="396" id="J7R-Ck-0lG"/>
                                     <constraint firstAttribute="height" constant="162" id="a0T-V4-SPG"/>
                                 </constraints>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-Hn-COL">
-                                <rect key="frame" x="38" y="328" width="338" height="128"/>
+                                <rect key="frame" x="38" y="322" width="338" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="a2P-Fd-Tu9"/>
@@ -262,8 +262,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-1i-bwv">
-                                <rect key="frame" x="38" y="299" width="88" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="38" y="299" width="99.5" height="15"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -273,6 +273,7 @@
                                     <constraint firstAttribute="height" constant="166" id="0If-f0-h8z"/>
                                     <constraint firstAttribute="width" constant="338" id="ZKr-c7-IoI"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <state key="normal" title="Upload Image" image="square.and.arrow.up" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
@@ -290,11 +291,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-Ty-TEs">
-                                <rect key="frame" x="82.5" y="475" width="249" height="67"/>
+                                <rect key="frame" x="82.5" y="469" width="249" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="6r7-Vf-fwP"/>
                                     <constraint firstAttribute="width" constant="249" id="Ntz-ze-2VP"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Choose Location" backgroundImage="rectPointer">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -303,11 +305,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj9-oQ-WfY">
-                                <rect key="frame" x="107" y="697" width="200" height="83"/>
+                                <rect key="frame" x="107" y="691" width="200" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ehy-WY-cex"/>
                                     <constraint firstAttribute="height" constant="83" id="weK-Sf-cGT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Save" backgroundImage="buttonImageTrans">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
