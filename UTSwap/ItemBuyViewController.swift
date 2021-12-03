@@ -101,8 +101,8 @@ class ItemBuyViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToItemChatSegue" {
-//            let dest = segue.destination as! ChatViewController
-//            dest.currentItem = self.currentItem
+            let dest = segue.destination as! ChatViewController
+            dest.currentItem = self.currentItem
         }
         
         else if segue.identifier == "ToItemMapSegue" {

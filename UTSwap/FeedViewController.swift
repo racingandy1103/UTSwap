@@ -64,6 +64,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     
     func addItemsFromDBIntoList() {
         if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
             ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
@@ -73,21 +74,23 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
                     let ownerKey = rest.key
-                    for i in rest.children.allObjects as! [DataSnapshot] {
-                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
-                        if cat != nil {
-                            if cat == self.categoryName{
-                                let key = i.key
-                                let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                                let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
-                                
-                                let a = Item(title: title)
-                                a.ownerKey = ownerKey
-                                a.key = key
-                                if imgUUID != nil {
-                                    a.itemImgUUID = imgUUID!
+                    if ownerKey != user?.uid {
+                        for i in rest.children.allObjects as! [DataSnapshot] {
+                            let cat = i.childSnapshot(forPath: "itemCategory").value as? String
+                            if cat != nil {
+                                if cat == self.categoryName{
+                                    let key = i.key
+                                    let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                    let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
+                                    
+                                    let a = Item(title: title)
+                                    a.ownerKey = ownerKey
+                                    a.key = key
+                                    if imgUUID != nil {
+                                        a.itemImgUUID = imgUUID!
+                                    }
+                                    self.items.append(a)
                                 }
-                                self.items.append(a)
                             }
                         }
                     }

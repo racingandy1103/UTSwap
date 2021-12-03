@@ -71,8 +71,7 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
                 let address = value?["address"] as? String ?? ""
                 let userEmail = Auth.auth().currentUser?.email
                 let profileRef = storageRef.child("profilepic").child(user!.uid).child("profilePic.jpg")
-                
-                
+                                
                 self.addressLabel.text = address
                 self.firstNameLabel.text = fname
                 self.lastNameLabel.text = lname
