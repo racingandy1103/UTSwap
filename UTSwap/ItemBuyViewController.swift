@@ -122,6 +122,11 @@ class ItemBuyViewController: BaseViewController {
         controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         controller.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
 
+            // Set item status to sold
+            self.ref = Database.database().reference()
+            var dataToAdd = ["itemStatus": "sold"]
+            self.ref.child("items").child(self.currentItem!.ownerKey).child(self.currentItem!.key).updateChildValues(dataToAdd)
+            
             // create an object that holds the data for our notification
             let notification = UNMutableNotificationContent()
             notification.title = "Purchase Complete"

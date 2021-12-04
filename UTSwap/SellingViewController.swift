@@ -1,8 +1,8 @@
 //
-//  FeedViewController.swift
+//  SellingViewController.swift
 //  UTSwap
 //
-//  Created by Peggy Chiang on 11/14/21.
+//  Created by Peggy Chiang on 12/3/21.
 //
 
 import UIKit
@@ -10,56 +10,33 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-let reuseIdentifier = "MyCell"
-//let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
+let reuseIdentifier2 = "SellCell"
 
+class SellingViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-class Item {
+    @IBOutlet weak var collectionview2: UICollectionView!
+    @IBOutlet weak var segCtrl: UISegmentedControl!
     
-    public var itemTitle:String = ""
-    public var itemImgUUID: String = ""
-    public var key:String = ""
-    public var ownerKey:String = ""
-
-    init(title:String) {
-        self.itemTitle = title
-    }
     
-    func printDesc() {
-        print("Item: \(ownerKey) \(key) \(itemTitle)")
-        
-    }
-
-}
-
-
-class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
     // for DB
     var categoryName = String()
     var ref: DatabaseReference!
     var timgUUID: String? = ""
     var items:[Item] = []
-
-
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    var test = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        /*var itemList:[Item] = []
-        for i in initialItems {
-            itemList.append(i)
-        }*/
+
+        collectionview2.delegate = self
+        collectionview2.dataSource = self
         
         addItemsFromDBIntoList()
-        
-        //self.items = itemList
-        print(self.items)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadInputViews()
     }
     
     func addItemsFromDBIntoList() {
@@ -67,6 +44,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
             ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
+            let user = Auth.auth().currentUser
             ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
                 // Get user value
                 print(snapshot.childrenCount) // I got the expected number of items
@@ -74,10 +52,8 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
                     let ownerKey = rest.key
                     for i in rest.children.allObjects as! [DataSnapshot] {
-                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
                         let status = i.childSnapshot(forPath: "itemStatus").value as? String
-                        if cat != nil && status == nil {
-                            if cat == self.categoryName{
+                        if ownerKey == user?.uid && status == nil {
                                 let key = i.key
                                 let title = i.childSnapshot(forPath: "itemTitle").value as! String
                                 let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
@@ -89,12 +65,12 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                                     a.itemImgUUID = imgUUID!
                                 }
                                 self.items.append(a)
-                            }
+                            
                         }
                     }
                 }
                 
-                self.collectionView.reloadData()
+                self.collectionview2.reloadData()
                 // ...
               }) { error in
                 print(error.localizedDescription)
@@ -111,7 +87,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let containerwidth = collectionView.bounds.width //width of screen
         let cellSize = (containerwidth-10)/2 //same as below
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath) as! SellingCollectionViewCell
         let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: cellSize, height: cellSize));
         
         let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
@@ -139,12 +115,6 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
               }
             }
         }
-        
-    
-        /*let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
-        if img != nil {
-            imageview.image = img
-        }*/
         
         cell.contentView.addSubview(imageview)
         cell.contentView.addSubview(title)
@@ -184,7 +154,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         super.viewDidLayoutSubviews()
         
         let layout = UICollectionViewFlowLayout()
-        let containerwidth = collectionView.bounds.width
+        let containerwidth = collectionview2.bounds.width
         let cellSize = (containerwidth-10)/2
         
         layout.itemSize = CGSize(width: cellSize, height: cellSize)
@@ -192,7 +162,89 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         layout.minimumLineSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        collectionView.collectionViewLayout = layout
+        collectionview2.collectionViewLayout = layout
     }
 
+    @IBAction func onSegChange(_ sender: Any) {
+        switch segCtrl.selectedSegmentIndex {
+        case 0: // For selling items
+            items.removeAll()
+            if (Auth.auth().currentUser != nil) {
+                ref = Database.database().reference()
+                print("reading items from db")
+                ref = Database.database().reference()
+                let user = Auth.auth().currentUser
+                ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
+                    // Get user value
+                    print(snapshot.childrenCount) // I got the expected number of items
+                    
+                    for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                        let ownerKey = rest.key
+                        for i in rest.children.allObjects as! [DataSnapshot] {
+                            let status = i.childSnapshot(forPath: "itemStatus").value as? String
+                            if ownerKey == user?.uid && status == nil {
+                                    let key = i.key
+                                    let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                    let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
+                                    
+                                    let a = Item(title: title)
+                                    a.ownerKey = ownerKey
+                                    a.key = key
+                                    if imgUUID != nil {
+                                        a.itemImgUUID = imgUUID!
+                                    }
+                                    self.items.append(a)
+                                
+                            }
+                        }
+                    }
+                    
+                    self.collectionview2.reloadData()
+                    // ...
+                  }) { error in
+                    print(error.localizedDescription)
+                  }
+            }
+        case 1: // For sold items
+            items.removeAll()
+            if (Auth.auth().currentUser != nil) {
+                ref = Database.database().reference()
+                print("reading items from db")
+                ref = Database.database().reference()
+                let user = Auth.auth().currentUser
+                ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
+                    // Get user value
+                    print(snapshot.childrenCount) // I got the expected number of items
+                    
+                    for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                        let ownerKey = rest.key
+                        for i in rest.children.allObjects as! [DataSnapshot] {
+                            let status = i.childSnapshot(forPath: "itemStatus").value as? String
+                            if ownerKey == user?.uid && status != nil {
+                                    let key = i.key
+                                    let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                    let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
+                                    
+                                    let a = Item(title: title)
+                                    a.ownerKey = ownerKey
+                                    a.key = key
+                                    if imgUUID != nil {
+                                        a.itemImgUUID = imgUUID!
+                                    }
+                                    self.items.append(a)
+                                
+                            }
+                        }
+                    }
+                    
+                    self.collectionview2.reloadData()
+                    // ...
+                  }) { error in
+                    print(error.localizedDescription)
+                  }
+            }
+        default:
+            print("Won't happen")
+        }
+    }
 }
