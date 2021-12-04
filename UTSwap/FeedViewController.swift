@@ -89,6 +89,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                                 if imgUUID != nil {
                                     a.itemImgUUID = imgUUID!
                                 }
+                                self.items.append(a)
                             }
                         }
                     }
