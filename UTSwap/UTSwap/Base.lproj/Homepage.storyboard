@@ -67,13 +67,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selling Goods:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dI-k9-Xap">
-                                <rect key="frame" x="209" y="155" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABZ-cT-ZMz">
                                 <rect key="frame" x="20" y="596" width="374" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,9 +95,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v30-Bn-huT">
-                                <rect key="frame" x="327" y="150" width="46" height="30"/>
+                                <rect key="frame" x="209" y="154" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Selling"/>
+                                <state key="normal" title="Selling Goods"/>
                                 <connections>
                                     <segue destination="awO-af-ayf" kind="show" id="7Kj-AM-i7T"/>
                                 </connections>
@@ -123,7 +116,6 @@
                         <outlet property="likedGoodsLabel" destination="CdE-qc-tRU" id="AFW-Xh-HPy"/>
                         <outlet property="notificationsButton" destination="aF5-76-Doe" id="ZJB-Bi-lm8"/>
                         <outlet property="sellButton" destination="Oge-tA-O0Y" id="Tg5-W0-Pxi"/>
-                        <outlet property="sellingGoodsLabel" destination="7dI-k9-Xap" id="Gm6-Dr-uWZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -290,10 +282,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-kQ-75V">
-                                <rect key="frame" x="40" y="62" width="158" height="34"/>
+                                <rect key="frame" x="40" y="62" width="104" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bmv-yD-tEk"/>
-                                    <constraint firstAttribute="width" constant="158" id="d9L-Aw-v5L"/>
+                                    <constraint firstAttribute="width" constant="104" id="qYZ-hH-I5J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -353,9 +345,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-OH-hxc">
-                                <rect key="frame" x="206" y="62" width="172" height="34"/>
+                                <rect key="frame" x="151" y="62" width="227" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="172" id="Xsj-BL-CDX"/>
+                                    <constraint firstAttribute="width" constant="227" id="NY3-94-1Ow"/>
                                     <constraint firstAttribute="height" constant="34" id="tLe-ZI-gV1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
