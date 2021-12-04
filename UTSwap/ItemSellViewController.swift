@@ -42,6 +42,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
 
         textField.layer.borderColor = UIColor.orange.cgColor
         textField.layer.borderWidth = 1.0
+        textField.font = UIFont(name:"Courier",size:15)
         textField.attributedPlaceholder = NSAttributedString(
             string: "Date & Time",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
@@ -49,6 +50,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         priceTextField.layer.borderColor = UIColor.orange.cgColor
         priceTextField.layer.borderWidth = 1.0
+        priceTextField.font = UIFont(name:"Courier",size:15)
         priceTextField.attributedPlaceholder = NSAttributedString(
             string: "Price",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
@@ -56,6 +58,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         titleTextField.layer.borderColor = UIColor.orange.cgColor
         titleTextField.layer.borderWidth = 1.0
+        titleTextField.font = UIFont(name:"Courier",size:15)
         titleTextField.attributedPlaceholder = NSAttributedString(
             string: "Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name:"Courier",size:15)]
@@ -181,24 +184,36 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
     func createDatePicker() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
+        toolbar.backgroundColor = .white
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: true)
+        doneButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name:"Courier",size:15)], for: .normal)
+        doneButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name:"Courier",size:15)], for: .highlighted)
         
         textField.inputAccessoryView = toolbar
-        
-        textField.inputView = datePicker
-        
         datePicker.datePickerMode = .dateAndTime
-        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.frame.size = CGSize(width: 0, height: 200)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+        textField.inputView = datePicker
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .compact
+            datePicker.backgroundColor = .white
+        } else {
+            // Fallback on earlier versions
+        }
     }
-    
+    @objc func datePickerValueChanged(sender: UIDatePicker){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        textField.text = formatter.string(from: sender.date)
+    }
     @objc func donePressed(){
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-        
         textField.text = formatter.string(from: datePicker.date)
+        textField.font = UIFont(name:"Courier",size:15)
         self.view.endEditing(true)
     }
     
