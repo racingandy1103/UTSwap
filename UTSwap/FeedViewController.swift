@@ -64,6 +64,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     
     func addItemsFromDBIntoList() {
         if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
             ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
@@ -88,7 +89,6 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                                 if imgUUID != nil {
                                     a.itemImgUUID = imgUUID!
                                 }
-                                self.items.append(a)
                             }
                         }
                     }

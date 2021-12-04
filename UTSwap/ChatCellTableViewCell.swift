@@ -9,14 +9,11 @@ import UIKit
 
 class ChatCellTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var chatText: UILabel!
+    @IBOutlet weak var chatLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        if chatText != nil {
-            self.chatText.numberOfLines = 0
-        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -37,10 +37,10 @@
 		D4A005D6274F63F500713368 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */; };
 		D4A005D7274F63F500713368 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A005D3274F63F500713368 /* Chat.storyboard */; };
 		D4A005D8274F63F500713368 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D4274F63F500713368 /* ChatViewController.swift */; };
-		D4A005D9274F63F500713368 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005D5274F63F500713368 /* ChatLogViewController.swift */; };
 		D4A005DC274F644D00713368 /* Transparent.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DA274F644D00713368 /* Transparent.PNG */; };
 		D4A005DD274F644D00713368 /* White.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DB274F644D00713368 /* White.PNG */; };
 		D4A005DF2753080800713368 /* LocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005DE2753080800713368 /* LocationMapViewController.swift */; };
+		D4A005E12759F74C00713368 /* ChatHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005E02759F74C00713368 /* ChatHistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,10 +77,10 @@
 		D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
 		D4A005D3274F63F500713368 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		D4A005D4274F63F500713368 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		D4A005D5274F63F500713368 /* ChatLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		D4A005DA274F644D00713368 /* Transparent.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Transparent.PNG; path = Assets.xcassets/Transparent.PNG; sourceTree = "<group>"; };
 		D4A005DB274F644D00713368 /* White.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White.PNG; path = Assets.xcassets/White.PNG; sourceTree = "<group>"; };
 		D4A005DE2753080800713368 /* LocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewController.swift; sourceTree = "<group>"; };
+		D4A005E02759F74C00713368 /* ChatHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewController.swift; sourceTree = "<group>"; };
 		D511F1DE48FBA3154F3C68F1 /* Pods-UTSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.debug.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +129,6 @@
 				D4A005DB274F644D00713368 /* White.PNG */,
 				D4A005D3274F63F500713368 /* Chat.storyboard */,
 				D4A005D2274F63F500713368 /* ChatCellTableViewCell.swift */,
-				D4A005D5274F63F500713368 /* ChatLogViewController.swift */,
 				D4A005D4274F63F500713368 /* ChatViewController.swift */,
 				D44E714C271A2ED800CC01C2 /* AppDelegate.swift */,
 				D44E714E271A2ED800CC01C2 /* SceneDelegate.swift */,
@@ -159,6 +158,7 @@
 				D44E7155271A2ED800CC01C2 /* UTSwap.xcdatamodeld */,
 				15E6844C273300F3005C245D /* GoogleService-Info.plist */,
 				D4A005DE2753080800713368 /* LocationMapViewController.swift */,
+				D4A005E02759F74C00713368 /* ChatHistoryViewController.swift */,
 			);
 			path = UTSwap;
 			sourceTree = "<group>";
@@ -309,9 +309,9 @@
 				A92F978D274F11C6003E01A1 /* CategoryViewController.swift in Sources */,
 				15914D10275AE5F900BA1950 /* SellingCollectionViewCell.swift in Sources */,
 				150D0B852741B1FE00D76FEB /* FeedCollectionViewCell.swift in Sources */,
-				D4A005D9274F63F500713368 /* ChatLogViewController.swift in Sources */,
 				A92F9791274F3308003E01A1 /* LikedGoodsPopoverTableViewController.swift in Sources */,
 				15914D0E275AE53300BA1950 /* SellingViewController.swift in Sources */,
+				D4A005E12759F74C00713368 /* ChatHistoryViewController.swift in Sources */,
 				D41450C1274767E000888BC8 /* ProfileViewController.swift in Sources */,
 				D42EB5382735C37E00ACEDEC /* ItemBuyViewController.swift in Sources */,
 				D4A005D8274F63F500713368 /* ChatViewController.swift in Sources */,
@@ -488,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JT9WG2H5NK;
 				INFOPLIST_FILE = UTSwap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,6 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JT9WG2H5NK;
 				INFOPLIST_FILE = UTSwap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
