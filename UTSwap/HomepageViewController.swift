@@ -42,6 +42,16 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         profilePicImageView.layer.masksToBounds = true
         profilePicImageView.layer.cornerRadius = profilePicImageView.bounds.height / 2
         
+        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 0, y: buyButton.bounds.size.height / 2), radius: buyButton.bounds.size.width, startAngle: 0.0, endAngle: .pi, clockwise: true)
+        let circleShape = CAShapeLayer()
+        circleShape.path = circlePath.cgPath
+        buyButton.layer.mask = circleShape
+        
+        
+        
+        sellButton.layer.cornerRadius = 0.5 * buyButton.bounds.size.width
+        sellButton.clipsToBounds = true
+        
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         

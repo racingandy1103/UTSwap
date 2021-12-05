@@ -96,7 +96,7 @@ class BaseViewController: UIViewController {
     
     func getFont() -> UIFont? {
         let chatFontName = UserDefaults.standard.string(forKey: "chatFont")
-        if BaseViewController.FONT_NAMES[chatFontName!] != nil {
+        if BaseViewController.FONT_NAMES[chatFontName ?? "Courier"] != nil {
             self.chatFont = BaseViewController.FONT_NAMES[chatFontName!]
         }
         return self.chatFont
