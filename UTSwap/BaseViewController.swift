@@ -34,6 +34,8 @@ class BaseViewController: UIViewController {
     var currentColor: UIColor = .lightGray
     
     public static let BURNT_ORANGE =  UIColor(rgb: 0xBE5801)
+    public static let TAN =  UIColor(red: 248, green: 220, blue: 187)
+
 
     public static let THEME_COLORS = [
         "BLUE": UIColor.blue,
@@ -42,8 +44,18 @@ class BaseViewController: UIViewController {
         "WHITE": UIColor.white,
         "CYAN": UIColor.cyan,
         "ORANGE": BURNT_ORANGE,
-        "GRAY": UIColor.gray
+        "GRAY": TAN
     ]
+    
+    
+    static let FONT_NAMES: [String:UIFont] = [
+        "MONO": UIFont.monospacedSystemFont(ofSize: 12.0, weight: .regular),
+        "SYSTEM": UIFont(name: "Times New Roman", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
+        "MENLO": UIFont(name: "Menlo", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular)
+    ]
+    
+    
+    public var chatFont: UIFont? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +86,26 @@ class BaseViewController: UIViewController {
         return BaseViewController.THEME_COLORS[key ?? "ORANGE"]!
     }
     
+    func setFont(_ fontName: String) {
+        if BaseViewController.FONT_NAMES[fontName] != nil {
+            
+            UserDefaults.standard.setValue(fontName, forKey: "chatFont")
+            self.chatFont = BaseViewController.FONT_NAMES[fontName]
+        }
+    }
+    
+    func getFont() -> UIFont? {
+        let chatFontName = UserDefaults.standard.string(forKey: "chatFont")
+        if BaseViewController.FONT_NAMES[chatFontName!] != nil {
+            self.chatFont = BaseViewController.FONT_NAMES[chatFontName!]
+        }
+        return self.chatFont
+    }
+    
+    func getFontKey() -> String? {
+        let chatFontName = UserDefaults.standard.string(forKey: "chatFont")
+        return chatFontName
+    }
     
     func setTheme(theme: String) {
         let _: Void = UserDefaults.standard.setValue(theme, forKey: "accentColor")

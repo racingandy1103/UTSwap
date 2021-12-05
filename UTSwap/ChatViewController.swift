@@ -162,13 +162,27 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                 cell.textLabel?.numberOfLines = 0
                 cell.detailTextLabel?.text = ""
                 cell.backgroundColor = BaseViewController.THEME_COLORS["GRAY"]
-
             }
+            cell.textLabel?.textColor = UIColor.black
+            cell.detailTextLabel?.textColor = UIColor.black
+        }
+        
+        if (self.getFont() != nil) {
+            print("font")
+            print(self.chatFont)
+            cell.textLabel?.font = self.chatFont
+            cell.detailTextLabel?.font = self.chatFont
+
         }
             
 
 //        cell.backgroundColor = BaseViewController.BURNT_ORANGE
         return cell
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
 }
