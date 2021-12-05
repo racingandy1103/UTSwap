@@ -42,6 +42,8 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
 
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = imageView.bounds.height / 2
         UILabel.appearance().font = UIFont(name: "Courier", size: 15.0)
         usernameLabel.font = UIFont(name: "Courier", size: 23.0)
         taptoUpload.isHidden = true
