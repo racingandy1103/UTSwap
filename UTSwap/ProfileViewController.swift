@@ -16,7 +16,8 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
     
 
     @IBOutlet weak var profilePic: UIImageView!
-    
+    @IBOutlet weak var taptoUpload: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var accountEmail: UILabel!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -24,8 +25,6 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
@@ -44,19 +43,22 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         UILabel.appearance().font = UIFont(name: "Courier", size: 15.0)
+        usernameLabel.font = UIFont(name: "Courier", size: 23.0)
+        taptoUpload.isHidden = true
         firstNameField.isEnabled = false
         lastNameField.isEnabled = false
         addressField.isEnabled = false
-        passwordField.isEnabled = false
+        
         uploadImageButton.isEnabled = false
         uploadImageButton.isHidden = true
+        uploadImageButton.titleEdgeInsets = UIEdgeInsets(top: 30.0, left: 0, bottom: 0, right: 0)
         deleteAccountButton.setTitleColor(.red, for: .normal)
+        
         
         
         firstNameField.placeholder = "Add a First Name"
         lastNameField.placeholder = "Add a Last Name"
         addressField.placeholder = "Enter a new address"
-        passwordField.placeholder = "Enter new password"
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
             let storage = Storage.storage()
@@ -70,23 +72,39 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
                 let lname = value?["lname"] as? String ?? ""
                 let address = value?["address"] as? String ?? ""
                 let userEmail = Auth.auth().currentUser?.email
-                let profileRef = storageRef.child("profilepic").child(user!.uid).child("profilePic.jpg")
-                                
+                let profileRef = storage.reference(withPath: "profilepic/\(user!.uid)/profilePic.jpg")
+                let username = Auth.auth().currentUser?.displayName
+                print(username)
+                print("signal is here")
+                
                 self.addressLabel.text = address
                 self.firstNameLabel.text = fname
                 self.lastNameLabel.text = lname
+                self.usernameLabel.text = username
                 
+                if(lname != ""){
+                    self.lastNameField.text = lname
+                }
+                if(fname != ""){
+                    self.firstNameField.text = fname
+                }
+                if(address != ""){
+                    self.addressField.text = address
+                }
                 
                 // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                profileRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                  if let error = error {
-                    self.imageView.image = UIImage(named: "default-profile-picture.png")
-                  } else {
-                    // Data for "images/island.jpg" is returned
-                    let profImage = UIImage(data: data!)
-                    self.imageView.image = profImage
-                  }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    print("Async after 1 second")
+                    profileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                        if error != nil {
+                            self.imageView.image = UIImage(named: "default-profile-picture")
+                        } else {
+                            self.imageView.image = UIImage(data: data!)
+                        }
+                    }
                 }
+                
+                
                 
                 if (fname == ""){
                     self.firstNameLabel.text = "No First Name Set"
@@ -110,6 +128,8 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
         
     }
     
+    
+    
     @IBAction func editProfileInfo(_ sender: Any) {
         
         if(editProfileButton.titleLabel?.text == "Save Changes"){
@@ -122,6 +142,8 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
                 let storageRef = storage.reference()
                 let imgUUID = UUID.init().uuidString
                 let userUid = Auth.auth().currentUser?.uid
+                
+                
                 if imageView.image != nil {
                     
                     // inspired from firebase documentation
@@ -156,23 +178,23 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
             firstNameField.isEnabled = false
             lastNameField.isEnabled = false
             addressField.isEnabled = false
-            passwordField.isEnabled = false
             uploadImageButton.isHidden = true
             uploadImageButton.isEnabled = false
             deleteAccountButton.isHidden = false
             signOutButton.isHidden = false
+            taptoUpload.isHidden = true
             
         }else{
             firstNameField.isEnabled = true
             lastNameField.isEnabled = true
             addressField.isEnabled = true
-            passwordField.isEnabled = true
             uploadImageButton.isHidden = false
             uploadImageButton.isEnabled = true
             editProfileButton.setTitle("Save Changes", for: .normal)
             
             deleteAccountButton.isHidden = true
             signOutButton.isHidden = true
+            taptoUpload.isHidden = false
         }
         
         
@@ -180,7 +202,45 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
     }
     
     
+    @IBAction func tapSignOut(_ sender: Any) {
+        
+        let controller = UIAlertController(
+            title: "Sign Out",
+            message: "Are you sure you want to sign out of this account?",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "Cancel",
+                                style: .cancel,
+                                handler: nil))
+        controller.addAction(UIAlertAction(
+                                title: "Sign Out",
+                                style: .default,
+                                handler:{(action) in self.signOut()} ))
+        present(controller, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func TapdeleteAccount(_ sender: Any) {
+        
+        let controller = UIAlertController(
+            title: "Warning",
+            message: "Are you sure you want to delete this account? This action cannot be reversed.",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "Cancel",
+                                style: .cancel,
+                                handler: nil))
+        controller.addAction(UIAlertAction(
+                                title: "Delete Account",
+                                style: .destructive,
+                                handler:{(action) in self.deleteAccount()} ))
+        present(controller, animated: true, completion: nil)
+        
+        
+    }
     @IBAction func tapImageUpload(_ sender: Any) {
+        
+        
         let controller = UIAlertController(
             title: "Upload Image",
             message: "Choose a method",
@@ -253,6 +313,36 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
         
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    func signOut(){
+        do
+            {
+                try Auth.auth().signOut()
+                _ = navigationController?.popToRootViewController(animated: true)
+                
+            }
+            catch let error as NSError
+            {
+                print("bye woeld")
+                print(error.localizedDescription)
+            }
+    }
+    
+    func deleteAccount(){
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+            
+            print("Error in deleting account")
+            // An error happened.
+          } else {
+            // Account deleted.
+            print("Account deleted")
+            _ = self.navigationController?.popToRootViewController(animated: true)
+          }
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
