@@ -19,7 +19,9 @@ class ChatThread {
     var type:String = ""
     
     var itemName: String = ""
-    
+    var buyerName: String = ""
+    var sellerName: String = ""
+
     init() {
         
     }
@@ -59,26 +61,50 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
                             chatThread.buyerId = otherKey
                             chatThread.sellerId = user!.uid
                             chatThread.itemId = itemKey
+                            chatThread.type =  "BUYER"
+
                         } else if chatType == "SELLER" {
                             chatThread.buyerId = user!.uid
                             chatThread.sellerId = otherKey
                             chatThread.itemId = itemKey
+                            chatThread.type =  "SELLER"
                         }
+                        
                         print(chatThread.sellerId)
                         print(chatThread.itemId)
 
                         let itemRef = Database.database().reference()
-                        itemRef.child("items").child(chatThread.sellerId).child(chatThread.itemId).observeSingleEvent(of: .value, with: {
+                        itemRef.child("items").child(chatThread.sellerId).child(chatThread.itemId).observeSingleEvent(of: .value, with: { [self]
                             s in
                             
                             print(s.key)
                             print(s.childrenCount)
                             let title = s.childSnapshot(forPath: "itemTitle").value as? String
                             print(title)
-                            chatThread.itemName = title ?? "no title"
+                            chatThread.itemName = title ?? "Item Inquery"
                             
-                            self.chatThreads.append(chatThread)
-                            self.tableView.reloadData()
+                            ref = Database.database().reference()
+                            ref.child("users").child(chatThread.sellerId).observeSingleEvent(of: .value, with: { [self]
+                                userSnapshot in
+                                let avalue = userSnapshot.value as? NSDictionary
+                                let mfname = avalue?["fname"] as? String ?? ""
+                                print(mfname)
+                                chatThread.sellerName = mfname
+                                ref.child("users").child(chatThread.buyerId).observeSingleEvent(of: .value, with: { [self]
+                                    userSnapshot in
+                                    let bvalue = userSnapshot.value as? NSDictionary
+                                    let ofname = bvalue?["fname"] as? String ?? ""
+                                    print(ofname)
+                                    chatThread.buyerName = ofname
+                                    
+                                    self.chatThreads.append(chatThread)
+                                    self.tableView.reloadData()
+                                })
+                               
+                            })
+                            
+                           
+
                         })
                         
                         
@@ -111,7 +137,13 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatHistoryCellID", for: indexPath)
         let row = indexPath.row
         let ct = self.chatThreads[row]
-        cell.textLabel?.text = "\(ct.itemName)"
+        var suffix = ""
+        if ct.type == "SELLER" {
+            suffix = ct.sellerName
+        } else {
+            suffix = ct.buyerName
+        }
+        cell.textLabel?.text = "\(ct.itemName) \(suffix)"
         return cell
     }
     

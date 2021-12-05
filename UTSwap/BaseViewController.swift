@@ -71,7 +71,7 @@ class BaseViewController: UIViewController {
         
     func getCurrentAccentColor() -> UIColor {
         let key = UserDefaults.standard.string(forKey: "accentColor")
-        return BaseViewController.THEME_COLORS[key ?? "BLUE"]!
+        return BaseViewController.THEME_COLORS[key ?? "ORANGE"]!
     }
     
     
@@ -173,7 +173,6 @@ class BaseViewController: UIViewController {
     {
        performSegue(withIdentifier: "toProfileSegue", sender: self)
     }
-
   }
 
 

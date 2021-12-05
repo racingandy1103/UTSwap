@@ -35,6 +35,7 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var chatMessageField: UITextField!
     
+    var nameTable:Dictionary<String, String> = [:]
   
     
     @IBOutlet weak var tableView: UITableView!
@@ -52,13 +53,31 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                 buyerKey = authUser!.uid
                 sellerKey = currentItem!.ownerKey
                 itemKey = currentItem!.key
+                
+                ref = Database.database().reference()
+                ref.child("users").child(sellerKey).observeSingleEvent(of: .value, with: { [self]
+                    userSnapshot in
+                    let avalue = userSnapshot.value as? NSDictionary
+                    let mfname = avalue?["fname"] as? String ?? ""
+                    nameTable[sellerKey] = mfname
+                    ref.child("users").child(buyerKey).observeSingleEvent(of: .value, with: { [self]
+                        userSnapshot in
+                        let bvalue = userSnapshot.value as? NSDictionary
+                        let ofname = bvalue?["fname"] as? String ?? ""
+                        nameTable[buyerKey] = ofname
+                    })
+                   
+                })
+                
             } else if chatThread != nil {
                 let ct =  chatThread!
                 buyerKey = ct.buyerId
                 sellerKey = ct.sellerId
                 itemKey = ct.itemId
+                nameTable[buyerKey] = ct.buyerName
+                nameTable[sellerKey] = ct.sellerName
             }
-            
+                        
             ref = Database.database().reference()
             ref.child("items").child(sellerKey).child(itemKey).child("chats").child(buyerKey).observe(.value, with: { snapshot in
                 // Get user value
@@ -128,7 +147,8 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatLogCellID", for: indexPath)
         let row = indexPath.row
         let ct = self.chats[row]
-        cell.textLabel?.text = ct.msg
+        let prefix = "\(self.nameTable[ct.ownerKey] ?? "")"
+        cell.textLabel?.text = "\(prefix) : \(ct.msg)"
         cell.textLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = ""
         cell.sizeToFit()
