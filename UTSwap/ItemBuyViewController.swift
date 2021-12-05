@@ -23,13 +23,16 @@ class ItemBuyViewController: BaseViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descBox: UITextView!
+    @IBOutlet weak var chatButton: UIButton!
     
     @IBOutlet weak var locationLabel: UILabel!
     
     var imgUUID: String? = ""
-    
+    var itemOwnedByAuthUser = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
         
@@ -37,11 +40,14 @@ class ItemBuyViewController: BaseViewController {
             if (Auth.auth().currentUser != nil && currentItem?.key != "" && currentItem?.ownerKey != "") {
                 print("Item Buy :: reading items from db")
                 let user = Auth.auth().currentUser
+                
                 ref = Database.database().reference()
                 ref.child("items").child(currentItem!.ownerKey).child(currentItem!.key).observeSingleEvent(of: .value, with: { snapshot in
                     // Get user value
                     print(snapshot.childrenCount) // I got the expected number of items
-                    
+
+                        
+                        
                     let title = snapshot.childSnapshot(forPath: "itemTitle").value as? String
                     if title != nil {
                         self.titleLabel.text = title
@@ -95,6 +101,15 @@ class ItemBuyViewController: BaseViewController {
                   }) { error in
                     print(error.localizedDescription)
                   }
+                
+                if currentItem!.ownerKey == user?.uid {
+                    itemOwnedByAuthUser = true
+                }
+                
+                if itemOwnedByAuthUser {
+                    chatButton.isHidden = true
+                }
+                
             }
         }
     }
