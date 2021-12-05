@@ -135,6 +135,7 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                         "msgOwner": user!.uid,
                         "msgTime": Int(Date().timeIntervalSince1970)
                     ])
+                chatMessageField.text = ""
             }
         }
     }
@@ -148,10 +149,23 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
         let row = indexPath.row
         let ct = self.chats[row]
         let prefix = "\(self.nameTable[ct.ownerKey] ?? "")"
-        cell.textLabel?.text = "\(prefix) : \(ct.msg)"
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = ""
-        cell.sizeToFit()
+
+        if(Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            if user?.uid == ct.ownerKey {
+                cell.detailTextLabel?.text = "\(prefix) : \(ct.msg)"
+                cell.detailTextLabel?.numberOfLines = 0
+                cell.textLabel?.text = ""
+                cell.backgroundColor = BaseViewController.BURNT_ORANGE
+            } else {
+                cell.textLabel?.text = "\(prefix) : \(ct.msg)"
+                cell.textLabel?.numberOfLines = 0
+                cell.detailTextLabel?.text = ""
+                cell.backgroundColor = BaseViewController.THEME_COLORS["GRAY"]
+
+            }
+        }
+            
 
 //        cell.backgroundColor = BaseViewController.BURNT_ORANGE
         return cell
