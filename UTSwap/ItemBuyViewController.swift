@@ -18,12 +18,13 @@ class ItemBuyViewController: BaseViewController {
     
     public var currentItem:Item? = nil
     
-    @IBOutlet weak var timeDesc: UITextView!
+    @IBOutlet weak var timeDesc: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descBox: UITextView!
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -51,26 +52,38 @@ class ItemBuyViewController: BaseViewController {
                     let title = snapshot.childSnapshot(forPath: "itemTitle").value as? String
                     if title != nil {
                         self.titleLabel.text = title
+                        self.titleLabel.sizeToFit()
+
                     }
                     
                     let price = snapshot.childSnapshot(forPath: "itemPrice").value as? String
                     if price != nil {
-                        self.priceLabel.text = price
+                        self.priceLabel.text = "Price: $\(price!)"
+                        self.priceLabel.sizeToFit()
                     }
                     
                     let location = snapshot.childSnapshot(forPath: "meetLocation").value as? String
-                    if location != nil {
-                        self.locationLabel.text = location
+                    if location != nil && location != "" {
+                        self.locationLabel.text = "\(location!)"
+                        self.locationLabel.sizeToFit()
+
+                    } else {
+                        self.locationLabel.isHidden = true
+                        self.mapButton.isHidden = true
                     }
                     
-                    let time = snapshot.childSnapshot(forPath: "meetTime").value as? TimeInterval
+                    let time = snapshot.childSnapshot(forPath: "meetTime").value as? String
                     if time != nil {
-                        self.timeDesc.text = Date(timeIntervalSince1970: time!).description(with: Locale.current)
+                        self.timeDesc.text = "Meet at \(time!)"
+                        self.timeDesc.sizeToFit()
+
                     }
                     
                     let desc = snapshot.childSnapshot(forPath: "itemDesc").value as? String
                     if desc != nil {
                         self.descBox.text = desc
+                        self.descBox.sizeToFit()
+
                     }
                    
                     let imgUUID = snapshot.childSnapshot(forPath: "itemImgUUID").value as? String

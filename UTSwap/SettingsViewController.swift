@@ -23,26 +23,61 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var colorBox: UIImageView!
     @IBOutlet weak var darkModeToggle: UISwitch!
     
-    static let fontList: [UIFont] = [
-        UIFont.monospacedSystemFont(ofSize: 12.0, weight: .regular),
-        UIFont.systemFont(ofSize: 12.0, weight: .regular),
-        UIFont(name: "Menlo", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular)
-    ]
-    
-    var currentFont: UIFont = fontList[0]
     
     @IBOutlet weak var themeSegment: UISegmentedControl!
     
     @IBAction func onFontEditPressed(_ sender: Any) {
-        randomizeFont()
+        pickFont()
     }
 
+    func pickFont() {
+        let controller = UIAlertController( // Alert message
+            title: "Font",
+            message: "Select your desired chat font",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "SYSTEM",
+                                style: .default,
+                                handler: {action in
+                                    self.setFont("SYSTEM")
+                                    self.updateFontLabel()
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "MONO",
+                                style: .default,
+                                handler: {action in
+                                    self.setFont("MONO")
+                                    self.updateFontLabel()
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "MENLO",
+                                style: .default,
+                                handler: {action in
+                                    self.setFont("MENLO")
+                                    self.updateFontLabel()
+                                }))
+        controller.addAction(UIAlertAction(
+                                title: "Cancel",
+                                style: .cancel,
+                                handler: nil))
+        present(controller, animated: true, completion: nil)
+    }
 
     
     func randomizeFont() {
-        currentFont = SettingsViewController.fontList.randomElement()!
-//        chatBubble1.font = currentFont
-//        chatBubble2.font = currentFont
+        let key = BaseViewController.FONT_NAMES.randomElement()!.key
+        self.setFont(key)
+        updateFontLabel()
+    }
+    
+    func updateFontLabel() {
+        let key = self.getFontKey()
+        self.fontLabel.text = "Chat Font"
+        if key != nil {
+            self.fontLabel.text = self.fontLabel.text! + " - \(key!)"
+        }
+        self.fontLabel.text =  self.fontLabel.text! + ": "
+        self.fontLabel.font = self.getFont()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,36 +86,7 @@ class SettingsViewController: BaseViewController {
         setUIColors(color: self.getCurrentAccentColor())
         
         self.showProfileButton()
-
-        
-//        chatBubble1.layer.borderWidth = 1.0
-//        chatBubble1.layer.masksToBounds = false
-//        chatBubble1.layer.borderColor = UIColor.white.cgColor
-//        chatBubble1.layer.cornerRadius = chatBubble1.bounds.height / 2
-//        chatBubble1.clipsToBounds = true
-//
-//
-//        chatBubble2.layer.borderWidth = 1.0
-//        chatBubble2.layer.masksToBounds = false
-//        chatBubble2.layer.borderColor = UIColor.white.cgColor
-//        chatBubble2.layer.cornerRadius = chatBubble1.bounds.height / 2
-//        chatBubble2.clipsToBounds = true
-//
-//        chatBubble1.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
-//        chatBubble2.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
-        
-//        var fixedWidth = chatBubble1.frame.size.width
-//        var newSize = chatBubble1.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//        chatBubble1.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-//
-//        fixedWidth = chatBubble2.frame.size.width
-//        newSize = chatBubble2.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//        chatBubble2.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        
-//        chatBubble1.font = currentFont
-//        chatBubble2.font = currentFont
-//
-
+        updateFontLabel()
 
     }
     
@@ -124,6 +130,7 @@ class SettingsViewController: BaseViewController {
         } else {
             self.themeSegment.selectedSegmentIndex = 1
         }
+        updateFontLabel()
     }
     
     

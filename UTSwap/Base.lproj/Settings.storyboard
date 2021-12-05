@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="o1D-5u-iJF">
-                                <rect key="frame" x="78" y="228" width="258" height="595"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="o1D-5u-iJF">
+                                <rect key="frame" x="10" y="144" width="394" height="518"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-CB-Ad7">
-                                        <rect key="frame" x="47.5" y="0.0" width="163" height="65"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="163" height="30.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-AD-mTj">
-                                                <rect key="frame" x="0.0" y="25" width="81.5" height="15"/>
+                                                <rect key="frame" x="0.0" y="8" width="81.5" height="15"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                                <color key="textColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-GI-aV3">
-                                                <rect key="frame" x="114" y="17" width="51" height="31"/>
+                                                <rect key="frame" x="114" y="0.0" width="51" height="30.5"/>
                                                 <connections>
                                                     <action selector="onDarkModeToggle:" destination="jLF-w1-foQ" eventType="valueChanged" id="dSc-IP-RNa"/>
                                                 </connections>
@@ -42,45 +42,45 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Dr-0R-rAH">
-                                        <rect key="frame" x="0.0" y="265" width="258" height="65"/>
+                                        <rect key="frame" x="68" y="230.5" width="258" height="64"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlk-ET-g4d">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="129" height="64"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-Iu-rHn">
-                                                        <rect key="frame" x="37.5" y="0.0" width="54.5" height="15"/>
+                                                        <rect key="frame" x="37.5" y="0.0" width="54.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                                        <color key="textColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S62-jO-1O0">
-                                                        <rect key="frame" x="29" y="15" width="71" height="50"/>
+                                                        <rect key="frame" x="29" y="14" width="71" height="50"/>
                                                         <color key="backgroundColor" name="AccentColor"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-K5-Var">
-                                                <rect key="frame" x="129" y="17" width="129" height="32"/>
+                                                <rect key="frame" x="129" y="16.5" width="129" height="32"/>
                                                 <segments>
                                                     <segment title="Orange"/>
-                                                    <segment title="Gray"/>
+                                                    <segment title="Cream"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aqY-C9-fI5">
-                                        <rect key="frame" x="60" y="530" width="138.5" height="65"/>
+                                        <rect key="frame" x="128" y="494.5" width="138.5" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Font : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-ax-jhu">
-                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                                <color key="textColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-vu-kbr">
-                                                <rect key="frame" x="108.5" y="0.0" width="30" height="65"/>
+                                                <rect key="frame" x="108.5" y="0.0" width="30" height="23.5"/>
                                                 <state key="normal" title="Edit">
-                                                    <color key="titleColor" systemColor="linkColor"/>
+                                                    <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="editFont:" destination="jLF-w1-foQ" eventType="touchUpInside" id="iad-cM-6mF"/>
@@ -95,10 +95,10 @@
                         <viewLayoutGuide key="safeArea" id="vvR-Uh-MkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="o1D-5u-iJF" firstAttribute="leading" secondItem="vvR-Uh-MkH" secondAttribute="leading" constant="78" id="2c1-fg-CUK"/>
-                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="bottom" secondItem="o1D-5u-iJF" secondAttribute="bottom" constant="39" id="Ju4-WC-vfH"/>
-                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="trailing" secondItem="o1D-5u-iJF" secondAttribute="trailing" constant="78" id="jOd-GA-m4c"/>
-                            <constraint firstItem="o1D-5u-iJF" firstAttribute="top" secondItem="vvR-Uh-MkH" secondAttribute="top" constant="184" id="yWi-m0-MX2"/>
+                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="bottom" secondItem="o1D-5u-iJF" secondAttribute="bottom" constant="200" id="7Tv-de-YjR"/>
+                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="trailing" secondItem="o1D-5u-iJF" secondAttribute="trailing" constant="10" id="HF3-7j-LWK"/>
+                            <constraint firstItem="o1D-5u-iJF" firstAttribute="leading" secondItem="vvR-Uh-MkH" secondAttribute="leading" constant="10" id="TPD-Xj-Jap"/>
+                            <constraint firstItem="o1D-5u-iJF" firstAttribute="top" secondItem="vvR-Uh-MkH" secondAttribute="top" constant="100" id="ifP-Ua-ucy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="onj-yu-rQx"/>
@@ -328,9 +328,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
