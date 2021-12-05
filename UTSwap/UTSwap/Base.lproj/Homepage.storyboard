@@ -115,6 +115,7 @@
                         <outlet property="heartButton" destination="Lfd-4q-TtE" id="AW8-pr-Egs"/>
                         <outlet property="likedGoodsLabel" destination="CdE-qc-tRU" id="AFW-Xh-HPy"/>
                         <outlet property="notificationsButton" destination="aF5-76-Doe" id="ZJB-Bi-lm8"/>
+                        <outlet property="profilePicImageView" destination="WLy-wR-66n" id="KNb-LV-Rmv"/>
                         <outlet property="sellButton" destination="Oge-tA-O0Y" id="Tg5-W0-Pxi"/>
                     </connections>
                 </viewController>

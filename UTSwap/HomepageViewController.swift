@@ -7,6 +7,10 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+import AVFoundation
+
 protocol ButtonSetter {
     func setButton()
 }
@@ -15,6 +19,7 @@ protocol ButtonSetter {
 var LikedGoodsSegueID = "LikedGoodsPopoverSegue"
 
 class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, ButtonSetter {
+    @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var accountNameLabel: UILabel!
     @IBOutlet weak var likedGoodsLabel: UILabel!
     @IBOutlet weak var sellingGoodsLabel: UILabel!
@@ -32,7 +37,23 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
                 accountNameLabel.text = Auth.auth().currentUser?.displayName
             }
         }
-
+        
+        if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            let storage = Storage.storage()
+            
+            let profileRef = storage.reference(withPath: "profilepic/\(user!.uid)/profilePic.jpg")
+            
+            profileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                if error != nil {
+                    self.profilePicImageView.image = UIImage(named: "default-profile-picture")
+                } else {
+                    self.profilePicImageView.image = UIImage(data: data!)
+                }
+            }
+        }
+        
+        
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         

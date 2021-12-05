@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Landing View Controller-->
+        <!--LandingViewController-->
         <scene sceneID="IP3-kS-Ejy">
             <objects>
-                <viewController storyboardIdentifier="landingVC" id="qjK-Zw-flz" customClass="LandingViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="landingVC" title="LandingViewController" id="qjK-Zw-flz" customClass="LandingViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0l-TV-Vbx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2111.594202898551" y="55.580357142857139"/>
         </scene>
-        <!--Base View Controller-->
+        <!--BaseViewController-->
         <scene sceneID="fA9-7T-Lyh">
             <objects>
-                <viewController id="9qp-QI-aTe" customClass="BaseViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaseViewController" title="BaseViewController" id="9qp-QI-aTe" customClass="BaseViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8I-c7-bkc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
