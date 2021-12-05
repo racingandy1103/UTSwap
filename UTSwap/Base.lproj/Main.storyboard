@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to UTSwap!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-mX-qtF">
-                                <rect key="frame" x="117.5" y="125" width="179" height="21"/>
+                                <rect key="frame" x="115" y="125" width="184" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="WRq-nY-Apd"/>
-                                    <constraint firstAttribute="width" constant="179" id="fe1-K9-94L"/>
+                                    <constraint firstAttribute="width" constant="184" id="Xe9-Gq-BC4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" constant="374" id="fmI-3Q-3Ys"/>
                                 </constraints>
                                 <string key="text">UTSwap is a platform for UT students to buy &amp; sell their new or used goods! The app is 100% created by students and designed for students! Click the gear icon on the top right to customize your own profile account and then hit Get Started below to start buying &amp; selling :)</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,6 +44,7 @@
                                     <constraint firstAttribute="height" constant="64" id="nPA-TD-rjM"/>
                                     <constraint firstAttribute="width" constant="193" id="sMU-Y7-4LH"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <state key="normal" title="Get Started" backgroundImage="buttonImageTrans">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -56,7 +57,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8dP-9H-LYg" firstAttribute="top" secondItem="xhj-mX-qtF" secondAttribute="bottom" constant="40" id="5LF-7x-cfK"/>
-                            <constraint firstItem="nM9-8y-a7M" firstAttribute="top" secondItem="8dP-9H-LYg" secondAttribute="bottom" constant="31" id="Gfc-3a-LNC"/>
+                            <constraint firstItem="epr-w0-P1v" firstAttribute="bottom" secondItem="nM9-8y-a7M" secondAttribute="bottom" constant="61" id="E8I-Dm-U6h"/>
                             <constraint firstItem="8dP-9H-LYg" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="OBq-4X-zah"/>
                             <constraint firstItem="xhj-mX-qtF" firstAttribute="top" secondItem="epr-w0-P1v" secondAttribute="top" constant="81" id="WT8-OL-Fgp"/>
                             <constraint firstItem="xhj-mX-qtF" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="dk7-ff-aOK"/>

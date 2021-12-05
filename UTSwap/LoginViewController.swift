@@ -15,7 +15,7 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
+        /*Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
           auth, user in
           
           if user != nil {
@@ -23,7 +23,7 @@ class LoginViewController: BaseViewController {
             self.textFieldLoginUser.text = nil
             self.textFieldLoginPass.text = nil
           }
-        }
+        }*/
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -51,18 +51,14 @@ class LoginViewController: BaseViewController {
             }
         }
     }
-
-}
-
-extension LoginViewController: UITextFieldDelegate {
-  
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if textField == textFieldLoginUser {
-      textFieldLoginPass.becomeFirstResponder()
+    
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    if textField == textFieldLoginPass {
-      textField.resignFirstResponder()
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    return true
-  }
+
 }

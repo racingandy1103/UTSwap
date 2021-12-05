@@ -93,6 +93,7 @@ class SellingViewController: BaseViewController, UICollectionViewDelegate, UICol
         let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
         let item = items[indexPath.row]
         title.text = "\(item.itemTitle)"
+        title.font = UIFont(name:"Courier",size:15)
         title.isEditable = false
         
         let storage = Storage.storage()

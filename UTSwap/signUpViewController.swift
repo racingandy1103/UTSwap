@@ -70,4 +70,13 @@ class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.present(alert, animated: true, completion: nil)
           }
     }
+    
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
