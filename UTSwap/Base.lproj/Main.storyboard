@@ -90,15 +90,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
-                                <rect key="frame" x="27" y="146" width="360" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="OIj-n1-w4d"/>
-                                    <constraint firstAttribute="width" constant="360" id="s8w-TR-2bp"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-aG-Rui">
-                                <rect key="frame" x="46" y="492" width="322" height="77"/>
+                                <rect key="frame" x="46" y="522" width="322" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="322" id="TqW-W8-XOQ"/>
                                     <constraint firstAttribute="height" constant="77" id="u4W-3d-cSO"/>
@@ -112,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x97-JH-ptX">
-                                <rect key="frame" x="46" y="577" width="322" height="77"/>
+                                <rect key="frame" x="46" y="607" width="322" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="322" id="boI-Xe-0va"/>
                                     <constraint firstAttribute="height" constant="77" id="joe-Oj-x5o"/>
@@ -125,16 +118,23 @@
                                     <segue destination="Qje-Pc-yTT" kind="show" id="RVs-dn-oXW"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
+                                <rect key="frame" x="18" y="146" width="378" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="378" id="aeU-YI-HfL"/>
+                                    <constraint firstAttribute="height" constant="305" id="rKc-35-nEO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nBG-cB-Yjb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="x97-JH-ptX" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="IOR-AL-RQe"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="top" secondItem="JkM-d5-nQt" secondAttribute="bottom" constant="71" id="8A6-Lm-FmW"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="Gy7-JP-1aT"/>
                             <constraint firstItem="JkM-d5-nQt" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="Rp1-2Q-XUe"/>
-                            <constraint firstItem="PeC-aG-Rui" firstAttribute="top" secondItem="JkM-d5-nQt" secondAttribute="bottom" constant="130" id="YTv-ej-6D8"/>
-                            <constraint firstItem="PeC-aG-Rui" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="fgb-P0-uHb"/>
-                            <constraint firstItem="x97-JH-ptX" firstAttribute="top" secondItem="PeC-aG-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="ktc-in-wND"/>
-                            <constraint firstItem="JkM-d5-nQt" firstAttribute="top" secondItem="nBG-cB-Yjb" secondAttribute="top" constant="58" id="mNQ-cg-aUy"/>
+                            <constraint firstItem="JkM-d5-nQt" firstAttribute="top" secondItem="nBG-cB-Yjb" secondAttribute="top" constant="58" id="XwA-f0-oRQ"/>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="top" secondItem="PeC-aG-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="lZR-6x-SQj"/>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="uMp-2E-d5X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LYf-ww-d8q"/>
