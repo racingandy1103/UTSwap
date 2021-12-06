@@ -10,7 +10,7 @@ import Firebase
 import FirebaseDatabase
 import UserNotifications
 
-class signUpViewController: UIViewController, UNUserNotificationCenterDelegate {
+class signUpViewController: BaseViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var textFieldLoginUser: UITextField!
     @IBOutlet weak var textFieldLoginPass: UITextField!
