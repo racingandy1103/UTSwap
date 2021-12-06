@@ -41,6 +41,7 @@
 		D4A005DD274F644D00713368 /* White.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D4A005DB274F644D00713368 /* White.PNG */; };
 		D4A005DF2753080800713368 /* LocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005DE2753080800713368 /* LocationMapViewController.swift */; };
 		D4A005E12759F74C00713368 /* ChatHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A005E02759F74C00713368 /* ChatHistoryViewController.swift */; };
+		D4A005E3275DE88F00713368 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A005E2275DE88F00713368 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		D4A005DB274F644D00713368 /* White.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White.PNG; path = Assets.xcassets/White.PNG; sourceTree = "<group>"; };
 		D4A005DE2753080800713368 /* LocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewController.swift; sourceTree = "<group>"; };
 		D4A005E02759F74C00713368 /* ChatHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewController.swift; sourceTree = "<group>"; };
+		D4A005E2275DE88F00713368 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D511F1DE48FBA3154F3C68F1 /* Pods-UTSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTSwap.debug.xcconfig"; path = "Target Support Files/Pods-UTSwap/Pods-UTSwap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A005E3275DE88F00713368 /* MapKit.framework in Frameworks */,
 				19935D18EEA0BCC83ADB1925 /* Pods_UTSwap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,7 @@
 		1DF0AA7EA82734484C4EC4AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4A005E2275DE88F00713368 /* MapKit.framework */,
 				B97F0747D5212E3EFF26AF0A /* Pods_UTSwap.framework */,
 			);
 			name = Frameworks;

@@ -10,7 +10,6 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-
 class ChatThread {
     
     var itemId: String = ""
@@ -51,7 +50,6 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
                 for other in snapshot.children.allObjects as! [DataSnapshot] {
                     let otherKey = other.key
                   
-                    
                     for itemChat in other.children.allObjects as! [DataSnapshot] {
                         let itemKey = itemChat.key
                         let chatType = itemChat.value as? String
@@ -102,14 +100,10 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
                                 })
                                
                             })
-                            
-                           
 
                         })
                         
-                        
                     }
-                    
                     
                 }
                 self.tableView.reloadData()
@@ -120,7 +114,6 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
 
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            print("row: \(indexPath.row)")
         let ct = chatThreads[indexPath.row]
@@ -128,7 +121,6 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
         performSegue(withIdentifier: "OnChatHistoryCellPressSegue", sender: self)
     }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatThreads.count
     }
@@ -144,9 +136,9 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
             suffix = " - \(ct.buyerName)"
         }
         cell.textLabel?.text = "\(ct.itemName)\(suffix)"
+        cell.textLabel!.font = BaseViewController.FONT_NAMES["Courier"]
         return cell
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OnChatHistoryCellPressSegue" {
@@ -154,6 +146,5 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
             dest.chatThread = self.currentChatThread
         }
     }
-
     
 }

@@ -66,11 +66,11 @@
                                 <rect key="frame" x="0.0" y="10" width="414" height="822"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="YJf-bV-hBB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-ve-LEd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="17"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -83,7 +83,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" id="PCl-N2-B9d">
-                                        <rect key="frame" x="0.0" y="20.5" width="414" height="767.5"/>
+                                        <rect key="frame" x="0.0" y="17" width="414" height="771"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ymv-US-rVz">
@@ -122,10 +122,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-4q-0kO">
-                                        <rect key="frame" x="0.0" y="788" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="784.5" width="414" height="37.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v6H-97-KNH">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                                <rect key="frame" x="0.0" y="2" width="300" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="22l-OQ-Doc"/>
                                                     <constraint firstAttribute="height" constant="34" id="SaH-Mr-dCi"/>
@@ -134,7 +134,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-jd-76t">
-                                                <rect key="frame" x="300" y="2" width="114" height="30"/>
+                                                <rect key="frame" x="300" y="4" width="114" height="30"/>
                                                 <state key="normal" title="Send"/>
                                                 <connections>
                                                     <action selector="onSendMessage:" destination="Ncq-hm-LAA" eventType="touchUpInside" id="Z99-aA-Db3"/>
@@ -157,8 +157,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7oK-wV-MaD" secondAttribute="trailing" id="BGc-Wv-wsG"/>
-                            <constraint firstAttribute="bottom" secondItem="7oK-wV-MaD" secondAttribute="bottom" id="I81-Wb-7cU"/>
-                            <constraint firstItem="7oK-wV-MaD" firstAttribute="top" secondItem="joG-Wx-zqG" secondAttribute="top" id="NSG-oK-Cnw"/>
                             <constraint firstItem="7oK-wV-MaD" firstAttribute="top" secondItem="joG-Wx-zqG" secondAttribute="top" constant="10" id="h4P-st-WHr"/>
                             <constraint firstItem="7oK-wV-MaD" firstAttribute="leading" secondItem="joG-Wx-zqG" secondAttribute="leading" id="hkN-6p-9mt"/>
                             <constraint firstAttribute="bottom" secondItem="7oK-wV-MaD" secondAttribute="bottom" constant="10" id="kaw-MP-L1S"/>

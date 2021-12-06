@@ -24,8 +24,6 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
     var currentItem:Item? = nil
     var chats:[Chat] = []
     
-    
-    
     var buyerKey = ""
     var sellerKey = ""
     var itemKey = ""
@@ -36,17 +34,45 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var chatMessageField: UITextField!
     
     var nameTable:Dictionary<String, String> = [:]
-  
     
     @IBOutlet weak var tableView: UITableView!
-    
 
     @IBOutlet weak var itemTitleLabel: UILabel!
+    
+    var inputPos = CGFloat()
+    var originalPos = CGFloat()
+
+    @objc func keyboardWillShow(sender: NSNotification) {
+        guard let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        self.view.frame.origin.y = 0.0 - keyboardSize.height
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+     
+        self.view.frame.origin.y = 0.0 
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        print(self.chatMessageField.frame.minY)
+        
+        originalPos = chatMessageField.frame.minY
+        print("originalPos \(originalPos)")
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
         
         if (Auth.auth().currentUser != nil) {
             let authUser = Auth.auth().currentUser
@@ -66,8 +92,8 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                         let bvalue = userSnapshot.value as? NSDictionary
                         let ofname = bvalue?["fname"] as? String ?? ""
                         nameTable[buyerKey] = ofname
+                        self.tableView.reloadData()
                     })
-                   
                 })
                 
             } else if chatThread != nil {
@@ -77,13 +103,19 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                 itemKey = ct.itemId
                 nameTable[buyerKey] = ct.buyerName
                 nameTable[sellerKey] = ct.sellerName
+                itemTitleLabel.text = ct.itemName
+
+            }
+            
+            for key in nameTable.keys {
+                if key == authUser?.uid {
+                    nameTable[key] = "Me"
+                }
             }
                         
             ref = Database.database().reference()
             ref.child("items").child(sellerKey).child(itemKey).child("chats").child(buyerKey).observe(.value, with: { snapshot in
                 // Get user value
-                print("ChatViewController")
-                print(snapshot.childrenCount) // I got the expected number of chats
                 var dbChats:[Chat] = []
                 for rest in snapshot.children.allObjects as! [DataSnapshot] {
                     let msgData = rest.childSnapshot(forPath: "msgData").value as? String
@@ -107,10 +139,8 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
               }
         }
 
-       
     }
    
-    
     func sortChatByTime(c1:Chat, c2:Chat) -> Bool {
         return c1.msgTime < c2.msgTime
     }
@@ -122,15 +152,11 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                 let user = Auth.auth().currentUser
                 ref = Database.database().reference()
                 
-                
-
                 ref.child("chats").child(buyerKey).child(sellerKey).child(itemKey).setValue("SELLER")
                 
                 ref.child("chats").child(sellerKey).child(buyerKey).child(itemKey).setValue("BUYER")
                 
-                
                 let chatMsg = chatMessageField.text
-                print("reading items from db for chats")
                 ref.child("items").child(sellerKey).child(itemKey).child("chats").child(buyerKey).childByAutoId().setValue([
                         "msgData": chatMsg!,
                         "msgOwner": user!.uid,
@@ -169,21 +195,25 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
         }
         
         if (self.getFont() != nil) {
-            print("font")
-            print(self.chatFont)
             cell.textLabel?.font = self.chatFont
             cell.detailTextLabel?.font = self.chatFont
 
         }
-            
-
 //        cell.backgroundColor = BaseViewController.BURNT_ORANGE
         return cell
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        originalPos = chatMessageField.frame.minY
+        print("originalPos \(originalPos)")
     }
     
 }

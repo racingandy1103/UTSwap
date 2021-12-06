@@ -9,8 +9,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
-
 class SettingsViewController: BaseViewController {
     
 //    let colors:[UIColor] = [UIColor.blue, UIColor.white,UIColor.red,UIColor.cyan, UIColor.yellow, UIColor.systemPink, UIColor.orange]
@@ -19,11 +17,8 @@ class SettingsViewController: BaseViewController {
     
     var ref: DatabaseReference!
 
-    
     @IBOutlet weak var colorBox: UIImageView!
     @IBOutlet weak var darkModeToggle: UISwitch!
-    
-    
     @IBOutlet weak var themeSegment: UISegmentedControl!
     
     @IBAction func onFontEditPressed(_ sender: Any) {
@@ -36,24 +31,24 @@ class SettingsViewController: BaseViewController {
             message: "Select your desired chat font",
             preferredStyle: .alert)
         controller.addAction(UIAlertAction(
-                                title: "SYSTEM",
+                                title: "Times New Roman",
                                 style: .default,
                                 handler: {action in
                                     self.setFont("SYSTEM")
                                     self.updateFontLabel()
                                 }))
         controller.addAction(UIAlertAction(
-                                title: "MONO",
+                                title: "Helvetica",
                                 style: .default,
                                 handler: {action in
-                                    self.setFont("MONO")
+                                    self.setFont("Helvetica")
                                     self.updateFontLabel()
                                 }))
         controller.addAction(UIAlertAction(
-                                title: "MENLO",
+                                title: "Courier",
                                 style: .default,
                                 handler: {action in
-                                    self.setFont("MENLO")
+                                    self.setFont("Courier")
                                     self.updateFontLabel()
                                 }))
         controller.addAction(UIAlertAction(
@@ -63,7 +58,6 @@ class SettingsViewController: BaseViewController {
         present(controller, animated: true, completion: nil)
     }
 
-    
     func randomizeFont() {
         let key = BaseViewController.FONT_NAMES.randomElement()!.key
         self.setFont(key)
@@ -87,7 +81,6 @@ class SettingsViewController: BaseViewController {
         
         self.showProfileButton()
         updateFontLabel()
-
     }
     
     func setUIColors(color: UIColor) {
@@ -111,18 +104,6 @@ class SettingsViewController: BaseViewController {
         colorBox.layer.masksToBounds = true
         colorBox.layer.borderWidth = 1.5
         
-        ref = Database.database().reference()
-        ref.child("TestData").observeSingleEvent(of: .value, with: { snapshot in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let data = value?["DataChunk1"] as? String ?? ""
-//            self.chatBubble1.text = data
-            // ...
-          }) { error in
-            print(error.localizedDescription)
-          }
-        
-        
         self.themeSegment.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
         
         if self.getThemeName() == "ORANGE" {
@@ -133,9 +114,7 @@ class SettingsViewController: BaseViewController {
         updateFontLabel()
     }
     
-    
-    @objc func segmentSelected(sender: UISegmentedControl)
-    {
+    @objc func segmentSelected(sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         if index == 0 {
             self.setTheme(theme: "ORANGE")
@@ -144,5 +123,4 @@ class SettingsViewController: BaseViewController {
         }
         setUIColors(color: self.getCurrentAccentColor())
     }
-    
 }
