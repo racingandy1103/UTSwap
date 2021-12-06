@@ -19,10 +19,59 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     var ref: DatabaseReference!
     var timgUUID: String? = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addItemsFromDBIntoList()
+        
+        if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            ref = Database.database().reference()
+            print("reading items from db")
+            ref = Database.database().reference()
+            ref.child("likeditems").child(user!.uid).observeSingleEvent(of: .value, with: { snapshot in
+                // Get user value
+                print("here are childrens" + "\(snapshot.childrenCount)") // I got the expected number of items
+                
+                for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                    let ownerKey = rest.key
+                    
+                        let cat = rest.childSnapshot(forPath: "itemCategory").value as? String
+                        let status = rest.childSnapshot(forPath: "itemStatus").value as? String
+                        
+                            
+                        let key = rest.key
+                        let title = rest.childSnapshot(forPath: "itemTitle").value as! String
+                                
+                                
+                        let a = Item(title: title)
+                        a.ownerKey = ownerKey
+                        a.key = key
+                        a.itemTitle = title
+                        self.likedGoods.append(a)
+                        print(self.likedGoods[0].itemTitle + " what")
+                    
+                }
+                print(self.likedGoods[0].itemTitle + " what" + self.likedGoods[1].itemTitle)
+                
+                
+                // ...
+              }) { error in
+                print(error.localizedDescription)
+              }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            print("Async after 1 second")
+            self.tableView.reloadData()
+            print(self.likedGoods[0].itemTitle)
+            self.tableView.reloadData()
+            }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,47 +81,10 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    func addItemsFromDBIntoList() {
-        if (Auth.auth().currentUser != nil) {
-            let user = Auth.auth().currentUser
-            ref = Database.database().reference()
-            print("reading items from db")
-            ref = Database.database().reference()
-            ref.child("likeditems").observeSingleEvent(of: .value, with: { snapshot in
-                // Get user value
-                print(snapshot.childrenCount) // I got the expected number of items
-                
-                for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                    let ownerKey = rest.key
-                    for i in rest.children.allObjects as! [DataSnapshot] {
-                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
-                        let status = i.childSnapshot(forPath: "itemStatus").value as? String
-                        if cat != nil && status == nil {
-                            
-                                let key = i.key
-                                let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                                
-                                
-                                let a = Item(title: title)
-                                a.ownerKey = ownerKey
-                                a.key = key
-                                
-                                self.likedGoods.append(a)
-                            
-                        }
-                    }
-                }
-                
-                
-                // ...
-              }) { error in
-                print(error.localizedDescription)
-              }
-        }
-
-    }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return likedGoods.count
     }
     

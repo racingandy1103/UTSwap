@@ -30,6 +30,9 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
     @IBOutlet weak var advertiseImageView: UIImageView!
     @IBOutlet weak var heartButton: UIButton!
     
+    var ref: DatabaseReference!
+    var timgUUID: String? = ""
+    var likedGoods : [Item] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         if (Auth.auth().currentUser != nil) { // Sets username
@@ -42,11 +45,11 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         profilePicImageView.layer.masksToBounds = true
         profilePicImageView.layer.cornerRadius = profilePicImageView.bounds.width / 2
         
-        buyButton.layer.cornerRadius = 0.5*buyButton.bounds.size.height
+        buyButton.layer.cornerRadius = 0.5*buyButton.bounds.size.width
         buyButton.clipsToBounds = true
         buyButton.backgroundColor?.withAlphaComponent(0.5)
         
-        sellButton.layer.cornerRadius = 0.5*buyButton.bounds.size.height
+        sellButton.layer.cornerRadius = 0.5*buyButton.bounds.size.width
         sellButton.clipsToBounds = true
         sellButton.backgroundColor?.withAlphaComponent(0.5)
         
@@ -100,6 +103,7 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         UIView.animate(withDuration: 1.0) {
             self.heartButton.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
                         }
+        addItemsFromDBIntoList()
         let vc = LikedGoodsPopoverTableViewController()
         vc.preferredContentSize = CGSize(width: 400,height: 500)
                 vc.modalPresentationStyle = .popover
@@ -119,6 +123,10 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         UIView.animate(withDuration: 1.0) {
             self.heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
                         }
+    }
+    
+    func addItemsFromDBIntoList() {
+        
     }
     
     

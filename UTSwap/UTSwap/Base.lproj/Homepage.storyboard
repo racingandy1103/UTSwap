@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AL-dV-p7O">
-                                <rect key="frame" x="40" y="341" width="135" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AL-dV-p7O">
+                                <rect key="frame" x="58" y="346.33333333333337" width="141" height="283.33333333333337"/>
                                 <color key="backgroundColor" red="0.65256701350000001" green="0.76939731840000003" blue="0.40381739239999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="26"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
@@ -30,10 +29,12 @@
                                     <segue destination="Gvs-K0-NoA" kind="show" identifier="BuySegueIdentifier" id="EhH-UI-RYy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-tA-O0Y">
-                                <rect key="frame" x="246" y="341" width="135" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-tA-O0Y">
+                                <rect key="frame" x="233" y="347" width="141" height="282"/>
                                 <color key="backgroundColor" red="0.96620899439999997" green="0.66600214329999996" blue="0.48281169070000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="5V9-cD-9ck"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="26"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Sell"/>
@@ -41,9 +42,11 @@
                                     <segue destination="82m-11-3Bd" kind="show" id="r4P-wv-6Tx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-ue-VYS">
-                                <rect key="frame" x="347" y="840" width="67" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-ue-VYS">
+                                <rect key="frame" x="352" y="862.66666666666663" width="66" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="59y-8z-er6"/>
+                                </constraints>
                                 <state key="normal" title="Chat">
                                     <imageReference key="image" image="message" catalog="system" symbolScale="large"/>
                                 </state>
@@ -51,32 +54,25 @@
                                     <segue destination="PGS-aS-qkm" kind="show" id="fD2-Dq-iy3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-76-Doe">
-                                <rect key="frame" x="40" y="840" width="47" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Notifications">
-                                    <imageReference key="image" image="bell" catalog="system" symbolScale="large"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-wR-66n">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-wR-66n">
                                 <rect key="frame" x="20" y="67" width="179" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="MLI-br-aWs"/>
+                                    <constraint firstAttribute="width" constant="179" id="ih2-OV-t9E"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTF-GO-afX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTF-GO-afX">
                                 <rect key="frame" x="213" y="67" width="181" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="J1f-Mc-CFl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABZ-cT-ZMz">
-                                <rect key="frame" x="20" y="596" width="374" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-4q-TtE">
-                                <rect key="frame" x="196" y="815" width="38" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Liked Goods">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-4q-TtE">
+                                <rect key="frame" x="198" y="864" width="33.333333333333343" height="22.333333333333371"/>
+                                <state key="normal" title="1">
                                     <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
@@ -86,28 +82,68 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Liked Goods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-qc-tRU">
-                                <rect key="frame" x="115" y="265" width="185" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked Goods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-qc-tRU">
+                                <rect key="frame" x="141" y="291.66666666666669" width="132.33333333333337" height="15.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v30-Bn-huT">
-                                <rect key="frame" x="115" y="294" width="185" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                <state key="normal" title="Selling Goods"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v30-Bn-huT">
+                                <rect key="frame" x="40" y="864.33333333333337" width="49" height="21.666666666666629"/>
+                                <state key="normal" title="sell" image="scroll" catalog="system"/>
                                 <connections>
                                     <segue destination="awO-af-ayf" kind="show" id="7Kj-AM-i7T"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Examples of items sold here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUw-fA-bUD">
-                                <rect key="frame" x="89" y="759" width="253" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples of items sold here!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUw-fA-bUD">
+                                <rect key="frame" x="81.000000000000014" y="818" width="252.33333333333337" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="vaH-b8-Bau"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="15"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ABZ-cT-ZMz">
+                                <rect key="frame" x="20" y="655" width="374" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="NzK-Hq-aR6"/>
+                                    <constraint firstAttribute="height" constant="155" id="Tv4-u9-i2X"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DfJ-Hr-RKu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IUw-fA-bUD" firstAttribute="top" secondItem="ABZ-cT-ZMz" secondAttribute="bottom" constant="8" symbolic="YES" id="2XK-Dv-779"/>
+                            <constraint firstItem="DfJ-Hr-RKu" firstAttribute="bottom" secondItem="eUf-ue-VYS" secondAttribute="bottom" constant="4.3333333333333712" id="3mf-Ag-CBA"/>
+                            <constraint firstItem="CdE-qc-tRU" firstAttribute="centerX" secondItem="ABZ-cT-ZMz" secondAttribute="centerX" id="4We-Kg-JgB"/>
+                            <constraint firstItem="ABZ-cT-ZMz" firstAttribute="top" secondItem="Oge-tA-O0Y" secondAttribute="bottom" constant="26" id="5Y3-FC-oJl"/>
+                            <constraint firstItem="IUw-fA-bUD" firstAttribute="leading" secondItem="DfJ-Hr-RKu" secondAttribute="leading" constant="81" id="ACi-Hj-eOX"/>
+                            <constraint firstItem="WLy-wR-66n" firstAttribute="top" secondItem="DfJ-Hr-RKu" secondAttribute="top" constant="23" id="FCh-cf-9uI"/>
+                            <constraint firstItem="v30-Bn-huT" firstAttribute="leading" secondItem="DfJ-Hr-RKu" secondAttribute="leading" constant="40" id="Gi3-ky-d5Y"/>
+                            <constraint firstItem="DfJ-Hr-RKu" firstAttribute="trailing" secondItem="eUf-ue-VYS" secondAttribute="trailing" constant="10" id="Ieo-6V-Yaa"/>
+                            <constraint firstItem="HTF-GO-afX" firstAttribute="trailing" secondItem="ABZ-cT-ZMz" secondAttribute="trailing" id="Jbe-SL-m20"/>
+                            <constraint firstItem="HTF-GO-afX" firstAttribute="leading" secondItem="WLy-wR-66n" secondAttribute="trailing" constant="14" id="NS2-1L-OwZ"/>
+                            <constraint firstItem="4AL-dV-p7O" firstAttribute="trailing" secondItem="WLy-wR-66n" secondAttribute="trailing" id="NgC-NY-5iR"/>
+                            <constraint firstItem="DfJ-Hr-RKu" firstAttribute="trailing" secondItem="HTF-GO-afX" secondAttribute="trailing" constant="34" id="QNn-nv-0tm"/>
+                            <constraint firstItem="eUf-ue-VYS" firstAttribute="centerY" secondItem="Lfd-4q-TtE" secondAttribute="centerY" id="STU-Iq-C7B"/>
+                            <constraint firstItem="4AL-dV-p7O" firstAttribute="top" secondItem="CdE-qc-tRU" secondAttribute="bottom" constant="39.333333333333314" id="SqA-sa-5mI"/>
+                            <constraint firstItem="Oge-tA-O0Y" firstAttribute="leading" secondItem="4AL-dV-p7O" secondAttribute="trailing" constant="34" id="Tma-2Z-1XN"/>
+                            <constraint firstItem="IUw-fA-bUD" firstAttribute="centerX" secondItem="Lfd-4q-TtE" secondAttribute="centerX" constant="-7.5" id="TwV-RC-STi"/>
+                            <constraint firstItem="Oge-tA-O0Y" firstAttribute="centerY" secondItem="hOs-g6-FJ7" secondAttribute="centerY" constant="25" id="UOI-gG-dFO"/>
+                            <constraint firstItem="4AL-dV-p7O" firstAttribute="centerY" secondItem="Oge-tA-O0Y" secondAttribute="centerY" id="XKE-pt-aZf"/>
+                            <constraint firstItem="HTF-GO-afX" firstAttribute="top" secondItem="WLy-wR-66n" secondAttribute="top" id="ZuX-3g-w7E"/>
+                            <constraint firstItem="CdE-qc-tRU" firstAttribute="top" secondItem="WLy-wR-66n" secondAttribute="bottom" constant="45.666666666666686" id="a86-oZ-5hm"/>
+                            <constraint firstItem="DfJ-Hr-RKu" firstAttribute="trailing" secondItem="Oge-tA-O0Y" secondAttribute="trailing" constant="54" id="bII-rF-tCL"/>
+                            <constraint firstItem="v30-Bn-huT" firstAttribute="centerY" secondItem="Lfd-4q-TtE" secondAttribute="centerY" id="bxo-Cm-Q1F"/>
+                            <constraint firstItem="WLy-wR-66n" firstAttribute="bottom" secondItem="HTF-GO-afX" secondAttribute="bottom" id="iwv-Vf-3xe"/>
+                            <constraint firstItem="4AL-dV-p7O" firstAttribute="leading" secondItem="DfJ-Hr-RKu" secondAttribute="leading" constant="58" id="m5b-VA-nVN"/>
+                            <constraint firstItem="eUf-ue-VYS" firstAttribute="centerY" secondItem="v30-Bn-huT" secondAttribute="centerY" id="mdM-cu-e7U"/>
+                            <constraint firstItem="Oge-tA-O0Y" firstAttribute="top" secondItem="CdE-qc-tRU" secondAttribute="bottom" constant="40" id="nB6-xO-acJ"/>
+                            <constraint firstItem="DfJ-Hr-RKu" firstAttribute="bottom" secondItem="v30-Bn-huT" secondAttribute="bottom" constant="6" id="nBM-Un-Rnp"/>
+                            <constraint firstItem="v30-Bn-huT" firstAttribute="baseline" secondItem="Lfd-4q-TtE" secondAttribute="baseline" id="oV3-Ci-gfD"/>
+                            <constraint firstItem="Lfd-4q-TtE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v30-Bn-huT" secondAttribute="trailing" constant="8" symbolic="YES" id="oif-Ok-NeP"/>
+                            <constraint firstItem="Lfd-4q-TtE" firstAttribute="top" secondItem="IUw-fA-bUD" secondAttribute="bottom" constant="30" id="qVm-yW-l4t"/>
+                            <constraint firstItem="eUf-ue-VYS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lfd-4q-TtE" secondAttribute="trailing" constant="8" symbolic="YES" id="qwD-bm-IZx"/>
+                            <constraint firstItem="v30-Bn-huT" firstAttribute="firstBaseline" secondItem="Lfd-4q-TtE" secondAttribute="firstBaseline" id="yE6-QU-RxM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YiT-XM-1lz"/>
                     <connections>
@@ -117,14 +153,13 @@
                         <outlet property="chatButton" destination="eUf-ue-VYS" id="EaN-aI-XiX"/>
                         <outlet property="heartButton" destination="Lfd-4q-TtE" id="AW8-pr-Egs"/>
                         <outlet property="likedGoodsLabel" destination="CdE-qc-tRU" id="AFW-Xh-HPy"/>
-                        <outlet property="notificationsButton" destination="aF5-76-Doe" id="ZJB-Bi-lm8"/>
                         <outlet property="profilePicImageView" destination="WLy-wR-66n" id="KNb-LV-Rmv"/>
                         <outlet property="sellButton" destination="Oge-tA-O0Y" id="Tg5-W0-Pxi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujc-06-Zk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4566.666666666667" y="77.678571428571431"/>
+            <point key="canvasLocation" x="4565.8878504672894" y="77.105831533477328"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="3dM-eV-kYe">
@@ -456,10 +491,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="buttonImageTrans" width="83" height="83"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="rectPointer" width="188" height="200"/>
+        <image name="scroll" catalog="system" width="128" height="116"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
