@@ -56,7 +56,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
                         print(self.likedGoods[0].itemTitle + " what")
                     
                 }
-                print(self.likedGoods[0].itemTitle + " what" + self.likedGoods[1].itemTitle)
+                //print(self.likedGoods[0].itemTitle + " what" + self.likedGoods[1].itemTitle)
                 
                 
                 // ...
