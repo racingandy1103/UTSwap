@@ -123,7 +123,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
         let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: cellSize, height: cellSize));
         
-        let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-30, width: cellSize, height: cellSize))
+        let title : UITextView = UITextView(frame: CGRect(x: 0, y: cellSize-40, width: cellSize, height: cellSize))
         let item = items[indexPath.row]
         title.text = "\(item.itemTitle)"
         title.font = UIFont(name:"Courier",size:15)
