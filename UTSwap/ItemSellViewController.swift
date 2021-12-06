@@ -81,12 +81,16 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             categories.append(categoryTextField.text!)
         }*/
     }
-    
+
     // Setting textView default color
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = ""
-            textView.textColor = UIColor.black
+            if UserDefaults.standard.bool(forKey: "darkModeOn") == true {
+                textView.textColor = UIColor.white
+            } else {
+                textView.textColor = UIColor.black
+            }
         }
     }
     
