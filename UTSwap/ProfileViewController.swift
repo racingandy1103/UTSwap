@@ -354,6 +354,7 @@ class ProfileViewController: BaseViewController, UITextViewDelegate, UIImagePick
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.showSettingsButton(show: false)
     }
     
