@@ -18,7 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvC-y2-70x">
-                                <rect key="frame" x="174" y="114" width="66" height="22"/>
+                                <rect key="frame" x="102.5" y="114" width="209" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="12b-H9-29T"/>
+                                    <constraint firstAttribute="width" constant="209" id="L3j-5L-gYC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,24 +76,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI2-cV-gdA">
-                                <rect key="frame" x="76.5" y="698" width="31.5" height="13"/>
+                                <rect key="frame" x="36" y="697.5" width="31.5" height="13"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
-                                <rect key="frame" x="77" y="762.5" width="30" height="33.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33.5" id="nNe-NB-lZp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
-                                <state key="normal" title="Buy">
-                                    <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="buyPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="Z9d-CL-h2V"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-kQ-TPF">
                                 <rect key="frame" x="207.5" y="768" width="28.5" height="22"/>
                                 <state key="normal" title="1" image="suit.heart" catalog="system"/>
@@ -110,32 +101,42 @@
                                     <segue destination="oZv-V2-cHn" kind="show" identifier="ToItemMapSegue" id="5hG-kP-nwD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
+                                <rect key="frame" x="96" y="762" width="30" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33.5" id="nNe-NB-lZp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <state key="normal" title="Buy">
+                                    <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="Z9d-CL-h2V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aCj-xo-XC2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="centerX" secondItem="pvC-y2-70x" secondAttribute="centerX" id="46D-ru-39r"/>
-                            <constraint firstItem="tUN-UP-fdz" firstAttribute="centerY" secondItem="MI2-cV-gdA" secondAttribute="centerY" id="5uH-ii-gLr"/>
                             <constraint firstItem="g4I-4x-maF" firstAttribute="top" secondItem="MI2-cV-gdA" secondAttribute="bottom" constant="51.5" id="8bP-nY-zOp"/>
-                            <constraint firstItem="pvC-y2-70x" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="174" id="CdM-vI-QUx"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="trailing" secondItem="tUN-UP-fdz" secondAttribute="trailing" constant="77" id="CkO-vd-2GG"/>
                             <constraint firstItem="Wjt-Jw-kuf" firstAttribute="leading" secondItem="n4t-kQ-TPF" secondAttribute="trailing" constant="68" id="Gaj-0c-3xr"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="top" secondItem="TWp-CS-Hid" secondAttribute="bottom" constant="20" id="I2t-FG-hUx"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="54" id="IAF-o3-2vX"/>
-                            <constraint firstItem="g4I-4x-maF" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="77" id="KRQ-hI-XhS"/>
+                            <constraint firstItem="MI2-cV-gdA" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="36" id="J0n-VV-ejJ"/>
                             <constraint firstItem="ihk-IS-B3m" firstAttribute="top" secondItem="UIX-lo-GFZ" secondAttribute="bottom" constant="44" id="OlK-Zj-omF"/>
                             <constraint firstItem="Wjt-Jw-kuf" firstAttribute="centerY" secondItem="n4t-kQ-TPF" secondAttribute="centerY" id="Q6a-cl-l2R"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="trailing" secondItem="9sB-U5-vZH" secondAttribute="trailing" id="QPl-wt-dfQ"/>
                             <constraint firstItem="TWp-CS-Hid" firstAttribute="top" secondItem="9sB-U5-vZH" secondAttribute="bottom" constant="26" id="T02-V9-YiK"/>
-                            <constraint firstItem="tUN-UP-fdz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MI2-cV-gdA" secondAttribute="trailing" constant="8" symbolic="YES" id="TDI-FO-C4G"/>
                             <constraint firstItem="ihk-IS-B3m" firstAttribute="trailing" secondItem="Wjt-Jw-kuf" secondAttribute="trailing" id="VxR-3i-WPy"/>
                             <constraint firstItem="ihk-IS-B3m" firstAttribute="top" secondItem="keN-Mw-aA6" secondAttribute="top" id="WLe-9A-AV8"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="leading" secondItem="9sB-U5-vZH" secondAttribute="leading" id="ZbV-FQ-exc"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="trailing" secondItem="ihk-IS-B3m" secondAttribute="trailing" constant="73" id="dKu-u5-DSq"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="centerX" secondItem="TWp-CS-Hid" secondAttribute="centerX" id="e67-PE-OCh"/>
                             <constraint firstItem="9sB-U5-vZH" firstAttribute="top" secondItem="pvC-y2-70x" secondAttribute="bottom" constant="22.5" id="eMs-OF-NWf"/>
-                            <constraint firstItem="g4I-4x-maF" firstAttribute="centerX" secondItem="MI2-cV-gdA" secondAttribute="centerX" id="fam-2a-Pdf"/>
                             <constraint firstItem="tUN-UP-fdz" firstAttribute="top" secondItem="ihk-IS-B3m" secondAttribute="bottom" constant="73.5" id="mdW-Ut-McB"/>
+                            <constraint firstItem="g4I-4x-maF" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="96" id="qRc-8J-fTo"/>
                             <constraint firstItem="ihk-IS-B3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="keN-Mw-aA6" secondAttribute="trailing" symbolic="YES" id="rBr-a4-IEj"/>
                             <constraint firstItem="Wjt-Jw-kuf" firstAttribute="top" secondItem="tUN-UP-fdz" secondAttribute="bottom" constant="47.5" id="tuK-59-7yB"/>
                             <constraint firstItem="Wjt-Jw-kuf" firstAttribute="baseline" secondItem="g4I-4x-maF" secondAttribute="baseline" id="tuf-uS-tvN"/>
@@ -160,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lv-59-h6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="-795"/>
+            <point key="canvasLocation" x="1666.6666666666667" y="-795.53571428571422"/>
         </scene>
         <!--Location Map View Controller-->
         <scene sceneID="HuF-p5-Gz2">
