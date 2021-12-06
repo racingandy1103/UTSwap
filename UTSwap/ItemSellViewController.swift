@@ -150,6 +150,8 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
             }
 
             ref.child("items").child(user!.uid).childByAutoId().setValue(dataToAdd)
+            _ = navigationController?.popViewController(animated: true)
+            
 
         }
     }
