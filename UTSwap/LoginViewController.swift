@@ -8,13 +8,24 @@
 import UIKit
 import Firebase
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textFieldLoginUser: UITextField!
     @IBOutlet weak var textFieldLoginPass: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textFieldLoginUser.delegate = self
+        self.textFieldLoginPass.delegate = self
+        
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+
         Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
           auth, user in
           
@@ -24,6 +35,11 @@ class LoginViewController: BaseViewController {
             self.textFieldLoginPass.text = nil
           }
         }
+    }
+    
+    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+        userText.resignFirstResponder()
+        return true;
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -51,18 +67,24 @@ class LoginViewController: BaseViewController {
             }
         }
     }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 
 }
-
-extension LoginViewController: UITextFieldDelegate {
-  
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if textField == textFieldLoginUser {
-      textFieldLoginPass.becomeFirstResponder()
-    }
-    if textField == textFieldLoginPass {
-      textField.resignFirstResponder()
-    }
-    return true
-  }
-}
+//
+//extension LoginViewController: UITextFieldDelegate {
+//
+//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    if textField == textFieldLoginUser {
+//      textFieldLoginPass.becomeFirstResponder()
+//    }
+//    if textField == textFieldLoginPass {
+//      textField.resignFirstResponder()
+//    }
+//    return true
+//  }
+//}

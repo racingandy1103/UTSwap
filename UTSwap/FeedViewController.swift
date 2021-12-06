@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import Foundation
+
 
 let reuseIdentifier = "MyCell"
 //let initialItems = [Item(title:"1"),Item(title:"2"),Item(title:"3")]
@@ -40,6 +42,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
     var ref: DatabaseReference!
     var timgUUID: String? = ""
     var items:[Item] = []
+    var itemImages:Dictionary<String,UIImage> = [:]
 
 
     
@@ -55,8 +58,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         for i in initialItems {
             itemList.append(i)
         }*/
-        
-        addItemsFromDBIntoList()
+        self.addItemsFromDBIntoList()
         
         //self.items = itemList
         print(self.items)
@@ -68,44 +70,50 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
             ref = Database.database().reference()
             print("reading items from db")
             ref = Database.database().reference()
-            ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
-                // Get user value
-                print(snapshot.childrenCount) // I got the expected number of items
-                
-                for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                    let ownerKey = rest.key
-                    for i in rest.children.allObjects as! [DataSnapshot] {
-                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
-                        let status = i.childSnapshot(forPath: "itemStatus").value as? String
-                        if cat != nil && status == nil {
-                            if cat == self.categoryName{
-                                let key = i.key
-                                let title = i.childSnapshot(forPath: "itemTitle").value as! String
-                                let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
-                                
-                                let a = Item(title: title)
-                                a.ownerKey = ownerKey
-                                a.key = key
-                                if imgUUID != nil {
-                                    a.itemImgUUID = imgUUID!
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.ref.child("items").observeSingleEvent(of: .value, with: { snapshot in
+                    // Get user value
+                    print(snapshot.childrenCount) // I got the expected number of items
+                    
+                    for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                        let ownerKey = rest.key
+                        for i in rest.children.allObjects as! [DataSnapshot] {
+                            let cat = i.childSnapshot(forPath: "itemCategory").value as? String
+                            let status = i.childSnapshot(forPath: "itemStatus").value as? String
+                            if cat != nil && status == nil {
+                                if cat == self.categoryName{
+                                    let key = i.key
+                                    let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                    let imgUUID = i.childSnapshot(forPath: "itemImgUUID").value as? String
+                                    
+                                    let a = Item(title: title)
+                                    a.ownerKey = ownerKey
+                                    a.key = key
+                                    if imgUUID != nil {
+                                        a.itemImgUUID = imgUUID!
+                                    }
+                                    self.items.append(a)
+                                    DispatchQueue.main.async {
+                                        self.collectionView.reloadData()
+                                    }
                                 }
-                                self.items.append(a)
                             }
                         }
                     }
-                }
+                                    // ...
+                  }) { error in
+                    print(error.localizedDescription)
+                  }
                 
-                self.collectionView.reloadData()
-                // ...
-              }) { error in
-                print(error.localizedDescription)
-              }
+            }
+         
         }
 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        items.count
+        return self.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -123,23 +131,31 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
-        
+       
         let user = Auth.auth().currentUser
-        if item.itemImgUUID != nil {
-            let imgRef = storageRef.child("itemimages").child("\(item.itemImgUUID).jpg")
-            print(imgRef.fullPath)
-            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-            imgRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-              if let error = error {
-                // Uh-oh, an error occurred!
-                print("error \(error)")
-              } else {
-                // Data for "images/island.jpg" is returned
-                let pic = UIImage(data: data!)
-                imageview.image = pic
-              }
+        if item.itemImgUUID != nil && itemImages[item.itemImgUUID] == nil {
+            DispatchQueue.global(qos: .background).async {
+                let imgRef = storageRef.child("itemimages").child("\(item.itemImgUUID).jpg")
+                print(imgRef.fullPath)
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                imgRef.getData(maxSize: 5 * 1024 * 1024) { [self] data, error in
+                  if let error = error {
+                    // Uh-oh, an error occurred!
+                    print("error \(error)")
+                  } else {
+                    // Data for "images/island.jpg" is returned
+                    let pic = UIImage(data: data!)
+                    itemImages[item.itemImgUUID] = pic
+                    DispatchQueue.main.async {
+                        imageview.image = itemImages[item.itemImgUUID]
+                    }
+                  }
+                }
             }
+        } else {
+            imageview.image = itemImages[item.itemImgUUID]
         }
+            
         
     
         /*let img : UIImage? = UIImage(named:"furniture\(indexPath.row)")
