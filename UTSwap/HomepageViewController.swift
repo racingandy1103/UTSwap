@@ -69,6 +69,7 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if (Auth.auth().currentUser != nil) {
             let user = Auth.auth().currentUser
             let storage = Storage.storage()
