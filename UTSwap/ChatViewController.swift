@@ -41,6 +41,7 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
 
+    @IBOutlet weak var itemTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,7 @@ class ChatViewController:  BaseViewController, UITableViewDelegate, UITableViewD
                 buyerKey = authUser!.uid
                 sellerKey = currentItem!.ownerKey
                 itemKey = currentItem!.key
-                
+                itemTitleLabel.text = currentItem?.itemTitle
                 ref = Database.database().reference()
                 ref.child("users").child(sellerKey).observeSingleEvent(of: .value, with: { [self]
                     userSnapshot in

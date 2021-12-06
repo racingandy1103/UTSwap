@@ -51,6 +51,7 @@ class BaseViewController: UIViewController {
     static let FONT_NAMES: [String:UIFont] = [
         "MONO": UIFont.monospacedSystemFont(ofSize: 12.0, weight: .regular),
         "SYSTEM": UIFont(name: "Times New Roman", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
+        "Courier": UIFont(name: "Courier", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
         "MENLO": UIFont(name: "Menlo", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular)
     ]
     
@@ -95,7 +96,7 @@ class BaseViewController: UIViewController {
     
     func getFont() -> UIFont? {
         let chatFontName = UserDefaults.standard.string(forKey: "chatFont")
-        if BaseViewController.FONT_NAMES[chatFontName ?? "Courier"] != nil {
+        if chatFontName != nil && BaseViewController.FONT_NAMES[chatFontName!] != nil {
             self.chatFont = BaseViewController.FONT_NAMES[chatFontName!]
         }
         return self.chatFont

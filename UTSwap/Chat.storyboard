@@ -65,12 +65,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7oK-wV-MaD">
                                 <rect key="frame" x="0.0" y="10" width="414" height="822"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="YJf-bV-hBB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-ve-LEd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Brq-ve-LEd" secondAttribute="trailing" id="3El-zK-v4m"/>
+                                            <constraint firstItem="Brq-ve-LEd" firstAttribute="top" secondItem="YJf-bV-hBB" secondAttribute="top" constant="30" id="6db-um-267"/>
+                                            <constraint firstItem="Brq-ve-LEd" firstAttribute="leading" secondItem="YJf-bV-hBB" secondAttribute="leading" id="Ibb-N2-YKe"/>
+                                            <constraint firstAttribute="bottom" secondItem="Brq-ve-LEd" secondAttribute="bottom" constant="30" id="Tnj-te-ZnQ"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" id="PCl-N2-B9d">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="414" height="767.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ymv-US-rVz">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="767.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="iEe-vt-tJ0"/>
@@ -132,6 +149,7 @@
                                 <constraints>
                                     <constraint firstItem="Rs0-4q-0kO" firstAttribute="leading" secondItem="7oK-wV-MaD" secondAttribute="leading" id="Mrr-kn-u3I"/>
                                     <constraint firstAttribute="trailing" secondItem="Rs0-4q-0kO" secondAttribute="trailing" id="PDL-Ua-2vu"/>
+                                    <constraint firstItem="PCl-N2-B9d" firstAttribute="top" secondItem="YJf-bV-hBB" secondAttribute="bottom" constant="20" id="nD2-lD-hyj"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -149,6 +167,7 @@
                     <navigationItem key="navigationItem" id="Wdp-S9-nTd"/>
                     <connections>
                         <outlet property="chatMessageField" destination="v6H-97-KNH" id="pHR-2K-CT5"/>
+                        <outlet property="itemTitleLabel" destination="Brq-ve-LEd" id="khj-ok-rjz"/>
                         <outlet property="tableView" destination="ymv-US-rVz" id="MkO-s7-fXM"/>
                     </connections>
                 </viewController>

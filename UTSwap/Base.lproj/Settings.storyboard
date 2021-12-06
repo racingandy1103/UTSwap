@@ -19,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="o1D-5u-iJF">
-                                <rect key="frame" x="10" y="144" width="394" height="518"/>
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-CB-Ad7">
-                                        <rect key="frame" x="115.5" y="0.0" width="163" height="30.5"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="163" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-AD-mTj">
-                                                <rect key="frame" x="0.0" y="8" width="81.5" height="15"/>
+                                                <rect key="frame" x="0.0" y="16" width="81.5" height="15"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-GI-aV3">
-                                                <rect key="frame" x="114" y="0.0" width="51" height="30.5"/>
+                                                <rect key="frame" x="114" y="8" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="onDarkModeToggle:" destination="jLF-w1-foQ" eventType="valueChanged" id="dSc-IP-RNa"/>
                                                 </connections>
@@ -42,25 +42,25 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Dr-0R-rAH">
-                                        <rect key="frame" x="68" y="230.5" width="258" height="64"/>
+                                        <rect key="frame" x="68" y="247" width="258" height="98.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlk-ET-g4d">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="64"/>
+                                                <rect key="frame" x="0.0" y="17" width="129" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-Iu-rHn">
-                                                        <rect key="frame" x="37.5" y="0.0" width="54.5" height="14"/>
+                                                        <rect key="frame" x="37.5" y="0.0" width="54.5" height="15"/>
                                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S62-jO-1O0">
-                                                        <rect key="frame" x="29" y="14" width="71" height="50"/>
+                                                        <rect key="frame" x="29" y="15" width="71" height="50"/>
                                                         <color key="backgroundColor" name="AccentColor"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-K5-Var">
-                                                <rect key="frame" x="129" y="16.5" width="129" height="32"/>
+                                                <rect key="frame" x="129" y="34" width="129" height="32"/>
                                                 <segments>
                                                     <segment title="Orange"/>
                                                     <segment title="Cream"/>
@@ -69,16 +69,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aqY-C9-fI5">
-                                        <rect key="frame" x="128" y="494.5" width="138.5" height="23.5"/>
+                                        <rect key="frame" x="128" y="545.5" width="138.5" height="252.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Font : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-ax-jhu">
-                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="252.5"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-vu-kbr">
-                                                <rect key="frame" x="108.5" y="0.0" width="30" height="23.5"/>
+                                                <rect key="frame" x="108.5" y="0.0" width="30" height="252.5"/>
                                                 <state key="normal" title="Edit">
                                                     <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
@@ -95,10 +95,10 @@
                         <viewLayoutGuide key="safeArea" id="vvR-Uh-MkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="bottom" secondItem="o1D-5u-iJF" secondAttribute="bottom" constant="200" id="7Tv-de-YjR"/>
+                            <constraint firstItem="o1D-5u-iJF" firstAttribute="top" secondItem="vvR-Uh-MkH" secondAttribute="top" constant="10" id="Dl1-dE-r7m"/>
                             <constraint firstItem="vvR-Uh-MkH" firstAttribute="trailing" secondItem="o1D-5u-iJF" secondAttribute="trailing" constant="10" id="HF3-7j-LWK"/>
                             <constraint firstItem="o1D-5u-iJF" firstAttribute="leading" secondItem="vvR-Uh-MkH" secondAttribute="leading" constant="10" id="TPD-Xj-Jap"/>
-                            <constraint firstItem="o1D-5u-iJF" firstAttribute="top" secondItem="vvR-Uh-MkH" secondAttribute="top" constant="100" id="ifP-Ua-ucy"/>
+                            <constraint firstItem="vvR-Uh-MkH" firstAttribute="bottom" secondItem="o1D-5u-iJF" secondAttribute="bottom" constant="10" id="nzb-1W-hgS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="onj-yu-rQx"/>
