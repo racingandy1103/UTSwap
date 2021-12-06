@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             self.textFieldLoginUser.text = nil
             self.textFieldLoginPass.text = nil
           }
-        }
+        }*/
     }
     
     func textFieldShouldReturn(userText: UITextField!) -> Bool {
@@ -72,6 +72,15 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

@@ -9,32 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Landing View Controller-->
+        <!--LandingViewController-->
         <scene sceneID="IP3-kS-Ejy">
             <objects>
-                <viewController storyboardIdentifier="landingVC" id="qjK-Zw-flz" customClass="LandingViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="landingVC" title="LandingViewController" id="qjK-Zw-flz" customClass="LandingViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0l-TV-Vbx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to UTSwap!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhj-mX-qtF">
-                                <rect key="frame" x="117.5" y="125" width="179" height="21"/>
+                                <rect key="frame" x="115" y="125" width="184" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="WRq-nY-Apd"/>
-                                    <constraint firstAttribute="width" constant="179" id="fe1-K9-94L"/>
+                                    <constraint firstAttribute="width" constant="184" id="Xe9-Gq-BC4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-9H-LYg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-9H-LYg">
                                 <rect key="frame" x="20" y="186" width="374" height="520"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="520" id="KSt-0D-kT9"/>
                                     <constraint firstAttribute="width" constant="374" id="fmI-3Q-3Ys"/>
                                 </constraints>
                                 <string key="text">UTSwap is a platform for UT students to buy &amp; sell their new or used goods! The app is 100% created by students and designed for students! Click the gear icon on the top right to customize your own profile account and then hit Get Started below to start buying &amp; selling :)</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,6 +44,7 @@
                                     <constraint firstAttribute="height" constant="64" id="nPA-TD-rjM"/>
                                     <constraint firstAttribute="width" constant="193" id="sMU-Y7-4LH"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <state key="normal" title="Get Started" backgroundImage="buttonImageTrans">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -51,15 +52,24 @@
                                     <segue destination="gZd-Y4-89g" kind="show" id="AOa-3W-WzL"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Phr-dO-8zu">
+                                <rect key="frame" x="65" y="154" width="284" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="5YU-cn-uDO"/>
+                                    <constraint firstAttribute="width" constant="284" id="PtJ-B0-OBS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epr-w0-P1v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Phr-dO-8zu" firstAttribute="top" secondItem="xhj-mX-qtF" secondAttribute="bottom" constant="8" symbolic="YES" id="49V-2O-NJG"/>
                             <constraint firstItem="8dP-9H-LYg" firstAttribute="top" secondItem="xhj-mX-qtF" secondAttribute="bottom" constant="40" id="5LF-7x-cfK"/>
-                            <constraint firstItem="nM9-8y-a7M" firstAttribute="top" secondItem="8dP-9H-LYg" secondAttribute="bottom" constant="31" id="Gfc-3a-LNC"/>
+                            <constraint firstItem="epr-w0-P1v" firstAttribute="bottom" secondItem="nM9-8y-a7M" secondAttribute="bottom" constant="61" id="E8I-Dm-U6h"/>
                             <constraint firstItem="8dP-9H-LYg" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="OBq-4X-zah"/>
                             <constraint firstItem="xhj-mX-qtF" firstAttribute="top" secondItem="epr-w0-P1v" secondAttribute="top" constant="81" id="WT8-OL-Fgp"/>
                             <constraint firstItem="xhj-mX-qtF" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="dk7-ff-aOK"/>
+                            <constraint firstItem="Phr-dO-8zu" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="gAj-Ub-d7i"/>
                             <constraint firstItem="nM9-8y-a7M" firstAttribute="centerX" secondItem="epr-w0-P1v" secondAttribute="centerX" id="siq-6B-m2u"/>
                         </constraints>
                     </view>
@@ -72,23 +82,16 @@
             </objects>
             <point key="canvasLocation" x="2111.594202898551" y="55.580357142857139"/>
         </scene>
-        <!--Base View Controller-->
+        <!--BaseViewController-->
         <scene sceneID="fA9-7T-Lyh">
             <objects>
-                <viewController id="9qp-QI-aTe" customClass="BaseViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaseViewController" title="BaseViewController" id="9qp-QI-aTe" customClass="BaseViewController" customModule="UTSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8I-c7-bkc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
-                                <rect key="frame" x="27" y="146" width="360" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="OIj-n1-w4d"/>
-                                    <constraint firstAttribute="width" constant="360" id="s8w-TR-2bp"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-aG-Rui">
-                                <rect key="frame" x="46" y="492" width="322" height="77"/>
+                                <rect key="frame" x="46" y="522" width="322" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="322" id="TqW-W8-XOQ"/>
                                     <constraint firstAttribute="height" constant="77" id="u4W-3d-cSO"/>
@@ -102,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x97-JH-ptX">
-                                <rect key="frame" x="46" y="577" width="322" height="77"/>
+                                <rect key="frame" x="46" y="607" width="322" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="322" id="boI-Xe-0va"/>
                                     <constraint firstAttribute="height" constant="77" id="joe-Oj-x5o"/>
@@ -115,16 +118,23 @@
                                     <segue destination="Qje-Pc-yTT" kind="show" id="RVs-dn-oXW"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transparent.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-d5-nQt">
+                                <rect key="frame" x="18" y="146" width="378" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="378" id="aeU-YI-HfL"/>
+                                    <constraint firstAttribute="height" constant="305" id="rKc-35-nEO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nBG-cB-Yjb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="x97-JH-ptX" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="IOR-AL-RQe"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="top" secondItem="JkM-d5-nQt" secondAttribute="bottom" constant="71" id="8A6-Lm-FmW"/>
+                            <constraint firstItem="PeC-aG-Rui" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="Gy7-JP-1aT"/>
                             <constraint firstItem="JkM-d5-nQt" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="Rp1-2Q-XUe"/>
-                            <constraint firstItem="PeC-aG-Rui" firstAttribute="top" secondItem="JkM-d5-nQt" secondAttribute="bottom" constant="130" id="YTv-ej-6D8"/>
-                            <constraint firstItem="PeC-aG-Rui" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="fgb-P0-uHb"/>
-                            <constraint firstItem="x97-JH-ptX" firstAttribute="top" secondItem="PeC-aG-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="ktc-in-wND"/>
-                            <constraint firstItem="JkM-d5-nQt" firstAttribute="top" secondItem="nBG-cB-Yjb" secondAttribute="top" constant="58" id="mNQ-cg-aUy"/>
+                            <constraint firstItem="JkM-d5-nQt" firstAttribute="top" secondItem="nBG-cB-Yjb" secondAttribute="top" constant="58" id="XwA-f0-oRQ"/>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="top" secondItem="PeC-aG-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="lZR-6x-SQj"/>
+                            <constraint firstItem="x97-JH-ptX" firstAttribute="centerX" secondItem="nBG-cB-Yjb" secondAttribute="centerX" id="uMp-2E-d5X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LYf-ww-d8q"/>

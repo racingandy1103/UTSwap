@@ -33,6 +33,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UILabel.appearance().font = UIFont(name: "Courier", size: 15.0)
         self.textView.layer.borderColor = UIColor.orange.cgColor
         self.textView.layer.borderWidth = 1
         
@@ -192,7 +193,7 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
         
         textField.inputAccessoryView = toolbar
         datePicker.datePickerMode = .dateAndTime
-        datePicker.frame.size = CGSize(width: 0, height: 200)
+        datePicker.frame.size = CGSize(width: 0, height: 100)
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
         textField.inputView = datePicker
         if #available(iOS 14.0, *) {
@@ -336,5 +337,14 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
                                 style: .cancel,
                                 handler: nil))
         present(controller, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

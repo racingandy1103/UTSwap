@@ -7,6 +7,10 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+import AVFoundation
+
 protocol ButtonSetter {
     func setButton()
 }
@@ -15,6 +19,7 @@ protocol ButtonSetter {
 var LikedGoodsSegueID = "LikedGoodsPopoverSegue"
 
 class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, ButtonSetter {
+    @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var accountNameLabel: UILabel!
     @IBOutlet weak var likedGoodsLabel: UILabel!
     @IBOutlet weak var sellingGoodsLabel: UILabel!
@@ -32,7 +37,21 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
                 accountNameLabel.text = Auth.auth().currentUser?.displayName
             }
         }
-
+        
+        
+        profilePicImageView.layer.masksToBounds = true
+        profilePicImageView.layer.cornerRadius = profilePicImageView.bounds.height / 2
+        
+        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 0, y: buyButton.bounds.size.height / 2), radius: buyButton.bounds.size.width, startAngle: 0.0, endAngle: .pi, clockwise: true)
+        let circleShape = CAShapeLayer()
+        circleShape.path = circlePath.cgPath
+        buyButton.layer.mask = circleShape
+        
+        
+        
+        sellButton.layer.cornerRadius = 0.5 * buyButton.bounds.size.width
+        sellButton.clipsToBounds = true
+        
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
         
@@ -47,6 +66,23 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         advertiseImageView.startAnimating()
         
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            let storage = Storage.storage()
+            
+            let profileRef = storage.reference(withPath: "profilepic/\(user!.uid)/profilePic.jpg")
+            
+            profileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                if error != nil {
+                    self.profilePicImageView.image = UIImage(named: "default-profile-picture")
+                } else {
+                    self.profilePicImageView.image = UIImage(data: data!)
+                }
+            }
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == LikedGoodsSegueID {
             let popoverVC = segue.destination as! LikedGoodsPopoverTableViewController
