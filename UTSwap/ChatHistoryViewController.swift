@@ -139,11 +139,11 @@ class ChatHistoryViewController:  BaseViewController, UITableViewDelegate, UITab
         let ct = self.chatThreads[row]
         var suffix = ""
         if ct.type == "SELLER" {
-            suffix = ct.sellerName
+            suffix = " - \(ct.sellerName)"
         } else {
-            suffix = ct.buyerName
+            suffix = " - \(ct.buyerName)"
         }
-        cell.textLabel?.text = "\(ct.itemName) \(suffix)"
+        cell.textLabel?.text = "\(ct.itemName)\(suffix)"
         return cell
     }
     

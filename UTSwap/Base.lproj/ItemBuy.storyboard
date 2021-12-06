@@ -40,8 +40,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-Jw-kuf">
-                                <rect key="frame" x="289" y="792" width="52" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-Jw-kuf">
+                                <rect key="frame" x="264" y="792" width="78" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Chat">
                                     <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -51,13 +51,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihk-IS-B3m">
-                                <rect key="frame" x="271" y="603" width="70" height="13"/>
+                                <rect key="frame" x="263.5" y="603" width="62.5" height="13"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Meet Location:" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keN-Mw-aA6">
-                                <rect key="frame" x="54" y="603" width="134" height="15"/>
+                                <rect key="frame" x="54" y="603" width="126.5" height="15"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-UP-fdz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-UP-fdz">
                                 <rect key="frame" x="193" y="728" width="30" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Map">
@@ -78,8 +78,8 @@
                                     <segue destination="oZv-V2-cHn" kind="show" identifier="ToItemMapSegue" id="5hG-kP-nwD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
-                                <rect key="frame" x="76" y="789" width="30" height="33.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-4x-maF">
+                                <rect key="frame" x="76" y="789" width="48" height="34"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Buy">
                                     <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -100,6 +100,7 @@
                             <constraint firstItem="9sB-U5-vZH" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="54" id="DRL-sJ-1W5"/>
                             <constraint firstItem="UIX-lo-GFZ" firstAttribute="top" secondItem="TWp-CS-Hid" secondAttribute="bottom" constant="20" id="FL0-b4-5SR"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="bottom" secondItem="tUN-UP-fdz" secondAttribute="bottom" constant="107" id="Jjs-hk-Yxu"/>
+                            <constraint firstItem="Wjt-Jw-kuf" firstAttribute="leading" secondItem="g4I-4x-maF" secondAttribute="trailing" constant="140" id="RrH-wA-6U3"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="trailing" secondItem="Wjt-Jw-kuf" secondAttribute="trailing" constant="73" id="SLO-jI-Lgb"/>
                             <constraint firstItem="pvC-y2-70x" firstAttribute="top" secondItem="aCj-xo-XC2" secondAttribute="top" constant="70" id="UEn-1m-96d"/>
                             <constraint firstItem="ihk-IS-B3m" firstAttribute="leading" secondItem="keN-Mw-aA6" secondAttribute="trailing" constant="83" id="ZI1-Me-iun"/>
@@ -113,7 +114,6 @@
                             <constraint firstItem="g4I-4x-maF" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="76" id="n8p-e5-Tfq"/>
                             <constraint firstItem="tUN-UP-fdz" firstAttribute="top" secondItem="MI2-cV-gdA" secondAttribute="bottom" constant="43" id="q4Y-pC-s2a"/>
                             <constraint firstItem="g4I-4x-maF" firstAttribute="top" secondItem="keN-Mw-aA6" secondAttribute="bottom" constant="171" id="r0h-3q-7e4"/>
-                            <constraint firstItem="Wjt-Jw-kuf" firstAttribute="leading" secondItem="g4I-4x-maF" secondAttribute="trailing" constant="183" id="sRN-1z-C6V"/>
                             <constraint firstItem="keN-Mw-aA6" firstAttribute="leading" secondItem="aCj-xo-XC2" secondAttribute="leading" constant="54" id="sik-em-sp7"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="bottom" secondItem="Wjt-Jw-kuf" secondAttribute="bottom" constant="43" id="ui9-C4-amE"/>
                             <constraint firstItem="aCj-xo-XC2" firstAttribute="trailing" secondItem="ihk-IS-B3m" secondAttribute="trailing" constant="73" id="uld-yh-Qzk"/>

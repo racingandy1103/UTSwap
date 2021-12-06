@@ -145,6 +145,7 @@ class FeedViewController: BaseViewController, UICollectionViewDelegate, UICollec
                     print("error \(error)")
                   } else {
                     // Data for "images/island.jpg" is returned
+                    print("processed picture \(item.itemImgUUID)")
                     let pic = UIImage(data: data!)
                     itemImages[item.itemImgUUID] = pic
                     DispatchQueue.main.async {

@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             self.textFieldLoginUser.text = nil
             self.textFieldLoginPass.text = nil
           }
-        }*/
+        }
     }
     
     func textFieldShouldReturn(userText: UITextField!) -> Bool {

@@ -75,6 +75,8 @@ class LocationMapViewController: UIViewController {
         super.viewDidLoad()
         
         setupMapkit()
+        mapView.showsUserLocation = true
+
     }
     
     func setupMapkit() {
