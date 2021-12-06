@@ -57,7 +57,7 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         
         
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
-        var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
+        var imagesArr = [UIImage(named: "furniture0")!,UIImage(named: "calculator")!, UIImage(named: "essentialsshirt")!, UIImage(named: "hamlet")!,  UIImage(named: "IMG_3219")!,  UIImage(named: "IMG_3215")!,UIImage(named: "keyboard")!,UIImage(named: "lamp")!, UIImage(named: "puzzlebook")!,UIImage(named: "furniture1")!, UIImage(named: "shelves")!, UIImage(named: "furniture2")!, UIImage(named: "shirt")!]
         
         for n in 0...imagesArr.count-1{
             imagesArr[n] = imagesArr[n].resize(200, 200)!
@@ -66,7 +66,7 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         advertiseImageView.animationImages = imagesArr
         self.advertiseImageView.clipsToBounds = true
         self.advertiseImageView.animationRepeatCount = 0
-        advertiseImageView.animationDuration = 3
+        advertiseImageView.animationDuration = 13
         advertiseImageView.startAnimating()
         
         }
