@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-Jw-kuf">
-                                <rect key="frame" x="289" y="769" width="52" height="27"/>
+                                <rect key="frame" x="289" y="765" width="52" height="27"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <state key="normal" title="Chat">
                                     <color key="titleColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -88,6 +88,14 @@
                                     <action selector="buyPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="Z9d-CL-h2V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-kQ-TPF">
+                                <rect key="frame" x="182" y="760" width="51" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1" image="suit.heart" catalog="system"/>
+                                <connections>
+                                    <action selector="heartPressed:" destination="0te-vQ-6al" eventType="touchUpInside" id="9r7-oa-cRh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aCj-xo-XC2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,6 +133,7 @@
                     <connections>
                         <outlet property="chatButton" destination="Wjt-Jw-kuf" id="3Qm-Qo-zk7"/>
                         <outlet property="descBox" destination="UIX-lo-GFZ" id="1Qc-rT-tJy"/>
+                        <outlet property="heartLabel" destination="n4t-kQ-TPF" id="ot7-5w-GuI"/>
                         <outlet property="imgView" destination="9sB-U5-vZH" id="e81-mI-ZI3"/>
                         <outlet property="locationLabel" destination="ihk-IS-B3m" id="0oo-pn-owI"/>
                         <outlet property="mapButton" destination="tUN-UP-fdz" id="vbC-Hi-cjh"/>
@@ -184,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

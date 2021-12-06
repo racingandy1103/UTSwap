@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class LikedGoodsPopoverTableViewController: UITableViewController {
     
     private let likedgoodslist = ["placeholder1", "placeholder2", "placeholder3"]
+    
+    var likedGoods : [Item] = []
     var delegate: ButtonSetter?
+    var ref: DatabaseReference!
+    var timgUUID: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addItemsFromDBIntoList()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,14 +31,54 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    func addItemsFromDBIntoList() {
+        if (Auth.auth().currentUser != nil) {
+            let user = Auth.auth().currentUser
+            ref = Database.database().reference()
+            print("reading items from db")
+            ref = Database.database().reference()
+            ref.child("likeditems").observeSingleEvent(of: .value, with: { snapshot in
+                // Get user value
+                print(snapshot.childrenCount) // I got the expected number of items
+                
+                for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                    let ownerKey = rest.key
+                    for i in rest.children.allObjects as! [DataSnapshot] {
+                        let cat = i.childSnapshot(forPath: "itemCategory").value as? String
+                        let status = i.childSnapshot(forPath: "itemStatus").value as? String
+                        if cat != nil && status == nil {
+                            
+                                let key = i.key
+                                let title = i.childSnapshot(forPath: "itemTitle").value as! String
+                                
+                                
+                                let a = Item(title: title)
+                                a.ownerKey = ownerKey
+                                a.key = key
+                                
+                                self.likedGoods.append(a)
+                            
+                        }
+                    }
+                }
+                
+                
+                // ...
+              }) { error in
+                print(error.localizedDescription)
+              }
+        }
+
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return likedgoodslist.count
+        return likedGoods.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = likedgoodslist[indexPath.row]
+        cell.textLabel?.text = likedGoods[indexPath.row].itemTitle
         return cell
     }
     

@@ -27,9 +27,11 @@ class ItemBuyViewController: BaseViewController {
     @IBOutlet weak var mapButton: UIButton!
     
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var heartLabel: UIButton!
     
     var imgUUID: String? = ""
     var itemOwnedByAuthUser = false
+    var itemDetails:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +43,7 @@ class ItemBuyViewController: BaseViewController {
             if (Auth.auth().currentUser != nil && currentItem?.key != "" && currentItem?.ownerKey != "") {
                 print("Item Buy :: reading items from db")
                 let user = Auth.auth().currentUser
-                
+                let likedItemUUID = UUID.init().uuidString
                 ref = Database.database().reference()
                 ref.child("items").child(currentItem!.ownerKey).child(currentItem!.key).observeSingleEvent(of: .value, with: { snapshot in
                     // Get user value
@@ -51,39 +53,52 @@ class ItemBuyViewController: BaseViewController {
                         
                     let title = snapshot.childSnapshot(forPath: "itemTitle").value as? String
                     if title != nil {
+                        self.itemDetails.append(title!)
                         self.titleLabel.text = title
                         self.titleLabel.sizeToFit()
 
+                    }else{
+                        self.itemDetails.append("")
                     }
                     
                     let price = snapshot.childSnapshot(forPath: "itemPrice").value as? String
                     if price != nil {
+                        self.itemDetails.append(price!)
                         self.priceLabel.text = "Price: $\(price!)"
                         self.priceLabel.sizeToFit()
+                    }else{
+                        self.itemDetails.append("")
                     }
                     
                     let location = snapshot.childSnapshot(forPath: "meetLocation").value as? String
                     if location != nil && location != "" {
+                        self.itemDetails.append(location!)
                         self.locationLabel.text = "\(location!)"
                         self.locationLabel.sizeToFit()
 
                     } else {
+                        self.itemDetails.append("")
                         self.locationLabel.isHidden = true
                         self.mapButton.isHidden = true
                     }
                     
                     let time = snapshot.childSnapshot(forPath: "meetTime").value as? String
                     if time != nil {
+                        self.itemDetails.append(time!)
                         self.timeDesc.text = "Meet at \(time!)"
                         self.timeDesc.sizeToFit()
 
+                    }else{
+                        self.itemDetails.append("")
                     }
                     
                     let desc = snapshot.childSnapshot(forPath: "itemDesc").value as? String
                     if desc != nil {
+                        self.itemDetails.append(desc!)
                         self.descBox.text = desc
                         self.descBox.sizeToFit()
-
+                    }else{
+                        self.itemDetails.append("")
                     }
                    
                     let imgUUID = snapshot.childSnapshot(forPath: "itemImgUUID").value as? String
@@ -142,6 +157,45 @@ class ItemBuyViewController: BaseViewController {
         }
     }
 
+    @IBAction func heartPressed(_ sender: Any) {
+        
+        if(heartLabel.currentImage == UIImage(systemName:"suit.heart")){
+            UIView.animate(withDuration: 1.0) {
+                self.heartLabel.setImage(UIImage(systemName:"suit.heart.fill"), for: .normal)
+                            }
+            
+            if (Auth.auth().currentUser != nil) {
+                let user = Auth.auth().currentUser
+                let likedItemUUID = UUID.init().uuidString
+                itemDetails.append(likedItemUUID)
+                print("onSaveItemPress - reading items from db")
+                
+                ref = Database.database().reference()
+                
+                var dataToAdd = ["itemTitle": itemDetails[0], "itemPrice": itemDetails[1],"meetLocation": itemDetails[2], "itemDesc": itemDetails[4], "meetTime": itemDetails[3]]
+
+                
+                    dataToAdd["itemImgUUID"] = imgUUID
+                
+
+                ref.child("likeditems").child(user!.uid).child(likedItemUUID).setValue(dataToAdd)
+                ref.child("likeditemsid").child(user!.uid).child(likedItemUUID)
+            }
+            
+        }else{
+            UIView.animate(withDuration: 1.0) {
+                self.heartLabel.setImage(UIImage(systemName:"suit.heart"), for: .normal)
+                            }
+            if (Auth.auth().currentUser != nil) {
+                
+                let user = Auth.auth().currentUser
+                ref = Database.database().reference()
+                ref.child("likeditems").child(user!.uid).child(itemDetails[5]).removeValue()
+            }
+        }
+        
+        
+    }
     
     @IBAction func buyPressed(_ sender: Any) {
         

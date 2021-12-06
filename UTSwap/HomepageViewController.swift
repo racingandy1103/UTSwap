@@ -34,23 +34,24 @@ class HomepageViewController: BaseViewController, UIPopoverControllerDelegate, B
         super.viewDidLoad()
         if (Auth.auth().currentUser != nil) { // Sets username
             if (Auth.auth().currentUser?.displayName != nil) {
-                accountNameLabel.text = Auth.auth().currentUser?.displayName
+                accountNameLabel.text = "Welcome, " + "\n " + (Auth.auth().currentUser?.displayName)!
             }
         }
         
         
         profilePicImageView.layer.masksToBounds = true
-        profilePicImageView.layer.cornerRadius = profilePicImageView.bounds.height / 2
+        profilePicImageView.layer.cornerRadius = profilePicImageView.bounds.width / 2
         
-        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 0, y: buyButton.bounds.size.height / 2), radius: buyButton.bounds.size.width, startAngle: 0.0, endAngle: .pi, clockwise: true)
-        let circleShape = CAShapeLayer()
-        circleShape.path = circlePath.cgPath
-        buyButton.layer.mask = circleShape
+        buyButton.layer.cornerRadius = 0.5*buyButton.bounds.size.height
+        buyButton.clipsToBounds = true
+        buyButton.backgroundColor?.withAlphaComponent(0.5)
         
-        
-        
-        sellButton.layer.cornerRadius = 0.5 * buyButton.bounds.size.width
+        sellButton.layer.cornerRadius = 0.5*buyButton.bounds.size.height
         sellButton.clipsToBounds = true
+        sellButton.backgroundColor?.withAlphaComponent(0.5)
+        
+        
+        
         
         heartButton.setImage(UIImage(systemName:"suit.heart"), for: .normal)
         var imagesArr = [UIImage(named: "furniture0")!, UIImage(named: "furniture1")!, UIImage(named: "furniture2")!]
