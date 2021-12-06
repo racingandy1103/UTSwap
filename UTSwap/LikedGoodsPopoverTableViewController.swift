@@ -68,7 +68,6 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             print("Async after 1 second")
             self.tableView.reloadData()
-            print(self.likedGoods[0].itemTitle)
             self.tableView.reloadData()
             }
         
