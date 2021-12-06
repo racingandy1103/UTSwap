@@ -19,12 +19,20 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3c-lo-vct">
                                 <rect key="frame" x="65.5" y="297" width="54.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54.5" id="003-ny-ClT"/>
+                                    <constraint firstAttribute="height" constant="15" id="ofD-gX-Hgu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-64-Ub4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-64-Ub4">
                                 <rect key="frame" x="28" y="341" width="92" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="KC2-B8-Zxz"/>
+                                    <constraint firstAttribute="height" constant="31" id="kbO-Gi-P64"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="128" id="q91-bQ-3aH"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmn-Ki-I3H">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmn-Ki-I3H">
                                 <rect key="frame" x="128" y="338" width="250" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="t6y-bB-e7H"/>
@@ -69,15 +77,15 @@
                         <viewLayoutGuide key="safeArea" id="tsG-wq-8T2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JcK-64-Ub4" firstAttribute="top" secondItem="r3c-lo-vct" secondAttribute="bottom" constant="29" id="9ZH-ZF-9Af"/>
                             <constraint firstItem="e3B-C9-tFc" firstAttribute="top" secondItem="6w8-63-zWl" secondAttribute="bottom" constant="24" id="Lhr-pl-yuf"/>
                             <constraint firstItem="Kmn-Ki-I3H" firstAttribute="leading" secondItem="JcK-64-Ub4" secondAttribute="trailing" constant="8" symbolic="YES" id="SQv-1q-mNm"/>
-                            <constraint firstItem="JcK-64-Ub4" firstAttribute="top" secondItem="r3c-lo-vct" secondAttribute="bottom" constant="27" id="Slb-WD-MHk"/>
                             <constraint firstItem="r3c-lo-vct" firstAttribute="top" secondItem="6w8-63-zWl" secondAttribute="bottom" constant="31" id="VdJ-nZ-Gdv"/>
+                            <constraint firstItem="Kmn-Ki-I3H" firstAttribute="top" secondItem="e3B-C9-tFc" secondAttribute="bottom" constant="14" id="YmH-a7-E5N"/>
                             <constraint firstItem="tsG-wq-8T2" firstAttribute="trailing" secondItem="Kmn-Ki-I3H" secondAttribute="trailing" constant="36" id="c2X-eP-NPH"/>
                             <constraint firstItem="e3B-C9-tFc" firstAttribute="leading" secondItem="r3c-lo-vct" secondAttribute="trailing" constant="8" symbolic="YES" id="ckW-Nm-hYy"/>
                             <constraint firstItem="6w8-63-zWl" firstAttribute="top" secondItem="tsG-wq-8T2" secondAttribute="top" constant="94" id="d2d-5m-EcW"/>
                             <constraint firstItem="tsG-wq-8T2" firstAttribute="trailing" secondItem="e3B-C9-tFc" secondAttribute="trailing" constant="36" id="iHA-YY-ba9"/>
-                            <constraint firstItem="Kmn-Ki-I3H" firstAttribute="top" secondItem="e3B-C9-tFc" secondAttribute="bottom" constant="13" id="lMt-Lh-i4f"/>
                             <constraint firstItem="6w8-63-zWl" firstAttribute="centerX" secondItem="tsG-wq-8T2" secondAttribute="centerX" id="xiU-BK-tGK"/>
                         </constraints>
                     </view>
