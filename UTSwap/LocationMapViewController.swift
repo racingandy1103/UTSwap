@@ -27,7 +27,6 @@ let JESTER_COOR = (30.282980, -97.736811)
 let UNION_COOR = (30.286587, -97.741197)
 let LITTLEFIELD_COOR = (30.283823, -97.739546)
 
-
 let LOC_MAP = [
     "GDC": GDC_COOR,
     "TOWER": TOWER_COOR,
@@ -35,7 +34,6 @@ let LOC_MAP = [
     "UNION": UNION_COOR,
     "LITTLEFIELD": LITTLEFIELD_COOR,
 ]
-
 
 class MeetLocation: NSObject, MKAnnotation {
   let locationName: String?
@@ -55,21 +53,11 @@ class MeetLocation: NSObject, MKAnnotation {
     return locationName
   }
 }
-//
-//let GDC_LOC = MeetLocation(locationName: "GDC", coordinate: "")
-//
-//let MEET_LOCATIONS = {
-//    "GDC": MeetLocation
-//}
-
 
 class LocationMapViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var mapView: MKMapView!
     var meetLocation: String? = nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +68,6 @@ class LocationMapViewController: UIViewController {
     }
     
     func setupMapkit() {
-        
         
         // UT TOWER
         let initialLocation = CLLocation(latitude: 30.2861, longitude: -97.7393)
@@ -122,6 +109,4 @@ class LocationMapViewController: UIViewController {
             }
         }
     }
-
-
 }

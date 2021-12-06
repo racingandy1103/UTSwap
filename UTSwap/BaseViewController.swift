@@ -52,6 +52,7 @@ class BaseViewController: UIViewController {
         "MONO": UIFont.monospacedSystemFont(ofSize: 12.0, weight: .regular),
         "SYSTEM": UIFont(name: "Times New Roman", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
         "Courier": UIFont(name: "Courier", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
+        "Helvetica": UIFont(name: "Helvetica", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular),
         "MENLO": UIFont(name: "Menlo", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .regular)
     ]
     
