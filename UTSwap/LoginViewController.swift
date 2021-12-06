@@ -26,7 +26,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
 
         view.addGestureRecognizer(tap)
 
-        Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
+        /*Auth.auth().addStateDidChangeListener() { //If user is logged in, changes to Main VC
           auth, user in
           
           if user != nil {
@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             self.textFieldLoginUser.text = nil
             self.textFieldLoginPass.text = nil
           }
-        }
+        }*/
     }
     
     func textFieldShouldReturn(userText: UITextField!) -> Bool {

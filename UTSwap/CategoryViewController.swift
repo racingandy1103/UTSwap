@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     
 
@@ -34,7 +34,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = categoryTableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         let row = indexPath.row
         cell.textLabel?.text = categories[row]
-        
+        cell.textLabel?.font = UIFont(name:"Courier",size:15)
         return cell
     }
     
