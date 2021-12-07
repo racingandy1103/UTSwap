@@ -33,7 +33,6 @@ class ItemSellViewController: BaseViewController, UIPickerViewDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UILabel.appearance().font = UIFont(name: "Courier", size: 15.0)
         self.textView.layer.borderColor = UIColor.orange.cgColor
         self.textView.layer.borderWidth = 1
         
