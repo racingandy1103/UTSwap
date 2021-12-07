@@ -148,6 +148,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ugd-9v-Cgm"/>
                     <connections>
+                        <outlet property="buyButton" destination="g4I-4x-maF" id="PZY-Ee-oms"/>
                         <outlet property="chatButton" destination="Wjt-Jw-kuf" id="3Qm-Qo-zk7"/>
                         <outlet property="descBox" destination="UIX-lo-GFZ" id="1Qc-rT-tJy"/>
                         <outlet property="heartLabel" destination="n4t-kQ-TPF" id="ot7-5w-GuI"/>

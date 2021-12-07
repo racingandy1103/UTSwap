@@ -25,6 +25,7 @@ class ItemBuyViewController: BaseViewController {
     @IBOutlet weak var descBox: UITextView!
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var heartLabel: UIButton!
@@ -43,6 +44,11 @@ class ItemBuyViewController: BaseViewController {
             if (Auth.auth().currentUser != nil && currentItem?.key != "" && currentItem?.ownerKey != "") {
                 print("Item Buy :: reading items from db")
                 let user = Auth.auth().currentUser
+                
+                if user?.uid == currentItem?.ownerKey {
+                    buyButton.isHidden = true
+                }
+                
                 let likedItemUUID = UUID.init().uuidString
                 ref = Database.database().reference()
                 ref.child("items").child(currentItem!.ownerKey).child(currentItem!.key).observeSingleEvent(of: .value, with: { snapshot in
