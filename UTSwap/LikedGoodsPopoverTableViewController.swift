@@ -10,7 +10,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-class LikedGoodsPopoverTableViewController: UITableViewController {
+class LikedGoodsPopoverTableViewController: UITableViewController{
     
     private let likedgoodslist = ["placeholder1", "placeholder2", "placeholder3"]
     
@@ -97,7 +97,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         showItemBuyForItem(item: likedGoods[indexPath.row])
-        print(likedGoods[indexPath.row])
+        print(likedGoods[indexPath.row].itemTitle + "hhhr")
         self.dismiss(animated: true, completion: nil)
         delegate?.setButton()
         
@@ -111,6 +111,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     {
         let storyBoard = UIStoryboard(name: "ItemBuy", bundle:nil)
         let itemBuyScreen = storyBoard.instantiateViewController(withIdentifier: "itemBuyId") as! ItemBuyViewController
+        
         itemBuyScreen.currentItem = item
         self.navigationController?.pushViewController(itemBuyScreen, animated: true)
     }

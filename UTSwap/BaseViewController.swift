@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
@@ -183,14 +184,20 @@ class BaseViewController: UIViewController {
     }
     
     func showProfileButton() {
-        
-            navigationItem.rightBarButtonItem = UIBarButtonItem(
+            
+            let profButton = UIBarButtonItem(
                 image: UIImage(systemName: "person.circle"),
                 style: .plain,
                 target: self,
                 action: #selector(profileTappedAction)
             )
+            navigationItem.rightBarButtonItem = profButton
             
+        if (Auth.auth().currentUser != nil) {
+            profButton.isEnabled = true
+        }else{
+            profButton.isEnabled = false
+        }
         
     }
     
