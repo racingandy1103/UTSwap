@@ -42,7 +42,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
                     
                         let cat = rest.childSnapshot(forPath: "itemCategory").value as? String
                         let status = rest.childSnapshot(forPath: "itemStatus").value as? String
-                        
+                    let imgUIUD = rest.childSnapshot(forPath: "itemImgUUID").value as? String
                             
                         let key = rest.key
                         let title = rest.childSnapshot(forPath: "itemTitle").value as! String
@@ -52,6 +52,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
                         a.ownerKey = ownerKey
                         a.key = key
                         a.itemTitle = title
+                    a.itemImgUUID = imgUIUD!
                         self.likedGoods.append(a)
                         print(self.likedGoods[0].itemTitle + " what")
                     
@@ -94,6 +95,9 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        showItemBuyForItem(item: likedGoods[indexPath.row])
+        print(likedGoods[indexPath.row])
         self.dismiss(animated: true, completion: nil)
         delegate?.setButton()
         
@@ -101,6 +105,14 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.setButton()
+    }
+    
+    func showItemBuyForItem(item: Item)
+    {
+        let storyBoard = UIStoryboard(name: "ItemBuy", bundle:nil)
+        let itemBuyScreen = storyBoard.instantiateViewController(withIdentifier: "itemBuyId") as! ItemBuyViewController
+        itemBuyScreen.currentItem = item
+        self.navigationController?.pushViewController(itemBuyScreen, animated: true)
     }
 
     /*
