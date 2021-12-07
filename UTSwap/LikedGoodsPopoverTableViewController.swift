@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import Foundation
 
 class LikedGoodsPopoverTableViewController: UITableViewController {
     
@@ -42,13 +43,22 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
                     
                         let cat = rest.childSnapshot(forPath: "itemCategory").value as? String
                         let status = rest.childSnapshot(forPath: "itemStatus").value as? String
-                        
+                    let itemDesc = rest.childSnapshot(forPath: "itemDesc").value as? String
+                    let itemImgUUID = rest.childSnapshot(forPath: "itemImgUUID").value as? String
+                    let itemPrice = rest.childSnapshot(forPath: "itemPrice").value as? String
+                    let meetLocation = rest.childSnapshot(forPath: "meetLocation").value as? String
+                    let meetTime = rest.childSnapshot(forPath: "meetTime").value as? String
                             
                         let key = rest.key
                         let title = rest.childSnapshot(forPath: "itemTitle").value as! String
+                    
                                 
                                 
-                        let a = Item(title: title)
+                    let a = Item(title: title)
+                    a.key = key
+                    a.ownerKey = ownerKey
+                    a.itemImgUUID = itemImgUUID!
+                
                         a.ownerKey = ownerKey
                         a.key = key
                         a.itemTitle = title
@@ -56,7 +66,7 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
                         print(self.likedGoods[0].itemTitle + " what")
                     
                 }
-                print(self.likedGoods[0].itemTitle + " what" + self.likedGoods[1].itemTitle)
+               
                 
                 
                 // ...
@@ -94,6 +104,9 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let i = self.likedGoods[indexPath.row]
+        i.printDesc()
+        buyItemVC(item: i)
         self.dismiss(animated: true, completion: nil)
         delegate?.setButton()
         
@@ -102,7 +115,18 @@ class LikedGoodsPopoverTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.setButton()
     }
+    func buyItemVC(item: Item){
+        
+        let storyBoard = UIStoryboard(name: "ItemBuy", bundle:nil)
+        print(item.itemTitle + "Hilo")
+        let itemBuyScreen = storyBoard.instantiateViewController(withIdentifier: "itemBuyId") as! ItemBuyViewController
+        itemBuyScreen.currentItem = item
+        self.navigationController?.pushViewController(itemBuyScreen, animated: true)
+        
 
+        
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
